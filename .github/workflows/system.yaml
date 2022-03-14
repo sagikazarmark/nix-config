@@ -1,0 +1,29 @@
+name: System
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  linux:
+    name: Linux
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        host: ['mark-g15']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: "Set up Nix ❄️"
+        uses: cachix/install-nix-action@v16
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Build NixOS config ❄️"
+        run: nix build .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel
