@@ -38,6 +38,19 @@
 
           configuration = { };
         };
+
+        "marksk@MARKSK-M-J1W8" = home-manager.lib.homeManagerConfiguration rec {
+          system = "x86_64-darwin";
+
+          username = "marksk";
+          homeDirectory = "/Users/marksk";
+
+          pkgs = import nixpkgs {
+            inherit system;
+          };
+
+          configuration = { };
+        };
       };
     };
 }
