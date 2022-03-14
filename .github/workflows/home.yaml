@@ -25,6 +25,16 @@ jobs:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
+      - name: "Set up Cachix ❄️"
+        uses: cachix/cachix-action@v10
+        with:
+          name: skm-nixos
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+
+      # Needed because cachix is also installed by Home Manager
+      - name: "Set priority flag for Cachix 🚩"
+        run: nix-env --set-flag priority 0 cachix
+
       - name: "Build home configuration 🏠"
         run: nix build .#homeConfigurations.${{ matrix.home }}.activationPackage
 
@@ -45,6 +55,16 @@ jobs:
         with:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Set up Cachix ❄️"
+        uses: cachix/cachix-action@v10
+        with:
+          name: skm-nixos
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+
+      # Needed because cachix is also installed by Home Manager
+      - name: "Set priority flag for Cachix 🚩"
+        run: nix-env --set-flag priority 0 cachix
 
       - name: "Build home configuration 🏠"
         run: nix build .#homeConfigurations.${{ matrix.home }}.activationPackage
