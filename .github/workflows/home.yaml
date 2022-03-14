@@ -27,3 +27,24 @@ jobs:
 
       - name: "Build home configuration 🏠"
         run: nix build .#homeConfigurations.${{ matrix.home }}.activationPackage
+
+  darwin:
+    name: Darwin
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        home: ['marksk@MARKSK-M-J1W8']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: "Set up Nix ❄️"
+        uses: cachix/install-nix-action@v16
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Build home configuration 🏠"
+        run: nix build .#homeConfigurations.${{ matrix.home }}.activationPackage
