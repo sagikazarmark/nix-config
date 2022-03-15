@@ -36,6 +36,8 @@
             inherit system;
           };
 
+          extraModules = [ ./modules/home-manager ];
+
           configuration = { };
         };
 
@@ -48,6 +50,8 @@
           pkgs = import nixpkgs {
             inherit system;
           };
+
+          extraModules = [ ./modules/home-manager ];
 
           configuration = { };
         };
