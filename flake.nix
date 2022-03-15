@@ -20,7 +20,8 @@
           system = "x86_64-linux";
 
           modules = [
-            ./hosts/mark-g15/default.nix
+            ./hosts/mark-g15
+            ./users/mark/system
           ];
         };
       };
