@@ -25,7 +25,7 @@
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/818046ee-954a-4737-8a7e-fb64109973fe";
+    device = "/dev/disk/by-uuid/b8b163eb-4f26-4388-a531-1fb449546344";
     fsType = "ext4";
   };
 
@@ -35,7 +35,7 @@
   };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/ce2e9c02-5551-4ac6-8cae-4d1cb97ede44"; }];
+    [{ device = "/dev/disk/by-uuid/b9c9ca31-567e-4388-b3f7-c0b9521ac887"; }];
 
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
