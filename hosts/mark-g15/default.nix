@@ -55,7 +55,7 @@
   # You might still get asked for a root password during install despites this setting.
   # https://github.com/NixOS/nixpkgs/issues/95778
   users.mutableUsers = false;
-  users.users.root.hashedPassword = "81fbf929a6196fae3564d34457b0f2f74345786f9fc3a762039f57e8d47f5f8a612e61a96f33ee165414de36e7ab0d2615667a7636ae5d598b5afb25ce87c0b4";
+  users.users.root.hashedPassword = "$6$pM4IARjHjdHpQOcl$B/9uv4QH9J38ImeRgAyqHhI5WDHZpCCNcKyRDV2f.iqL8wMvGZ38H.zAyqiCUoBD/8YMPvnTiOvncUOZorw6z.";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
