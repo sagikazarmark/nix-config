@@ -9,11 +9,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "mark-g15"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Budapest";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -34,6 +34,32 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
+
+
+  nix = {
+    settings = {
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://skm-nixos.cachix.org"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "skm-nixos.cachix.org-1:/vQ9eIf7dL0imfHCWQGI1W/TVKceo6OYBsX0RvS55xs="
+      ];
+
+      trusted-users = [ "root" "@wheel" ];
+      auto-optimise-store = true;
+    };
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      warn-dirty = false
+    '';
+    # gc = {
+    #   automatic = true;
+    #   dates = "daily";
+    # };
+  };
 
 
 
