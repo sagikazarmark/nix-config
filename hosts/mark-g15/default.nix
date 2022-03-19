@@ -33,7 +33,52 @@
   };
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.layout = "hu";
+
+  services.xserver = {
+    #enable = true;
+    #layout = "hu";
+    # windowManager.bspwm.enable = true;
+    # windowManager.i3.enable = true;
+    #windowManager.default = "bspwm";
+    # desktopManager.xterm.enable = false;
+    #displayManager.defaultSession = "none+bspwm";
+    # displayManager.lightdm.enable = true;
+    # displayManager.startx.enable = false;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  environment.gnome.excludePackages = [ pkgs.gnome.cheese pkgs.gnome-photos pkgs.gnome.gnome-music pkgs.gnome.gnome-terminal pkgs.gnome.gedit pkgs.epiphany pkgs.evince pkgs.gnome.gnome-characters pkgs.gnome.totem pkgs.gnome.tali pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour pkgs.gnome.geary ];
+
+
+  # Enable sound.
+  # sound.enable = true;
+  hardware.pulseaudio.enable = false;
+
+  # rtkit is optional but recommended
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.xserver.libinput.enable = true;
+
+  virtualisation.docker.enable = true;
 
 
   nix = {
