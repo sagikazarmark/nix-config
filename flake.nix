@@ -65,7 +65,7 @@
       in
       {
         devShell = pkgs.mkShell {
-          buildInputs = [ home-manager pkgs.git ];
+          buildInputs = with pkgs; [ home-manager git ];
         };
       });
 }
