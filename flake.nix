@@ -10,6 +10,7 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -39,9 +40,14 @@
             inherit system;
           };
 
-          extraModules = [ ./modules/home-manager ];
+          extraModules = [
+            ./modules/home-manager
+            inputs.nix-colors.homeManagerModule
+          ];
 
-          configuration = { };
+          extraSpecialArgs = { inherit inputs; };
+
+          configuration = import ./home.nix;
         };
 
         "marksk@MARKSK-M-J1W8" = home-manager.lib.homeManagerConfiguration rec {

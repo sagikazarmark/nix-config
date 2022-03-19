@@ -1,0 +1,10 @@
+#helm 2.16.1
+helm system
+terraform system
+nodejs system
+python system
+argo system
+yarn system
+hugo system
+kubectl-wbx3 0.3.8
+clusterctl 1.1.0
