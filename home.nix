@@ -131,6 +131,9 @@
     nixos-generators
 
     # wkhtmltopdf
+
+    firefox-devedition-bin
+    _1password-gui
   ];
 
   home.sessionPath = [
