@@ -47,7 +47,16 @@
 
           extraSpecialArgs = { inherit inputs; };
 
-          configuration = import ./home.nix;
+          configuration = {
+            imports = [
+              ./home.nix
+              ./users/mark/home/linux.nix
+              ./users/mark/home/dev.nix
+              ./users/mark/home/programs/git.nix
+              ./users/mark/home/programs/kitty.nix
+              ./users/mark/home/programs/neomutt.nix
+            ];
+          };
         };
 
         "marksk@MARKSK-M-J1W8" = home-manager.lib.homeManagerConfiguration rec {
@@ -60,9 +69,24 @@
             inherit system;
           };
 
-          extraModules = [ ./modules/home-manager ];
+          extraModules = [
+            ./modules/home-manager
+            inputs.nix-colors.homeManagerModule
+          ];
 
-          configuration = { };
+          extraSpecialArgs = { inherit inputs; };
+
+          configuration = {
+            imports = [
+              ./home.nix
+              ./home.darwin.nix
+              ./users/mark/home/dev.nix
+              ./users/mark/home/programs/git.nix
+              ./users/mark/home/programs/kitty.nix
+              ./users/mark/home/programs/kitty.darwin.nix
+              ./users/mark/home/programs/neomutt.nix
+            ];
+          };
         };
       };
     } // inputs.flake-utils.lib.eachDefaultSystem (system:
