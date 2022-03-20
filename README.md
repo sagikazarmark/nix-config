@@ -284,3 +284,34 @@ When installing NixOS for the first time, make sure you complete the following s
 1. Create a new system configuration under `nixosConfigurations` in `flake.nix`.
 1. Create a new directory under `hosts/` for your new host.
 1. Create a new home configuration under `homeConfigurations` in the form of `user@host`.
+
+## References
+
+### Installation guides
+
+- https://nixos.org/manual/nixos/stable/index.html#sec-installation
+- https://wiki.archlinux.org/title/installation_guide
+- https://blog.tuxinaut.de/2018/05/07/part-1-installing-nixos/
+
+### Encryption
+
+- https://nixos.wiki/wiki/Full_Disk_Encryption
+- https://dzone.com/articles/nixos-native-flake-deployment-with-luks-and-lvm
+- https://gist.github.com/ladinu/bfebdd90a5afd45dec811296016b2a3f
+- https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
+
+### Config examples
+
+- https://github.com/jonringer/nixpkgs-config
+- https://github.com/kclejeune/system
+- https://github.com/Misterio77/nix-config
+- https://github.com/ttuegel/nixos-config
+- https://github.com/vidbina/nixos-configuration
+- https://github.com/wiltaylor/dotfiles
+- https://github.com/foo-dogsquared/nixos-config
+- https://github.com/jared-w/nixos-configs
+- https://github.com/gvolpe/nix-config
+
+### Misc
+
+- https://gvolpe.com/blog/nixos-binary-cache-ci/
