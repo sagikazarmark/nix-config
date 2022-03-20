@@ -141,7 +141,14 @@
     #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #   wget
     #   firefox
+
+
+    # For gnome
+    gnomeExtensions.appindicator
   ];
+
+  services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
+  services.dbus.packages = with pkgs; [ gnome2.GConf ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
