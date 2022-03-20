@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-21.11";
+    nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-21.11";
@@ -13,7 +14,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgsUnstable, home-manager, ... }@inputs:
     let
       lib = nixpkgs.lib;
     in
@@ -65,7 +66,7 @@
           username = "marksk";
           homeDirectory = "/Users/marksk";
 
-          pkgs = import nixpkgs {
+          pkgs = import nixpkgsUnstable {
             inherit system;
           };
 
