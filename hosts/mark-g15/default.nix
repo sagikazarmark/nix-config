@@ -56,6 +56,9 @@
 
   environment.gnome.excludePackages = [ pkgs.gnome.cheese pkgs.gnome-photos pkgs.gnome.gnome-music pkgs.gnome.gnome-terminal pkgs.gnome.gedit pkgs.epiphany pkgs.evince pkgs.gnome.gnome-characters pkgs.gnome.totem pkgs.gnome.tali pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour pkgs.gnome.geary ];
 
+  # Required for the user to show up in GNOME
+  # https://www.reddit.com/r/NixOS/comments/ocimef/users_not_showing_up_in_gnome/
+  environment.shells = [ pkgs.zsh ];
 
   # Enable sound.
   # sound.enable = true;
