@@ -13,7 +13,7 @@
   boot.extraModulePackages = [ ];
 
   boot.initrd.luks.devices = {
-    luksroot = {
+    nixos-enc = {
       device = "/dev/nvme0n1p2";
       preLVM = true;
 
@@ -25,17 +25,17 @@
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/b170be1b-ef53-4ee5-ad6c-6bad3cabe185";
+    device = "/dev/disk/by-uuid/ed653029-d9e4-42a3-9c22-14d7ca3a89a2";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/02A5-1AB9";
+    device = "/dev/disk/by-uuid/2A57-1181";
     fsType = "vfat";
   };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/26ffd550-ad68-4c63-98e6-29d87f9465f5"; }];
+    [{ device = "/dev/disk/by-uuid/53542e4d-5d86-4981-9b69-f252fa5fe238"; }];
 
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
