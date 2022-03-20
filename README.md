@@ -270,7 +270,7 @@ cd nix-config
 Run the following command to bootstrap your home environment:
 
 ```shell
-nix run --no-write-lock-file github:nix-community/home-manager/release-21.11 -- switch --flake .#
+nix run --no-write-lock-file github:nix-community/home-manager/release-21.11 -- switch --flake .
 ```
 
 Enjoy!
