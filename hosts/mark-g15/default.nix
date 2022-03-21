@@ -45,7 +45,7 @@
   virtualisation.docker.enable = true;
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
