@@ -312,6 +312,8 @@ When installing NixOS for the first time, make sure you complete the following s
 - https://github.com/jared-w/nixos-configs
 - https://github.com/gvolpe/nix-config
 
+Collection of Nix setups: https://nixos.wiki/wiki/Comparison_of_NixOS_setups
+
 ### Misc
 
 - https://gvolpe.com/blog/nixos-binary-cache-ci/
