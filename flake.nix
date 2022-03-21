@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-21.11";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
+    hardware.url = "github:nixos/nixos-hardware";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-21.11";
@@ -22,6 +23,8 @@
       nixosConfigurations = {
         mark-g15 = lib.nixosSystem {
           system = "x86_64-linux";
+
+	  specialArgs = { inherit inputs; };
 
           modules = [
             ./hosts/mark-g15
