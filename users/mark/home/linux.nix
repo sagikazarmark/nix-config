@@ -7,5 +7,7 @@
 
     spotify
     gnomeExtensions.spotify-tray
+
+    tdesktop
   ];
 }
