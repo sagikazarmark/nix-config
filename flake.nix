@@ -24,6 +24,12 @@
         mark-g15 = lib.nixosSystem {
           system = "x86_64-linux";
 
+	  pkgs = import nixpkgs {
+            inherit system;
+
+	    config.allowUnfree = true;
+	  };
+
 	  specialArgs = { inherit inputs; };
 
           modules = [

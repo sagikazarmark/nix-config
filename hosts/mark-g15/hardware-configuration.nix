@@ -48,8 +48,21 @@
   # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
 
-  hardware.nvidia.prime = {
-    amdgpuBusId = "PCI:7:0:0";
-    nvidiaBusId = "PCI:1:0:0";
+  hardware.nvidia = {
+    powerManagement = {
+      enable = true;
+      finegrained = true;
+    };
+
+    prime = {
+      amdgpuBusId = "PCI:7:0:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
   };
+
+  # fixes mic mute button
+  services.udev.extraHwdb = ''
+    evdev:name:*:dmi:bvn*:bvr*:bd*:svnASUS*:pn*:*
+     KEYBOARD_KEY_ff31007c=f20
+'';
 }
