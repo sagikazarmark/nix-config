@@ -72,6 +72,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "typescript",
   "yaml",
   "vim",
+  "nix",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
