@@ -11,6 +11,7 @@
     ../common/users.nix
     ../common/gnome.nix
     ../common/audio.nix
+    ../common/fonts.nix
     ../common/services/ssh.nix
   ];
 
