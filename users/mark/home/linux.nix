@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -12,4 +12,12 @@
 
     python310Packages.pip
   ];
+
+  programs.gpg = {
+    enable = true;
+
+    homedir = "${config.xdg.dataHome}/gnupg";
+  };
+
+  services.gpg-agent.enable = true;
 }
