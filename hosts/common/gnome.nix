@@ -5,6 +5,8 @@
 {
   services.xserver = {
     displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = true;
+    displayManager.gdm.nvidiaWayland = true;
     desktopManager.gnome.enable = true;
   };
 

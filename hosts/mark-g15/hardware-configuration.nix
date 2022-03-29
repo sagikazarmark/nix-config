@@ -58,6 +58,8 @@
       amdgpuBusId = "PCI:7:0:0";
       nvidiaBusId = "PCI:1:0:0";
     };
+
+    modesetting.enable = true;
   };
 
   # fixes mic mute button
