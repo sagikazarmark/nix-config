@@ -48,11 +48,9 @@
       default = {
         text = ''
           [ids]
-
           *
 
           [main]
-
           # Maps capslock to escape when pressed and control when held.
           capslock = overload(meta, esc)
         '';
