@@ -48,6 +48,12 @@
 
           pkgs = import nixpkgs {
             inherit system;
+
+	    overlays = [
+              (final: prev: {
+	        neovim = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim;
+	      })
+	    ];
           };
 
           extraModules = [

@@ -40,6 +40,10 @@
     # Rust
     cargo
 
+    python310Packages.pip
+    gnumake
+    gcc
+
     # Containers
     lima
     podman
