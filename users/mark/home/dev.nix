@@ -37,6 +37,9 @@
     # go
     gofumpt
 
+    # Rust
+    cargo
+
     # Containers
     lima
     podman

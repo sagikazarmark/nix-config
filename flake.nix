@@ -21,7 +21,7 @@
     in
     {
       nixosConfigurations = {
-        mark-g15 = lib.nixosSystem {
+        mark-g15 = lib.nixosSystem rec {
           system = "x86_64-linux";
 
 	  pkgs = import nixpkgs {
