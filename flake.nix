@@ -24,17 +24,25 @@
         mark-g15 = lib.nixosSystem rec {
           system = "x86_64-linux";
 
-	  pkgs = import nixpkgs {
+          pkgs = import nixpkgs {
             inherit system;
 
-	    config.allowUnfree = true;
-	  };
+            config.allowUnfree = true;
 
-	  specialArgs = { inherit inputs; };
+            overlays = [
+              (final: prev: {
+                keyd = prev.callPackage ./pkgs/keyd/default.nix { };
+              })
+            ];
+          };
+
+          specialArgs = { inherit inputs; };
 
           modules = [
             ./hosts/mark-g15
             ./users/mark/system
+
+            ./modules/nixos/keyd.nix
           ];
         };
       };
@@ -49,11 +57,11 @@
           pkgs = import nixpkgs {
             inherit system;
 
-	    overlays = [
+            overlays = [
               (final: prev: {
-	        neovim = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim;
-	      })
-	    ];
+                neovim = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim;
+              })
+            ];
           };
 
           extraModules = [

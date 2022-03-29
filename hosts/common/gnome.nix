@@ -40,4 +40,23 @@
 
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
   services.dbus.packages = with pkgs; [ gnome2.GConf ];
+
+  services.keyd = {
+    enable = true;
+
+    configuration = {
+      default = {
+        text = ''
+          [ids]
+
+          *
+
+          [main]
+
+          # Maps capslock to escape when pressed and control when held.
+          capslock = overload(meta, esc)
+        '';
+      };
+    };
+  };
 }
