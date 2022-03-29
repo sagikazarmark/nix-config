@@ -234,6 +234,10 @@
     #   /* recursive = true; */
     # };
 
+    "lvim/config.lua" = {
+      source = ./dotfiles/lvim/config.lua;
+    };
+
     "wgetrc" = {
       text = ''
         hsts-file = ${config.xdg.cacheHome}/wget-hsts

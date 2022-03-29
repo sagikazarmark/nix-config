@@ -9,5 +9,7 @@
     gnomeExtensions.spotify-tray
 
     tdesktop
+
+    python310Packages.pip
   ];
 }

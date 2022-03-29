@@ -40,7 +40,6 @@
     # Rust
     cargo
 
-    python310Packages.pip
     gnumake
     gcc
 
