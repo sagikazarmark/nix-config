@@ -15,9 +15,9 @@
           cfg = config.wayland.windowManager.sway;
         in
         lib.mkOptionDefault {
-          "''${modifier}+Return" = "exec ${cfg.config.terminal}";
+          "${modifier}+Return" = "exec ${cfg.config.terminal}";
           # "''${modifier}+Shift+q" = "kill";
-          "''${modifier}+Space" = "exec ${cfg.config.menu}";
+          "${modifier}+Space" = "exec ${cfg.config.menu}";
         };
     };
 
