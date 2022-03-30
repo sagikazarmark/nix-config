@@ -6,8 +6,8 @@
 
     config = {
       modifier = "Mod4";
-      terminal = "\${pkgs.kitty}/bin/kitty";
-      menu = "\${config.programs.rofi.package}/bin/rofi";
+      terminal = "${pkgs.kitty}/bin/kitty";
+      menu = "${config.programs.rofi.package}/bin/rofi";
 
       keybindings =
         let
@@ -29,6 +29,6 @@
     enable = true;
     package = pkgs.rofi-wayland;
 
-    terminal = "\${pkgs.kitty}/bin/kitty";
+    terminal = "${pkgs.kitty}/bin/kitty";
   };
 }
