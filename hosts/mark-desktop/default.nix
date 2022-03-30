@@ -13,6 +13,8 @@
     ../common/audio.nix
     ../common/fonts.nix
     ../common/services/ssh.nix
+
+    ../common/logitech.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
