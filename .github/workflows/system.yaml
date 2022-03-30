@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        host: ['mark-g15']
+        host: ['mark-desktop', 'mark-g15']
 
     steps:
       - name: Checkout code
