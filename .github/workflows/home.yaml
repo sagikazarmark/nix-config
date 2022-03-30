@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        home: ['mark@mark-g15']
+        home: ['mark@mark-desktop', 'mark@mark-g15']
 
     steps:
       - name: Checkout code
