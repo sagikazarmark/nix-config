@@ -2,7 +2,13 @@
 
 {
   home.packages = with pkgs; [
-    firefox-devedition-bin
+    (firefox-devedition-bin.override
+      {
+        cfg = {
+          enableTridactylNative = true;
+        };
+      })
+
     _1password-gui
 
     spotify
