@@ -9,6 +9,7 @@
     gnomeExtensions.spotify-tray
 
     tdesktop
+    slack
 
     python310Packages.pip
   ];
