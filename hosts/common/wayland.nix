@@ -6,6 +6,8 @@
     displayManager.gdm.nvidiaWayland = true;
   };
 
+  programs.xwayland.enable = true;
+
   services.keyd = {
     enable = true;
 
