@@ -10,6 +10,7 @@
     ../common/nix.nix
     ../common/users.nix
     ../common/gnome.nix
+    ../common/wayland.nix
     ../common/audio.nix
     ../common/fonts.nix
     ../common/services/ssh.nix

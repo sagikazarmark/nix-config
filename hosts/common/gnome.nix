@@ -5,8 +5,6 @@
 {
   services.xserver = {
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = true;
-    displayManager.gdm.nvidiaWayland = true;
     desktopManager.gnome.enable = true;
   };
 
@@ -40,25 +38,4 @@
 
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
   services.dbus.packages = with pkgs; [ gnome2.GConf ];
-
-  services.keyd = {
-    enable = true;
-
-    configuration = {
-      default = {
-        text = ''
-          [ids]
-          *
-
-        # Logitech MX Master 3
-        -046d:4082
-        -046d:b023
-
-          [main]
-          # Maps capslock to escape when pressed and control when held.
-          capslock = overload(meta, esc)
-        '';
-      };
-    };
-  };
 }
