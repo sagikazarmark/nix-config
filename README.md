@@ -70,6 +70,8 @@ parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
 parted /dev/sda -- set 1 esp on
 ```
 
+⚠️⚠️⚠️ **Make sure you follow the right section below.** ⚠️⚠️⚠️
+
 #### Unencrypted root (and swap) partition
 
 Create a root partition:
@@ -249,6 +251,8 @@ Run the following command to install NixOS:
 ```shell
 nixos-install --no-root-passwd --flake .#YOUR_HOSTNAME
 ```
+
+Go and get yourself a cup of coffee while Nix does it's thing. ☕
 
 Once the installation is ready, you can reboot the computer:
 
