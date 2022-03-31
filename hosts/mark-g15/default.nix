@@ -5,12 +5,15 @@
     ./hardware-configuration.nix
 
     ../common/base.nix
+    ../common/core.nix
     ../common/networking.nix
     ../common/i18n.nix
     ../common/nix.nix
     ../common/users.nix
-    ../common/gnome.nix
+    # ../common/gnome.nix
     ../common/wayland.nix
+    ../common/opengl.nix
+    ../common/security.nix
     ../common/audio.nix
     ../common/fonts.nix
     ../common/services/ssh.nix
@@ -24,40 +27,13 @@
   # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "mark-g15"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   networking.interfaces.enp3s0.useDHCP = true;
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  services.xserver = {
-    #enable = true;
-    #layout = "hu";
-    # windowManager.bspwm.enable = true;
-    # windowManager.i3.enable = true;
-    #windowManager.default = "bspwm";
-    # desktopManager.xterm.enable = false;
-    #displayManager.defaultSession = "none+bspwm";
-    # displayManager.lightdm.enable = true;
-    # displayManager.startx.enable = false;
-  };
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
 
   virtualisation.docker.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #   wget
-    #   firefox
-    pciutils
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

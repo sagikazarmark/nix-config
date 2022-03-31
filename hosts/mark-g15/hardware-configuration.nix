@@ -7,10 +7,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
 
-    inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.common-gpu-nvidia
-    inputs.hardware.nixosModules.common-pc-laptop
-    inputs.hardware.nixosModules.common-pc-laptop-ssd
+    inputs.hardware.nixosModules.asus-zephyrus-ga503
   ];
 
   boot.initrd.availableKernelModules =
@@ -48,23 +45,14 @@
   # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
 
+  hardware.bluetooth.enable = true;
+
   hardware.nvidia = {
     powerManagement = {
       enable = true;
       finegrained = true;
     };
 
-    prime = {
-      amdgpuBusId = "PCI:7:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-
     modesetting.enable = true;
   };
-
-  # fixes mic mute button
-  services.udev.extraHwdb = ''
-    evdev:name:*:dmi:bvn*:bvr*:bd*:svnASUS*:pn*:*
-     KEYBOARD_KEY_ff31007c=f20
-'';
 }

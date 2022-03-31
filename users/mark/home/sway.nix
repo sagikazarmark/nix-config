@@ -96,7 +96,7 @@ in
 
       startup = [
         # { command = "${config.programs.waybar.package}/bin/waybar"; }
-        { command = "systemctl --user restart waybar"; }
+        # { command = "systemctl --user restart waybar"; }
       ];
 
       bars = [ ];
