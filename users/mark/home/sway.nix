@@ -4,6 +4,10 @@ let
   colorscheme = config.colorscheme;
 in
 {
+  imports = [
+    ./qt.nix
+  ];
+
   wayland.windowManager.sway = {
     enable = true;
 
@@ -95,13 +99,20 @@ in
         { command = "systemctl --user restart waybar"; }
       ];
 
-      bars = [];
+      bars = [ ];
     };
 
     # https://github.com/NixOS/nixpkgs/issues/119445#issuecomment-820507505
     extraConfig = ''
       exec dbus-update-activation-environment WAYLAND_DISPLAY
       exec systemctl --user import-environment WAYLAND_DISPLAY
+    '';
+
+    extraSessionCommands = ''
+      export SDL_VIDEODRIVER=wayland
+      # Fix for some Java AWT applications (e.g. Android Studio),
+      # use this if they aren't displayed properly:
+      export _JAVA_AWT_WM_NONREPARENTING=1
     '';
 
     extraOptions = [ "--unsupported-gpu" ];
