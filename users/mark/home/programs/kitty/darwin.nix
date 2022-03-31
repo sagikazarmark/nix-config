@@ -1,6 +1,6 @@
-{ ... }:
+{ lib, pkgs, ... }:
 
-{
+lib.mkIf pkgs.stdenv.isDarwin {
   programs.kitty = {
     darwinLaunchOptions = [
       "--single-instance"
