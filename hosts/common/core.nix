@@ -32,5 +32,10 @@
     openFirewall = true;
   };
 
+  # needed for opengpg pinentry gnome3
   services.dbus.packages = [ pkgs.gcr ];
+
+
+  # needed for setting gtk themes
+  programs.dconf.enable = true;
 }

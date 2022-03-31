@@ -1,7 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 let
   colorscheme = config.colorscheme;
+  inherit (inputs.nix-colors.lib { inherit pkgs; }) gtkThemeFromScheme;
 in
 {
   imports = [
@@ -132,6 +133,21 @@ in
     systemd = {
       enable = true;
       # target = "sway-session.target";
+    };
+  };
+
+  gtk = {
+    enable = true;
+
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+
+    # cursorTheme = pkgs.numix-cursor-theme;
+    theme = {
+      name = "${config.colorscheme.slug}";
+      package = gtkThemeFromScheme { scheme = config.colorscheme; };
     };
   };
 }
