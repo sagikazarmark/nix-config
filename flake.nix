@@ -131,7 +131,6 @@
                   rofi-wayland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland;
                 }
               )
-              # inputs.nur.overlay
             ];
           };
 
