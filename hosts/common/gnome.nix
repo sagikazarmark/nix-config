@@ -4,6 +4,8 @@
 
 {
   services.xserver = {
+    enable = true;
+
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
@@ -26,10 +28,6 @@
     pkgs.gnome.geary
   ];
 
-  # Required for the user to show up in GNOME
-  # https://www.reddit.com/r/NixOS/comments/ocimef/users_not_showing_up_in_gnome/
-  environment.shells = [ pkgs.zsh ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -38,4 +36,7 @@
 
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
   services.dbus.packages = with pkgs; [ gnome2.GConf ];
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.xserver.libinput.enable = true;
 }
