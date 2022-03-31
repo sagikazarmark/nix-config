@@ -2,7 +2,14 @@
 
 {
   home.packages = with pkgs; [
-    (firefox-devedition-bin.override
+    # (firefox-devedition-bin.override
+    #   {
+    #     cfg = {
+    #       enableTridactylNative = true;
+    #     };
+    #   })
+
+    (firefox-wayland.override
       {
         cfg = {
           enableTridactylNative = true;
