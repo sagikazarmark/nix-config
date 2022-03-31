@@ -214,9 +214,6 @@
 
     nix-direnv = {
       enable = true;
-
-      # No longer necessary
-      # enableFlakes = true;
     };
   };
 

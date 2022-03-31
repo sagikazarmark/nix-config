@@ -20,6 +20,13 @@
     python310Packages.pip
   ];
 
+  programs.direnv = {
+    nix-direnv = {
+      # Can ber removed in the next version
+      enableFlakes = true;
+    };
+  };
+
   programs.gpg = {
     enable = true;
 
