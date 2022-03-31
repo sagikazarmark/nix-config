@@ -40,5 +40,9 @@
     homedir = "${config.xdg.dataHome}/gnupg";
   };
 
-  services.gpg-agent.enable = true;
+  services.gpg-agent = {
+    enable = true;
+
+    pinentryFlavor = "gnome3";
+  };
 }

@@ -31,4 +31,6 @@
 
     openFirewall = true;
   };
+
+  services.dbus.packages = [ pkgs.gcr ];
 }
