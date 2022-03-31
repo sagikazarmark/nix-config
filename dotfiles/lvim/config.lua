@@ -252,6 +252,9 @@ lvim.plugins = {
   },
   {
     "kosayoda/nvim-lightbulb"
+  },
+  {
+    "tridactyl/vim-tridactyl"
   }
 }
 
