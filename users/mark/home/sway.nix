@@ -39,6 +39,23 @@ in
         "${modifier}+t" = "floating toggle";
       };
 
+      input = {
+        "type:keyboard" = {
+          xkb_layout = "hu";
+          xkb_options = "caps:super";
+          # xkb_options = "caps:super,apple:alupckeys,compose:rwin";
+
+          repeat_delay = "225";
+          repeat_rate = "30";
+        };
+
+        "type:touchpad" = {
+          tap = "enabled";
+          tap_button_map = "lrm";
+          natural_scroll = "enabled";
+        };
+      };
+
       colors = {
         focused = {
           border = "${colorscheme.colors.base0C}";
@@ -47,6 +64,7 @@ in
           indicator = "${colorscheme.colors.base09}";
           childBorder = "${colorscheme.colors.base0C}";
         };
+
         focusedInactive = {
           border = "${colorscheme.colors.base03}";
           background = "${colorscheme.colors.base00}";
@@ -54,6 +72,7 @@ in
           indicator = "${colorscheme.colors.base03}";
           childBorder = "${colorscheme.colors.base03}";
         };
+
         unfocused = {
           border = "${colorscheme.colors.base02}";
           background = "${colorscheme.colors.base00}";
@@ -61,6 +80,7 @@ in
           indicator = "${colorscheme.colors.base02}";
           childBorder = "${colorscheme.colors.base02}";
         };
+
         urgent = {
           border = "${colorscheme.colors.base09}";
           background = "${colorscheme.colors.base00}";
@@ -75,7 +95,7 @@ in
         { command = "systemctl --user restart waybar"; }
       ];
 
-      bars = [ ];
+      bars = [];
     };
 
     # https://github.com/NixOS/nixpkgs/issues/119445#issuecomment-820507505
