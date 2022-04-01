@@ -109,7 +109,7 @@ in
     enable = true;
 
     iconTheme = {
-      name = "Papirus Dark";
+      name = "Papirus";
       package = pkgs.papirus-icon-theme;
     };
 
