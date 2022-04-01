@@ -107,6 +107,7 @@
           configuration = {
             imports = [
               ./home.nix
+              ./users/mark/home/nix-colors.nix
               ./users/mark/home/linux.nix
               ./users/mark/home/dev.nix
               ./users/mark/home/programs/git.nix
@@ -140,6 +141,7 @@
           configuration = {
             imports = [
               ./home.nix
+              ./users/mark/home/nix-colors.nix
               ./users/mark/home/linux.nix
               ./users/mark/home/sway.nix
               ./users/mark/home/dev.nix
@@ -185,6 +187,7 @@
             imports = [
               ./home.nix
               ./home.darwin.nix
+              ./users/mark/home/nix-colors.nix
               ./users/mark/home/dev.nix
               ./users/mark/home/programs/git.nix
               ./users/mark/home/programs/kitty

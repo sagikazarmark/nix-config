@@ -9,16 +9,6 @@
       size = 13;
     };
 
-    colorscheme = {
-      enable = true;
-      override = lib.recursiveUpdate inputs.nix-colors.colorSchemes.tokyo-night-terminal-storm
-        {
-          colors = {
-            base05 = "A9B1D6";
-          };
-        };
-    };
-
     settings = {
       allow_remote_control = "yes";
     };

@@ -64,7 +64,6 @@
     "$HOME/.local/bin"
   ];
 
-  colorscheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
 
   programs.bat = {
     enable = true;

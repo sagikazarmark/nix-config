@@ -2,11 +2,14 @@
 
 let
   colorscheme = config.colorscheme;
-  inherit (inputs.nix-colors.lib { inherit pkgs; }) gtkThemeFromScheme;
 in
 {
   imports = [
     ./qt.nix
+  ];
+
+  home.packages = with pkgs; [
+    wl-clipboard
   ];
 
   wayland.windowManager.sway = {
@@ -61,40 +64,6 @@ in
         };
       };
 
-      colors = {
-        focused = {
-          border = "${colorscheme.colors.base0C}";
-          background = "${colorscheme.colors.base00}";
-          text = "${colorscheme.colors.base05}";
-          indicator = "${colorscheme.colors.base09}";
-          childBorder = "${colorscheme.colors.base0C}";
-        };
-
-        focusedInactive = {
-          border = "${colorscheme.colors.base03}";
-          background = "${colorscheme.colors.base00}";
-          text = "${colorscheme.colors.base04}";
-          indicator = "${colorscheme.colors.base03}";
-          childBorder = "${colorscheme.colors.base03}";
-        };
-
-        unfocused = {
-          border = "${colorscheme.colors.base02}";
-          background = "${colorscheme.colors.base00}";
-          text = "${colorscheme.colors.base03}";
-          indicator = "${colorscheme.colors.base02}";
-          childBorder = "${colorscheme.colors.base02}";
-        };
-
-        urgent = {
-          border = "${colorscheme.colors.base09}";
-          background = "${colorscheme.colors.base00}";
-          text = "${colorscheme.colors.base03}";
-          indicator = "${colorscheme.colors.base09}";
-          childBorder = "${colorscheme.colors.base09}";
-        };
-      };
-
       startup = [
         # { command = "${config.programs.waybar.package}/bin/waybar"; }
         # { command = "systemctl --user restart waybar"; }
@@ -140,14 +109,29 @@ in
     enable = true;
 
     iconTheme = {
-      name = "Papirus";
+      name = "Papirus Dark";
       package = pkgs.papirus-icon-theme;
     };
 
     # cursorTheme = pkgs.numix-cursor-theme;
-    theme = {
-      name = "${config.colorscheme.slug}";
-      package = gtkThemeFromScheme { scheme = config.colorscheme; };
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+
+    defaultApplications = {
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
+      "x-scheme-handler/chrome" = "firefox.desktop";
+      "application/x-extension-htm" = "firefox.desktop";
+      "application/x-extension-html" = "firefox.desktop";
+      "application/x-extension-shtml" = "firefox.desktop";
+      "application/xhtml+xml" = "firefox.desktop";
+      "application/x-extension-xhtml" = "firefox.desktop";
+      "application/x-extension-xht" = "firefox.desktop";
     };
   };
 }
