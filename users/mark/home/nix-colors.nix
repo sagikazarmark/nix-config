@@ -16,4 +16,6 @@ in
   };
 
   gtk.nix-colors.enable = true;
+
+  wayland.windowManager.sway.nix-colors.enable = true;
 }
