@@ -50,5 +50,49 @@ in
         childBorder = "${colorscheme.colors.base09}";
       };
     };
+
+    # wayland.windowManager.sway.config.colors = {
+    #   focused = {
+    #     border = "${colorscheme.colors.base00}";
+    #     background = "${colorscheme.colors.base02}";
+    #     text = "${colorscheme.colors.base05}";
+    #     indicator = "${colorscheme.colors.base0E}";
+    #     childBorder = "${colorscheme.colors.base00}";
+    #   };
+
+    #   focusedInactive = {
+    #     border = "${colorscheme.colors.base00}";
+    #     background = "${colorscheme.colors.base01}";
+    #     text = "${colorscheme.colors.base05}";
+    #     indicator = "${colorscheme.colors.base0E}";
+    #     childBorder = "${colorscheme.colors.base00}";
+    #   };
+
+    #   unfocused = {
+    #     border = "${colorscheme.colors.base00}";
+    #     background = "${colorscheme.colors.base01}";
+    #     text = "${colorscheme.colors.base05}";
+    #     indicator = "${colorscheme.colors.base0E}";
+    #     childBorder = "${colorscheme.colors.base00}";
+    #   };
+
+    #   urgent = {
+    #     border = "${colorscheme.colors.base00}";
+    #     background = "${colorscheme.colors.base0D}";
+    #     text = "${colorscheme.colors.base05}";
+    #     indicator = "${colorscheme.colors.base0E}";
+    #     childBorder = "${colorscheme.colors.base00}";
+    #   };
+
+    #   placeholder = {
+    #     border = "${colorscheme.colors.base00}";
+    #     background = "${colorscheme.colors.base00}";
+    #     text = "${colorscheme.colors.base05}";
+    #     indicator = "${colorscheme.colors.base0E}";
+    #     childBorder = "${colorscheme.colors.base00}";
+    #   };
+
+    #   background = "${colorscheme.colors.base00}";
+    # };
   };
 }
