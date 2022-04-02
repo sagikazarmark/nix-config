@@ -1,14 +1,14 @@
 { config, pkgs, lib, inputs, ... }:
 
 let
-  colorSchemes = inputs.nix-colors.colorSchemes;
+  colorschemes = inputs.nix-colors.colorSchemes;
 in
 {
-  colorscheme = colorSchemes.tokyo-night-storm;
+  colorscheme = colorschemes.tokyo-night-storm;
 
   programs.kitty.nix-colors = {
     enable = true;
-    colorscheme = lib.recursiveUpdate colorSchemes.tokyo-night-terminal-storm {
+    colorscheme = lib.recursiveUpdate colorschemes.tokyo-night-terminal-storm {
       colors = {
         base05 = "A9B1D6";
       };
