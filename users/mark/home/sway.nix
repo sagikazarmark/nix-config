@@ -61,6 +61,7 @@ in
           tap = "enabled";
           tap_button_map = "lrm";
           natural_scroll = "enabled";
+          dwt = "enabled";
         };
       };
 
