@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   fonts.fonts = with pkgs; [
@@ -38,4 +38,9 @@
 
   # needed for setting gtk themes
   programs.dconf.enable = true;
+
+  # needed for diskmounting in dolphin
+  services.udisks2.enable = true;
+
+  services.upower.enable = config.powerManagement.enable;
 }

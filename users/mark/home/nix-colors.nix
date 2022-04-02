@@ -18,4 +18,8 @@ in
   gtk.nix-colors.enable = true;
 
   wayland.windowManager.sway.nix-colors.enable = true;
+
+  programs.waybar.nix-colors.enable = true;
+
+  programs.rofi.nix-colors.enable = true;
 }

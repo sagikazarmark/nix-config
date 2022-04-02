@@ -29,8 +29,16 @@
       scheme = config.colorscheme;
     in
     {
+      # https://github.com/mnussbaum/base16-qt5ct
       "qt5ct/colors/base16-${scheme.slug}.conf" = {
         text = ''
+          /*
+          *
+          * Base16 ${ scheme.name }
+          * Author: ${ scheme.author }
+          *
+          */
+
           [ColorScheme]
           active_colors=#ff${ scheme.colors.base0C }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base04 }, #ff${ scheme.colors.base0E }, #ff${ scheme.colors.base06 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base00 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base0E }, #ff${ scheme.colors.base09 }, #ff${ scheme.colors.base08 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base0E }, #8f${ scheme.colors.base0E }
           disabled_colors=#ff${ scheme.colors.base0F }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base04 }, #ff${ scheme.colors.base0F }, #ff${ scheme.colors.base0F }, #ff${ scheme.colors.base0F }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base00 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base0E }, #ff${ scheme.colors.base09 }, #ff${ scheme.colors.base08 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base0F }, #8f${ scheme.colors.base0F }
