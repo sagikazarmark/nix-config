@@ -17,6 +17,7 @@ in
   };
 
   config = mkIf cfg.nix-colors.enable {
+    # https://github.com/kdrag0n/base16-kitty
     programs.kitty.settings = {
       foreground = "#${colorscheme.colors.base05}";
       background = "#${colorscheme.colors.base00}";
