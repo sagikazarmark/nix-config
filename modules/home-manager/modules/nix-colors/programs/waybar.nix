@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.nix-colors.enable {
-    programs.waybar.style = ''
+    programs.waybar.style = mkDefault ''
       @import "colors/base16-${colorscheme.slug}.css";
     '';
 
