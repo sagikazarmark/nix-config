@@ -131,6 +131,14 @@ in
         background: @base01;
       }
 
+      /*window#waybar {
+          background-color: rgba(0,0,0,0);
+      }
+
+      window#waybar.hidden {
+          opacity: 0.2;
+      }*/
+
       #workspaces {
         margin: 0 4px;
       }
