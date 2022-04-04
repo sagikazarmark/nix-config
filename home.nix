@@ -241,6 +241,13 @@
     };
   };
 
+  xdg.dataFile = {
+    sounds = {
+      source = ./dotfiles/sounds;
+      recursive = true;
+    };
+  };
+
   xdg.fallback.enable = true;
 
   # This value determines the Home Manager release that your

@@ -12,6 +12,17 @@ in
     wl-clipboard
 
     gnome.eog
+
+
+    # for dunst
+    notify-desktop
+
+    # for screenshots
+    grim
+    slurp
+
+    # play screenshot sound
+    mpv
   ];
 
   wayland.windowManager.sway = {
@@ -26,28 +37,36 @@ in
       menu = "${config.programs.rofi.package}/bin/rofi -show run";
 
       # Note: make sure to use lower-case for "space" to override defaults.
-      keybindings = lib.mkOptionDefault {
-        # Start a terminal
-        "${modifier}+Return" = "exec ${terminal}";
+      keybindings =
+        let
+          processScreenshot = ''wl-copy -t image/png && mpv ${config.xdg.dataHome}/sounds/shutter.mp3 && notify-desktop "Screenshot taken"'';
+        in
+        lib.mkOptionDefault {
+          # Start a terminal
+          "${modifier}+Return" = "exec ${terminal}";
 
-        # Start your launcher
-        "${modifier}+space" = "exec ${menu}";
+          # Start your launcher
+          "${modifier}+space" = "exec ${menu}";
 
-        # Kill focused window
-        "${modifier}+w" = "kill";
+          # Kill focused window
+          "${modifier}+w" = "kill";
 
-        # Reload configuration
-        "${modifier}+Alt+r" = "reload";
+          # Reload configuration
+          "${modifier}+Alt+r" = "reload";
 
-        # Exit sway
-        "${modifier}+Alt+q" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+          # Exit sway
+          "${modifier}+Alt+q" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
 
-        # Make the current focus fullscreen
-        "${modifier}+m" = "fullscreen toggle";
+          # Make the current focus fullscreen
+          "${modifier}+m" = "fullscreen toggle";
 
-        # Toggle the current focus between tiling and floating mode
-        "${modifier}+t" = "floating toggle";
-      };
+          # Toggle the current focus between tiling and floating mode
+          "${modifier}+t" = "floating toggle";
+
+          # Screenshot
+          "${modifier}+Shift+F3" = ''exec grim - | ${processScreenshot}'';
+          "${modifier}+Shift+F4" = ''exec grim -g "$(slurp -d)" - | ${processScreenshot}'';
+        };
 
       input = {
         "type:keyboard" = {
@@ -202,6 +221,10 @@ in
         color: @base0F;
       }
     '';
+  };
+
+  services.dunst = {
+    enable = true;
   };
 
   gtk = {
