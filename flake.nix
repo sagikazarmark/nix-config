@@ -175,20 +175,6 @@
 
           pkgs = import nixpkgsUnstable {
             inherit system;
-
-            overlays = [
-              # https://github.com/NixOS/nixpkgs/issues/165387
-              # https://github.com/azuwis/nix-config/commit/c0d894d96fdbcd9c1ef675836be3b51f76f8fb6b
-              (
-                final: prev: {
-                  kitty = prev.kitty.overrideAttrs (
-                    o: rec {
-                      patches = (o.patches or [ ]) ++ prev.lib.optionals prev.stdenv.isDarwin [ ./pkgs/kitty/darwin.patch ];
-                    }
-                  );
-                }
-              )
-            ];
           };
 
           extraModules = [
