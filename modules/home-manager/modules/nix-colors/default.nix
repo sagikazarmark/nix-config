@@ -4,5 +4,6 @@
   imports = [
     ./modules
     ./programs
+    ./services
   ];
 }

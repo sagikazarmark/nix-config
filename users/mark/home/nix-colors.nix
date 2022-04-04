@@ -24,4 +24,7 @@ in
   programs.waybar.nix-colors.enable = true;
 
   programs.rofi.nix-colors.enable = true;
+
+  services.dunst.nix-colors.enable = true;
+  services.dunst.nix-colors.colorscheme = colorschemes.twilight;
 }

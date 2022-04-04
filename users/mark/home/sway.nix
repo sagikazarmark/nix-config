@@ -225,32 +225,6 @@ in
 
   services.dunst = {
     enable = true;
-
-    # https://github.com/khamer/base16-dunst
-    settings = {
-      global = {
-        frame_color = "#${ colorscheme.colors.base05 }";
-        separator_color = "#${ colorscheme.colors.base05 }";
-      };
-
-      base16_low = {
-        msg_urgency = "low";
-        background = "#${ colorscheme.colors.base01 }";
-        foreground = "#${ colorscheme.colors.base03 }";
-      };
-
-      base16_normal = {
-        msg_urgency = "normal";
-        background = "#${ colorscheme.colors.base02 }";
-        foreground = "#${ colorscheme.colors.base05 }";
-      };
-
-      base16_critical = {
-        msg_urgency = "critical";
-        background = "#${ colorscheme.colors.base08 }";
-        foreground = "#${ colorscheme.colors.base06 }";
-      };
-    };
   };
 
   gtk = {
