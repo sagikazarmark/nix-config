@@ -64,8 +64,10 @@ in
           "${modifier}+t" = "floating toggle";
 
           # Screenshot
-          "${modifier}+Shift+F3" = ''exec grim - | ${processScreenshot}'';
-          "${modifier}+Shift+F4" = ''exec grim -g "$(slurp -d)" - | ${processScreenshot}'';
+          # "${modifier}+Shift+F3" = ''exec grim - | ${processScreenshot}'';
+          "${modifier}+Shift+F3" = "exec bash ${config.xdg.dataHome}/scripts/screenshot.sh";
+          # "${modifier}+Shift+F4" = ''exec grim -g "$(slurp -d)" - | ${processScreenshot}'';
+          "${modifier}+Shift+F4" = "exec bash ${config.xdg.dataHome}/scripts/screenshot-area.sh";
         };
 
       input = {
@@ -122,9 +124,42 @@ in
     # ++ lib.optionals (lib.elem "nvidia" sysconfig.services.xserver.videoDrivers) [ "--unsupported-gpu" ];
   };
 
+  xdg.dataFile =
+    let
+      processScreenshot = ''wl-copy -t image/png && mpv ${config.xdg.dataHome}/sounds/shutter.mp3 && notify-desktop "Screenshot taken"'';
+    in
+    {
+      "scripts/screenshot.sh" = {
+        text = ''
+          #/usr/bin/env bash
+
+          set -e
+          set -o pipefail
+
+          grim - | ${processScreenshot}
+        '';
+      };
+      "scripts/screenshot-area.sh" = {
+        text = ''
+          #/usr/bin/env bash
+
+          set -e
+          set -o pipefail
+
+          grim -g "$(slurp -d)" - | ${processScreenshot}
+        '';
+      };
+    };
+
   programs.rofi = {
     enable = true;
+
     package = pkgs.rofi-wayland;
+    plugins = [
+      pkgs.rofi-power-menu
+      pkgs.rofi-calc
+      pkgs.rofi-emoji
+    ];
 
     terminal = "${pkgs.kitty}/bin/kitty";
   };
