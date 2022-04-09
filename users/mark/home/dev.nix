@@ -36,6 +36,7 @@
     # Go
     # go
     gofumpt
+    gopls
 
     # Rust
     cargo
