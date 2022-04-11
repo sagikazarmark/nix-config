@@ -264,10 +264,6 @@ in
     enable = true;
   };
 
-  services.greenclip = {
-    enable = true;
-  };
-
   gtk = {
     enable = true;
 
