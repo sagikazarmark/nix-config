@@ -30,6 +30,7 @@
         final: prev: {
           neovim = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim;
           rofi-wayland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland;
+          lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix { };
         }
       );
     in

@@ -5,5 +5,6 @@
     ./modules
     ./overlays
     ./programs
+    ./services
   ];
 }

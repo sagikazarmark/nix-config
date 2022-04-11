@@ -23,6 +23,8 @@ in
 
     # play screenshot sound
     mpv
+
+    lr-tech-rofi-themes
   ];
 
   wayland.windowManager.sway = {
@@ -259,6 +261,10 @@ in
   };
 
   services.dunst = {
+    enable = true;
+  };
+
+  services.greenclip = {
     enable = true;
   };
 
