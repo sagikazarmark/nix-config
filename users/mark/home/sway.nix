@@ -111,6 +111,10 @@ in
 
     # https://github.com/NixOS/nixpkgs/issues/119445#issuecomment-820507505
     extraConfig = ''
+      for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
+      for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
+      for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
+
       exec dbus-update-activation-environment WAYLAND_DISPLAY
       exec systemctl --user import-environment WAYLAND_DISPLAY
     '';

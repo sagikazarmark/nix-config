@@ -29,7 +29,14 @@
       linuxHomeOverlay = (
         final: prev: {
           neovim = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim;
-          rofi-wayland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland;
+          rofi-wayland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland.override {
+            rofi-unwrapped = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland-unwrapped.overrideAttrs (
+              old: rec{
+                version = "1.7.3+wayland1+xdg-patch";
+                patches = [ ./pkgs/rofi/xdg-data-dirs.patch ];
+              }
+            );
+          };
           lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix { };
         }
       );
