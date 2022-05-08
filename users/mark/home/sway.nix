@@ -130,6 +130,25 @@ in
     # ++ lib.optionals (lib.elem "nvidia" sysconfig.services.xserver.videoDrivers) [ "--unsupported-gpu" ];
   };
 
+  # TODO: move to overlay in sway?
+  programs.zsh.loginExtra = lib.mkBefore ''
+    if [[ "$(tty)" == /dev/tty1 ]]; then
+      exec sway &> /dev/null
+    fi
+  '';
+
+  programs.fish.loginShellInit = lib.mkBefore ''
+    if test (tty) = /dev/tty1
+      exec sway &> /dev/null
+    end
+  '';
+
+  programs.bash.profileExtra = lib.mkBefore ''
+    if [[ "$(tty)" == /dev/tty1 ]]; then
+      exec sway &> /dev/null
+    fi
+  '';
+
   xdg.dataFile =
     let
       processScreenshot = ''wl-copy -t image/png && mpv ${config.xdg.dataHome}/sounds/shutter.mp3 && notify-desktop "Screenshot taken"'';
