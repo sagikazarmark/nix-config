@@ -255,6 +255,15 @@ lvim.plugins = {
   },
   {
     "tridactyl/vim-tridactyl"
+  },
+  {
+    "aklt/plantuml-syntax"
+  },
+  {
+    "tyru/open-browser.vim"
+  },
+  {
+    "weirongxu/plantuml-previewer.vim"
   }
 }
 

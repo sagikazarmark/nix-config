@@ -81,6 +81,7 @@
 
 
     # wkhtmltopdf
+    plantuml
   ];
 
   home.sessionPath = [
