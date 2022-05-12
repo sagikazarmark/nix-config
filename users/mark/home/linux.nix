@@ -32,7 +32,7 @@
 
   programs.direnv = {
     nix-direnv = {
-      # Can ber removed in the next version
+      # Can be removed in the next version
       enableFlakes = true;
     };
   };
