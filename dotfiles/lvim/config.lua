@@ -264,6 +264,9 @@ lvim.plugins = {
   },
   {
     "weirongxu/plantuml-previewer.vim"
+  },
+  {
+    "jjo/vim-cue"
   }
 }
 
