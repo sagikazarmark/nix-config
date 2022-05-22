@@ -72,6 +72,8 @@ in
           "${modifier}+Shift+F3" = "exec bash ${config.xdg.dataHome}/scripts/screenshot.sh";
           # "${modifier}+Shift+F4" = ''exec grim -g "$(slurp -d)" - | ${processScreenshot}'';
           "${modifier}+Shift+F4" = "exec bash ${config.xdg.dataHome}/scripts/screenshot-area.sh";
+
+          "XF86TouchpadToggle" = "input type:touchpad events toggle enabled disabled";
         };
 
       input = {
