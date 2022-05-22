@@ -29,6 +29,7 @@
       linuxHomeOverlay = (
         final: prev: {
           neovim = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim;
+          waybar = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.waybar;
           rofi-wayland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland.override {
             rofi-unwrapped = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland-unwrapped.overrideAttrs (
               old: rec{
