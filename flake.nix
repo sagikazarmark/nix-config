@@ -12,6 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sagikazarmark = {
+      url = "github:sagikazarmark/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-utils.url = "github:numtide/flake-utils";
     nix-colors.url = "github:misterio77/nix-colors";
   };
@@ -23,6 +28,8 @@
       systemOverlay = (
         final: prev: {
           keyd = prev.callPackage ./pkgs/keyd/default.nix { };
+          sf-pro = prev.callPackage ./pkgs/sf-pro/default.nix { };
+          # sf-pro = inputs.sagikazarmark.packages.${prev.system}.sf-pro;
         }
       );
 
@@ -46,22 +53,16 @@
     in
     {
       nixosConfigurations = {
-        mark-desktop = lib.nixosSystem rec {
+        mark-desktop = lib.nixosSystem {
           system = "x86_64-linux";
-
-          pkgs = import nixpkgs {
-            inherit system;
-
-            config.allowUnfree = true;
-
-            overlays = [
-              systemOverlay
-            ];
-          };
 
           specialArgs = { inherit inputs; };
 
           modules = [
+            {
+              nixpkgs.overlays = [ systemOverlay ];
+            }
+
             ./hosts/mark-desktop
             ./users/mark/system
 
@@ -69,22 +70,16 @@
           ];
         };
 
-        mark-g15 = lib.nixosSystem rec {
+        mark-g15 = lib.nixosSystem {
           system = "x86_64-linux";
-
-          pkgs = import nixpkgs {
-            inherit system;
-
-            config.allowUnfree = true;
-
-            overlays = [
-              systemOverlay
-            ];
-          };
 
           specialArgs = { inherit inputs; };
 
           modules = [
+            {
+              nixpkgs.overlays = [ systemOverlay ];
+            }
+
             ./hosts/mark-g15
             ./users/mark/system
 

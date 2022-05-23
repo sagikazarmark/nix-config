@@ -249,6 +249,10 @@ in
           memory = {
             format = "{}% ";
           };
+          battery = {
+            format = "{capacity}% {icon}";
+            format-icons = [ "" "" "" "" "" ];
+          };
           # backlight = {
           #   format = "{icon}";
           #   format-alt = "{percent}% {icon}";

@@ -119,7 +119,28 @@
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs",
         "nixpkgsUnstable": "nixpkgsUnstable",
-        "nur": "nur"
+        "nur": "nur",
+        "sagikazarmark": "sagikazarmark"
+      }
+    },
+    "sagikazarmark": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1653316397,
+        "narHash": "sha256-yHsA10Va3wfhQuOK54sb5iBiR9klsM727pW8MK0hyD4=",
+        "owner": "sagikazarmark",
+        "repo": "nur-packages",
+        "rev": "8ac2c70bc9103018874c0e75b012c7a394cb5203",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sagikazarmark",
+        "repo": "nur-packages",
+        "type": "github"
       }
     }
   },

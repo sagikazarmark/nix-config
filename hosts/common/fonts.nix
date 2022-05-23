@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
   fonts.fonts = with pkgs; [
     fira-code
     fira-code-symbols
@@ -9,5 +8,8 @@
     jetbrains-mono
 
     (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
+
+    font-awesome
+    sf-pro
   ];
 }
