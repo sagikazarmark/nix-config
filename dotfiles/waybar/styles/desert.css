@@ -1,0 +1,145 @@
+* {
+    border: none;
+    border-radius: 0;
+    /*font-family: "SF Pro Display", "Font Awesome 5 Free";*/
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0);
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar > .horizontal {
+    padding: 10px 10px 0;
+}
+
+window#waybar > .horizontal > .horizontal:nth-child(1) {
+    margin-right: 10px;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#custom-media,
+#custom-power {
+    border-radius: 5px;
+    margin: 10px 10px 0 0;
+    padding: 7px 15px;
+}
+
+#backlight {
+    font-size: 15px;
+}
+
+#mode {
+    border-radius: 5px;
+    margin: 10px 0 0 10px;
+    padding: 0 10px;
+}
+
+#workspaces button {
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0 0 10px;
+    padding: 5px 10px;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button label {
+    font-size: 28px;
+}
+
+#window {
+    font-weight: 600;
+    margin: 10px 0 0 10px;
+}
+
+#custom-media {
+    margin: 10px 0 0 10px;
+    min-width: 100px;
+}
+
+#custom-media:nth-child(2) {
+    margin-right: 10px;
+}
+
+/* Colors */
+@define-color moduleBackgroundBase rgb(74, 85, 104);
+@define-color moduleBackground alpha(@moduleBackgroundBase, 0.6);
+@define-color moduleColor #FFFFFF;
+@define-color moduleWorkspaceHoverBackground alpha(@moduleBackgroundBase, 0.2);
+@define-color moduleWorkspaceFocusedBackground #2D3748;
+
+/* Base */
+#backlight,
+#battery,
+#clock,
+#cpu,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#workspaces button,
+#custom-media,
+#custom-power {
+    color: @moduleColor;
+    background: @moduleBackground;
+}
+
+/* Effects */
+#workspaces button:hover {
+    background: @moduleWorkspaceHoverBackground;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button.focused {
+    background-color: @moduleWorkspaceFocusedBackground;
+}
+
+/* Disabled */
+#network.disconnected,
+#pulseaudio.muted,
+#custom-nordvpn.disconnected {
+    background: rgba(229, 231, 235, 0.50);
+    color: #9CA3AF;
+}
+
+/* Green */
+#battery.charging {
+    background: rgba(167, 243, 208, 0.60);
+    color: #064E3B;
+}
+
+/* Urgent */
+#workspaces button.urgent,
+#battery.critical:not(.charging) {
+    background: rgba(254, 202, 202, 0.90);
+    color: #7F1D1D;
+}
+
+/* Tooltip */
+tooltip {
+    background: rgba(229, 231, 235, 0.90);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+tooltip * {
+    color: #374151;
+}
