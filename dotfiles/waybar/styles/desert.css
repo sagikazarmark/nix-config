@@ -1,3 +1,20 @@
+/*
+Desert Waybar style
+
+Sources:
+- https://www.reddit.com/r/unixporn/comments/lepmss/sway_simple_sway_on_nixos/
+- https://imgur.com/a/l4lUp80
+- https://github.com/KubqoA/dotfiles
+- https://unsplash.com/photos/eew2Sz9U5WY
+*/
+
+/* Default colors */
+@define-color moduleBackgroundBase rgb(74, 85, 104);
+@define-color moduleBackground alpha(@moduleBackgroundBase, 0.6);
+@define-color moduleColor #FFFFFF;
+@define-color moduleWorkspaceHoverBackground alpha(@moduleBackgroundBase, 0.2);
+@define-color moduleWorkspaceFocusedBackground #2D3748;
+
 * {
     border: none;
     border-radius: 0;
@@ -21,18 +38,41 @@ window#waybar > .horizontal > .horizontal:nth-child(1) {
     margin-right: 10px;
 }
 
+#mode {
+    border-radius: 5px;
+    margin: 10px 0 0 10px;
+    padding: 0 10px;
+}
+
+#window {
+    font-weight: 600;
+    margin: 10px 0 0 10px;
+}
+
 #backlight,
 #battery,
+#bluetooth,
 #clock,
 #cpu,
+#disk,
+#gamemode,
+#idle_inhibitor,
+#keyboard-state,
+#language,
 #memory,
+#mpd,
 #network,
 #pulseaudio,
+#sndio,
 #temperature,
 #tray,
+#upower,
+#workspaces button,
 #custom-media,
 #custom-power {
+    background: @moduleBackground;
     border-radius: 5px;
+    color: @moduleColor;
     margin: 10px 10px 0 0;
     padding: 7px 15px;
 }
@@ -41,31 +81,24 @@ window#waybar > .horizontal > .horizontal:nth-child(1) {
     font-size: 15px;
 }
 
-#mode {
-    border-radius: 5px;
-    margin: 10px 0 0 10px;
-    padding: 0 10px;
-}
-
 #workspaces button {
-    border-radius: 5px;
     font-size: 16px;
     margin: 10px 0 0 10px;
     padding: 5px 10px;
 }
 
 #workspaces button:hover {
+    background: @moduleWorkspaceHoverBackground;
     box-shadow: inherit;
     text-shadow: inherit;
 }
 
-#workspaces button label {
-    font-size: 28px;
+#workspaces button.focused {
+    background-color: @moduleWorkspaceFocusedBackground;
 }
 
-#window {
-    font-weight: 600;
-    margin: 10px 0 0 10px;
+#workspaces button label {
+    font-size: 28px;
 }
 
 #custom-media {
@@ -75,42 +108,6 @@ window#waybar > .horizontal > .horizontal:nth-child(1) {
 
 #custom-media:nth-child(2) {
     margin-right: 10px;
-}
-
-/* Colors */
-@define-color moduleBackgroundBase rgb(74, 85, 104);
-@define-color moduleBackground alpha(@moduleBackgroundBase, 0.6);
-@define-color moduleColor #FFFFFF;
-@define-color moduleWorkspaceHoverBackground alpha(@moduleBackgroundBase, 0.2);
-@define-color moduleWorkspaceFocusedBackground #2D3748;
-
-/* Base */
-#backlight,
-#battery,
-#clock,
-#cpu,
-#memory,
-#mode,
-#network,
-#pulseaudio,
-#temperature,
-#tray,
-#workspaces button,
-#custom-media,
-#custom-power {
-    color: @moduleColor;
-    background: @moduleBackground;
-}
-
-/* Effects */
-#workspaces button:hover {
-    background: @moduleWorkspaceHoverBackground;
-    box-shadow: inherit;
-    text-shadow: inherit;
-}
-
-#workspaces button.focused {
-    background-color: @moduleWorkspaceFocusedBackground;
 }
 
 /* Disabled */
