@@ -18,6 +18,8 @@
 
     _1password-gui
 
+    gnome.nautilus
+
     spotify
     gnomeExtensions.spotify-tray
 

@@ -310,16 +310,6 @@ in
     enable = true;
   };
 
-  gtk = {
-    enable = true;
-
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-
-    # cursorTheme = pkgs.numix-cursor-theme;
-  };
 
   xdg.mimeApps = {
     enable = true;
