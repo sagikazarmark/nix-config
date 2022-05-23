@@ -444,6 +444,7 @@ in
        #backlight,
        #battery,
        #clock,
+       #temperature,
        #custom-media,
        #custom-power {
        	margin: 10px 10px 0 0;
@@ -475,6 +476,7 @@ in
        #backlight,
        #battery,
        #clock,
+       #temperature,
        #custom-media,
        #custom-power {
            /*background: ${rgbaColor colors.gray._200 90};*/
