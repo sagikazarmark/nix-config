@@ -249,14 +249,14 @@ in
           memory = {
             format = "{}% ";
           };
-          backlight = {
-            format = "{icon}";
-            format-alt = "{percent}% {icon}";
-            format-alt-click = "click-right";
-            format-icons = [ "○" "◐" "●" ];
-            on-scroll-down = "light -U 10";
-            on-scroll-up = "light -A 10";
-          };
+          # backlight = {
+          #   format = "{icon}";
+          #   format-alt = "{percent}% {icon}";
+          #   format-alt-click = "click-right";
+          #   format-icons = [ "○" "◐" "●" ];
+          #   on-scroll-down = "light -U 10";
+          #   on-scroll-up = "light -A 10";
+          # };
           # "battery#bat0" = battery { name = "BAT0"; };
           # "battery#bat1" = battery { name = "BAT1"; };
           network = {
