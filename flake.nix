@@ -31,6 +31,7 @@
           neovim = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim;
           waybar = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.waybar;
           scaleway-cli = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.scaleway-cli;
+          gopls = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.gopls;
           rofi-wayland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland.override {
             rofi-unwrapped = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland-unwrapped.overrideAttrs (
               old: rec{
