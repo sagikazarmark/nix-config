@@ -98,7 +98,7 @@ window#waybar > .horizontal > .horizontal:nth-child(1) {
 }
 
 #workspaces button label {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 #custom-media {

@@ -12,6 +12,8 @@
     pkgs.materia-theme
     pkgs.materia-kde-theme
     pkgs.dolphin
+    # pkgs.whitesur-gtk-theme
+    # pkgs.whitesur-icon-theme
   ];
 
   wayland.windowManager.sway = {

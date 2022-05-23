@@ -39,6 +39,8 @@
           waybar = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.waybar;
           scaleway-cli = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.scaleway-cli;
           gopls = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.gopls;
+          whitesur-gtk-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-gtk-theme;
+          whitesur-icon-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-icon-theme;
           rofi-wayland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland.override {
             rofi-unwrapped = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland-unwrapped.overrideAttrs (
               old: rec{
@@ -163,6 +165,7 @@
             imports = [
               ./home.nix
               ./users/mark/home/nix-colors.nix
+              ./users/mark/home/gtk.nix
               ./users/mark/home/linux.nix
               ./users/mark/home/sway.nix
               ./users/mark/home/dev.nix

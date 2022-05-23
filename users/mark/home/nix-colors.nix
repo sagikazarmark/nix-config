@@ -17,7 +17,7 @@ in
 
   programs.fzf.nix-colors.enable = true;
 
-  gtk.nix-colors.enable = true;
+  # gtk.nix-colors.enable = true;
 
   wayland.windowManager.sway.nix-colors.enable = true;
 
