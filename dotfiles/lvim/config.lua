@@ -148,7 +148,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "gopls" })
 require("lvim.lsp.manager").setup("gopls", {
-    cmd = { "/home/mark/.nix-profile/bin/gopls" }
+    cmd = { "gopls" }
 })
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
