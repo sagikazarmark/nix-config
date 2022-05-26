@@ -12,24 +12,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sagikazarmark = {
-      url = "github:sagikazarmark/nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     flake-utils.url = "github:numtide/flake-utils";
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, nixpkgsUnstable, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgsUnstable, nur, home-manager, ... }@inputs:
     let
       lib = nixpkgs.lib;
 
       systemOverlay = (
         final: prev: {
           keyd = prev.callPackage ./pkgs/keyd/default.nix { };
-          sf-pro = prev.callPackage ./pkgs/sf-pro/default.nix { };
-          # sf-pro = inputs.sagikazarmark.packages.${prev.system}.sf-pro;
         }
       );
 
@@ -62,7 +55,7 @@
 
           modules = [
             {
-              nixpkgs.overlays = [ systemOverlay ];
+              nixpkgs.overlays = [ systemOverlay nur.overlay ];
             }
 
             ./hosts/mark-desktop
@@ -79,7 +72,7 @@
 
           modules = [
             {
-              nixpkgs.overlays = [ systemOverlay ];
+              nixpkgs.overlays = [ systemOverlay nur.overlay ];
             }
 
             ./hosts/mark-g15
