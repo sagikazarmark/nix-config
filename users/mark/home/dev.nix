@@ -46,7 +46,7 @@
 
     # Containers
     lima
-    podman
+    # podman
     # podman-compose # Not supported on darwin
     skopeo
 
