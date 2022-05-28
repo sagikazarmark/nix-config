@@ -44,6 +44,10 @@
     gnumake
     gcc
 
+    # For protobuf formatting
+    # clang
+    clang-tools
+
     # Containers
     lima
     # podman

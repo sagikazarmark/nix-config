@@ -152,8 +152,14 @@ require("lvim.lsp.manager").setup("gopls", {
 })
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    name = "clang_format",
+    filetypes = { "proto" },
+    extra_args = {"--style", "{BasedOnStyle: Google, IndentWidth: 4}"},
+  },
+
 --   { exe = "black", filetypes = { "python" } },
 --   { exe = "isort", filetypes = { "python" } },
 --   {
@@ -164,7 +170,7 @@ require("lvim.lsp.manager").setup("gopls", {
 --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
 --     filetypes = { "typescript", "typescriptreact" },
 --   },
--- }
+}
 
 -- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"

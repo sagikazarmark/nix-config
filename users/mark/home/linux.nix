@@ -32,6 +32,8 @@
     python310Packages.pip
 
     pavucontrol
+
+    unzip
   ];
 
   programs.direnv = {
