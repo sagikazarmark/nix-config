@@ -30,6 +30,8 @@
     jitsi-meet-electron
 
     python310Packages.pip
+
+    pavucontrol
   ];
 
   programs.direnv = {

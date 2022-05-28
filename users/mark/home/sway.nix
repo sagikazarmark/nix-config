@@ -208,9 +208,10 @@ in
         modules-center = [ ];
         modules-right = [
           "pulseaudio"
+          "idle_inhibitor"
           "network"
-          "memory"
           "temperature"
+          "memory"
           "cpu"
           "battery"
           "clock"
@@ -218,6 +219,79 @@ in
         ];
 
         modules = {
+          # backlight = {
+          #   format = "{icon}";
+          #   format-alt = "{percent}% {icon}";
+          #   format-alt-click = "click-right";
+          #   format-icons = [ "○" "◐" "●" ];
+          #   on-scroll-down = "light -U 10";
+          #   on-scroll-up = "light -A 10";
+          # };
+          battery = {
+            format = "{capacity}% {icon}";
+            format-icons = [ "" "" "" "" "" ];
+            states = {
+              warning = 30;
+              critical = 15;
+            };
+          };
+          clock = {
+            tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+            format-alt = "{:%A, %d %b}";
+          };
+          cpu = {
+            format = "{usage}% ";
+          };
+          idle_inhibitor = {
+            format = "{icon}";
+            format-icons = {
+              activated = "";
+              deactivated = "";
+            };
+          };
+          memory = {
+            format = "{}% ";
+            format-alt = "{used:0.1f}G/{total:0.1f}G ";
+          };
+          network = {
+            format = "{ifname}";
+            format-alt = "⬇️ {bandwidthDownBits} / ⬆️ {bandwidthUpBits}";
+            format-wifi = "{essid} ({signalStrength}%) ";
+            format-ethernet = "{ipaddr}/{cidr} ";
+            format-linked = "no ip ";
+            format-disconnected = "Disconnected ";
+            tooltip-format = "{ifname} via {gwaddr} ";
+            tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+            tooltip-format-ethernet = "{ifname} ";
+            tooltip-format-disconnected = "Disconnected";
+
+            on-click-middle = "nm-connection-editor";
+          };
+          pulseaudio = {
+            format = "{volume}% {icon} {format_source}";
+            format-bluetooth = "{volume}% {icon} {format_source}";
+            format-bluetooth-muted = " {icon} {format_source}";
+            format-muted = " {format_source}";
+            format-source = "{volume}% ";
+            format-source-muted = "";
+            format-icons = {
+              headphone = "";
+              hands-free = "";
+              headset = "";
+              phone = "";
+              portable = "";
+              car = "";
+              default = [ "" "" ];
+            };
+            scroll-step = 1;
+            on-click = "pavucontrol";
+          };
+          temperature = {
+            format = "{temperatureC}°C ";
+          };
+          tray = {
+            spacing = 10;
+          };
           "sway/workspaces" = {
             all-outputs = true;
             format = "{icon}";
@@ -236,60 +310,6 @@ in
               default = "";
             };
           };
-          tray = {
-            spacing = 10;
-          };
-          clock = {
-            tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-            format-alt = "{:%A, %d %b}";
-          };
-          cpu = {
-            format = "{usage}% ";
-          };
-          memory = {
-            format = "{}% ";
-          };
-          battery = {
-            format = "{capacity}% {icon}";
-            format-icons = [ "" "" "" "" "" ];
-          };
-          # backlight = {
-          #   format = "{icon}";
-          #   format-alt = "{percent}% {icon}";
-          #   format-alt-click = "click-right";
-          #   format-icons = [ "○" "◐" "●" ];
-          #   on-scroll-down = "light -U 10";
-          #   on-scroll-up = "light -A 10";
-          # };
-          # "battery#bat0" = battery { name = "BAT0"; };
-          # "battery#bat1" = battery { name = "BAT1"; };
-          network = {
-            format-wifi = "{essid} ({signalStrength}%) ";
-            format-ethernet = "Ethernet ";
-            format-linked = "Ethernet (No IP) ";
-            format-disconnected = "Disconnected ";
-            format-alt = "{bandwidthDownBits}/{bandwidthUpBits}";
-            on-click-middle = "nm-connection-editor";
-          };
-          # pulseaudio = mkIf audioSupport {
-          #   scroll-step = 1;
-          #   format = "{volume}% {icon} {format_source}";
-          #   format-bluetooth = "{volume}% {icon} {format_source}";
-          #   format-bluetooth-muted = " {icon} {format_source}";
-          #   format-muted = " {format_source}";
-          #   format-source = "{volume}% ";
-          #   format-source-muted = "";
-          #   format-icons = {
-          #       headphone = "";
-          #       hands-free = "";
-          #       headset = "";
-          #       phone = "";
-          #       portable = "";
-          #       car = "";
-          #       default = [ "" "" "" ];
-          #   };
-          #   on-click = "pavucontrol";
-          # };
           # "custom/media#0" = mkIf audioSupport (media { number = 0; });
           # "custom/media#1" = mkIf audioSupport (media { number = 1; });
           # "custom/power" = {
