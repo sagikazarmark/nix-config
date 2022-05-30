@@ -3,7 +3,6 @@
 {
   services.xserver = {
     displayManager.gdm.wayland = true;
-    displayManager.gdm.nvidiaWayland = true;
   };
 
   programs.xwayland.enable = true;

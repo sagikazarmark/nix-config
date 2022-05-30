@@ -36,13 +36,6 @@
     unzip
   ];
 
-  programs.direnv = {
-    nix-direnv = {
-      # Can be removed in the next version
-      enableFlakes = true;
-    };
-  };
-
   programs.gpg = {
     enable = true;
 
