@@ -15,7 +15,7 @@
     #   trusted-users = [ "root" "@wheel" ];
     #   auto-optimise-store = true;
     # };
-    package = pkgs.nixUnstable;
+    # package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
       warn-dirty = false

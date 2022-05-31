@@ -64,7 +64,6 @@
     "$HOME/.local/bin"
   ];
 
-
   programs.bat = {
     enable = true;
   };
@@ -154,7 +153,7 @@
       unalias duf
     '';
 
-    zprofileExtra = ''
+    profileExtra = ''
       # Preferred editor for local and remote sessions
       # TODO: test that it works properly for SSH login shells.
       if [ -n $SSH_CONNECTION ]; then
@@ -167,6 +166,8 @@
 
       # TODO: ZSH login shells probably need a different browser (qutebrowser?)
       export BROWSER=firefox-developer-edition
+    '' + lib.optionalString (config.home.sessionPath != [ ]) ''
+      export PATH="$PATH''${PATH:+:}${lib.concatStringsSep ":" config.home.sessionPath}"
     '';
 
     oh-my-zsh = {
