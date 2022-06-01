@@ -16,6 +16,12 @@
   # https://www.reddit.com/r/NixOS/comments/ocimef/users_not_showing_up_in_gnome/
   environment.shells = [ pkgs.zsh ];
 
+  # Required for home-manager ZSH module
+  # https://github.com/nix-community/home-manager/issues/2991
+  programs.zsh = {
+    enable = true;
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
