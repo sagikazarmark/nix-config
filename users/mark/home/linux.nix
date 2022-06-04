@@ -34,6 +34,8 @@
     pavucontrol
 
     unzip
+
+    onlyoffice-bin
   ];
 
   programs.gpg = {
