@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     asdf-vm
     rnix-lsp
+    terraform-ls
     terraform
     caddy
     cue
@@ -86,6 +87,7 @@
 
     # wkhtmltopdf
     plantuml
+    graphviz
   ];
 
   home.sessionPath = [

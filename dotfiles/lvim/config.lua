@@ -151,6 +151,10 @@ require("lvim.lsp.manager").setup("gopls", {
     cmd = { "gopls" }
 })
 
+require("lvim.lsp.manager").setup("rnix", {
+    cmd = { "rnix-lsp" }
+})
+
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
