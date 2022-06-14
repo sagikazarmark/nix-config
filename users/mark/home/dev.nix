@@ -3,8 +3,6 @@
 {
   home.packages = with pkgs; [
     asdf-vm
-    rnix-lsp
-    terraform-ls
     terraform
     caddy
     cue
@@ -20,6 +18,10 @@
     lnav
     nmap
     vault-bin
+
+    rnix-lsp
+    terraform-ls
+    nodePackages.yaml-language-server
 
     # Nix
     nixfmt
