@@ -13,6 +13,7 @@
     mitmproxy
     mkcert
     nodejs
+    yarn
     protobuf
     tunnelto
     lnav
