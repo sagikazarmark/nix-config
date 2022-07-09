@@ -23,6 +23,7 @@
     rnix-lsp
     terraform-ls
     nodePackages.yaml-language-server
+    nodePackages.typescript-language-server
 
     # Nix
     nixfmt
