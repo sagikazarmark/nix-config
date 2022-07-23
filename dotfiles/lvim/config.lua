@@ -52,7 +52,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+-- lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -286,9 +286,30 @@ lvim.plugins = {
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
-lvim.autocommands.custom_groups = {
+lvim.autocommands = {
+    {
+        "BufWinEnter",
+        {
+            pattern = { "*.php" },
+            command = "setlocal ts=4 sw=4",
+        }
+    },
+    {
+        "BufWinEnter",
+        {
+            pattern = { "*.yaml.dist" },
+            command = "setlocal filetype=yaml",
+        }
+    },
+    {
+        "BufWinEnter",
+        {
+            pattern = { "Makefile" },
+            command = "setlocal noexpandtab",
+        }
+    },
   -- { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
-  { "BufWinEnter", "*.php", "setlocal ts=4 sw=4" },
-  { "BufWinEnter", "*.yaml.dist", "setlocal filetype=yaml" },
-  { "BufWinEnter", "Makefile", "setlocal noexpandtab" },
+  -- { "BufWinEnter", "*.php", "setlocal ts=4 sw=4" },
+  -- { "BufWinEnter", "*.yaml.dist", "setlocal filetype=yaml" },
+  -- { "BufWinEnter", "Makefile", "setlocal noexpandtab" },
 }
