@@ -52,7 +52,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
--- lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -148,11 +148,11 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "gopls" })
 require("lvim.lsp.manager").setup("gopls", {
-    cmd = { "gopls" }
+  cmd = { "gopls" }
 })
 
 require("lvim.lsp.manager").setup("rnix", {
-    cmd = { "rnix-lsp" }
+  cmd = { "rnix-lsp" }
 })
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
@@ -161,19 +161,19 @@ formatters.setup {
   {
     name = "clang_format",
     filetypes = { "proto" },
-    extra_args = {"--style", "{BasedOnStyle: Google, IndentWidth: 4}"},
+    extra_args = { "--style", "{BasedOnStyle: Google, IndentWidth: 4}" },
   },
 
---   { exe = "black", filetypes = { "python" } },
---   { exe = "isort", filetypes = { "python" } },
---   {
---     exe = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     args = { "--print-with", "100" },
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "typescript", "typescriptreact" },
---   },
+  --   { exe = "black", filetypes = { "python" } },
+  --   { exe = "isort", filetypes = { "python" } },
+  --   {
+  --     exe = "prettier",
+  --     ---@usage arguments to pass to the formatter
+  --     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+  --     args = { "--print-with", "100" },
+  --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+  --     filetypes = { "typescript", "typescriptreact" },
+  --   },
 }
 
 -- -- set additional linters
@@ -195,16 +195,16 @@ formatters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  {"lunarvim/colorschemes"},
-  {"folke/tokyonight.nvim"},
+  { "lunarvim/colorschemes" },
+  { "folke/tokyonight.nvim" },
   {
-      "ray-x/lsp_signature.nvim",
-      config = function() require"lsp_signature".on_attach() end,
-      event = "InsertEnter"
+    "ray-x/lsp_signature.nvim",
+    config = function() require "lsp_signature".on_attach() end,
+    event = "InsertEnter"
   },
   {
     "folke/trouble.nvim",
-      cmd = "TroubleToggle",
+    cmd = "TroubleToggle",
   },
   {
     "simrat39/symbols-outline.nvim",
@@ -227,16 +227,16 @@ lvim.plugins = {
   -- },
   {
     "norcalli/nvim-colorizer.lua",
-      config = function()
-        require("colorizer").setup({ "*" }, {
-            RGB = true, -- #RGB hex codes
-            RRGGBB = true, -- #RRGGBB hex codes
-            RRGGBBAA = true, -- #RRGGBBAA hex codes
-            rgb_fn = true, -- CSS rgb() and rgba() functions
-            hsl_fn = true, -- CSS hsl() and hsla() functions
-            css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-            css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-            })
+    config = function()
+      require("colorizer").setup({ "*" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
     end,
   },
   {
@@ -258,7 +258,7 @@ lvim.plugins = {
   },
   {
     "jbyuki/instant.nvim",
-    config = function ()
+    config = function()
       vim.g.instant_username = "mark"
     end
   },
@@ -287,27 +287,27 @@ lvim.plugins = {
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 lvim.autocommands = {
+  {
+    "BufWinEnter",
     {
-        "BufWinEnter",
-        {
-            pattern = { "*.php" },
-            command = "setlocal ts=4 sw=4",
-        }
-    },
+      pattern = { "*.php" },
+      command = "setlocal ts=4 sw=4",
+    }
+  },
+  {
+    "BufWinEnter",
     {
-        "BufWinEnter",
-        {
-            pattern = { "*.yaml.dist" },
-            command = "setlocal filetype=yaml",
-        }
-    },
+      pattern = { "*.yaml.dist" },
+      command = "setlocal filetype=yaml",
+    }
+  },
+  {
+    "BufWinEnter",
     {
-        "BufWinEnter",
-        {
-            pattern = { "Makefile" },
-            command = "setlocal noexpandtab",
-        }
-    },
+      pattern = { "Makefile" },
+      command = "setlocal noexpandtab",
+    }
+  },
   -- { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
   -- { "BufWinEnter", "*.php", "setlocal ts=4 sw=4" },
   -- { "BufWinEnter", "*.yaml.dist", "setlocal filetype=yaml" },
