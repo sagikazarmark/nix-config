@@ -78,7 +78,7 @@
     stern
     fluxctl
     kustomize
-    kubeval
+    # kubeval # Not maintained
     aws-iam-authenticator
     telepresence2
     argocd
