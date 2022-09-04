@@ -34,14 +34,6 @@
           gopls = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.gopls;
           whitesur-gtk-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-gtk-theme;
           whitesur-icon-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-icon-theme;
-          rofi-wayland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland.override {
-            rofi-unwrapped = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.rofi-wayland-unwrapped.overrideAttrs (
-              old: rec{
-                version = "1.7.3+wayland1+xdg-patch";
-                patches = [ ./pkgs/rofi/xdg-data-dirs.patch ];
-              }
-            );
-          };
           lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix {};
         }
       );
