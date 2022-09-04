@@ -70,7 +70,7 @@
     minikube
     kubernetes-helm
     kind
-    kail
+    # kail # Not maintained
     # popeye # Not supported on darwin
     # k3s # Not supported on darwin
     k9s
@@ -78,7 +78,7 @@
     stern
     fluxctl
     kustomize
-    kubeval
+    # kubeval # Not maintained
     aws-iam-authenticator
     telepresence2
     argocd
