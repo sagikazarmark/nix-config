@@ -43,11 +43,6 @@
             );
           };
           lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix {};
-
-          # Waiting for https://github.com/guumaster/hostctl/pull/85 to fix dependency problems
-          hostctl = prev.hostctl.override {
-            buildGoModule = final.buildGo117Module;
-          };
         }
       );
     in
