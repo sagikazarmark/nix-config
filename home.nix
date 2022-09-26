@@ -150,7 +150,8 @@
 
 
       # Unset 'duf' alias set by ohmyzsh in OMZ::plugins/common-aliases/common-aliases.plugin.zsh
-      unalias duf
+      # Not necessary anymore
+      # unalias duf
     '';
 
     profileExtra = ''
