@@ -58,6 +58,8 @@
     nodePackages.neovim
     python39Packages.pynvim
     tree-sitter
+
+    woff2
   ];
 
   home.sessionPath = [
