@@ -56,6 +56,7 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.open_mapping = "<c-t>" -- https://github.com/LunarVim/LunarVim/pull/3104
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
@@ -152,6 +153,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- require("lspconfig")["rnix"].setup({})
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "gopls" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
 require("lvim.lsp.manager").setup("gopls", {
     cmd = { "gopls" }
 })
