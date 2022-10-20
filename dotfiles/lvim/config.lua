@@ -3,7 +3,7 @@
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight-storm"
 -- lvim.colorscheme = "onedarker"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
@@ -201,7 +201,7 @@ formatters.setup {
 -- Additional Plugins
 lvim.plugins = {
     { "lunarvim/colorschemes" },
-    { "folke/tokyonight.nvim" },
+    -- { "folke/tokyonight.nvim" },
     {
         "ray-x/lsp_signature.nvim",
         config = function() require "lsp_signature".on_attach() end,
