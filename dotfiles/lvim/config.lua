@@ -154,12 +154,15 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "gopls" })
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rnix" })
 require("lvim.lsp.manager").setup("gopls", {
     cmd = { "gopls" }
 })
 
-require("lvim.lsp.manager").setup("rnix", {
-    cmd = { "rnix-lsp" }
+-- require("lvim.lsp.manager").setup("rnix", {
+require("lspconfig")["rnix"].setup({
+    cmd = { "rnix-lsp" },
+    filetypes = { "nix" }
 })
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
