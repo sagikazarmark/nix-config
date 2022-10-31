@@ -165,6 +165,8 @@ require("lspconfig")["rnix"].setup({
     filetypes = { "nix" }
 })
 
+require("lspconfig")["emmet_ls"].setup({})
+
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
