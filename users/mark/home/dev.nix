@@ -10,7 +10,7 @@
     gh
     gron
     k6
-    mitmproxy
+    # mitmproxy # does not build on silicone because of pyopenssl
     mkcert
     nodejs
     yarn
