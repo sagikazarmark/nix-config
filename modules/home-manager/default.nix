@@ -6,5 +6,6 @@
     ./overlays
     ./programs
     ./services
+    ./targets
   ];
 }

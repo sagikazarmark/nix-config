@@ -1,6 +1,15 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    obsidian
+
+    vscodium
+
+    _1password-gui
+    _1password
+  ];
+
   xdg.configFile = {
     karabiner = {
       source = ./dotfiles/karabiner;

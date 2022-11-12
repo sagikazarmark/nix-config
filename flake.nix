@@ -12,11 +12,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    darwin = {
+      url = "github:lnl7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-utils.url = "github:numtide/flake-utils";
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, nixpkgsUnstable, nur, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgsUnstable, nur, home-manager, darwin, ... }@inputs:
     let
       lib = nixpkgs.lib;
 
@@ -71,6 +76,40 @@
             ./users/mark/system
 
             ./modules/nixos/keyd.nix
+          ];
+        };
+      };
+
+      darwinConfigurations = {
+        Mark-M1-MacBook-Pro = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+
+          modules = [
+            {
+              programs.bash.enable = false;
+            }
+            {
+              nix.extraOptions = ''
+                experimental-features = nix-command flakes
+              '';
+
+              # nix.useDaemon = true;
+              services.nix-daemon.enable = true;
+              services.nix-daemon.enableSocketListener = true;
+            }
+            {
+              system.defaults.NSGlobalDomain.KeyRepeat = 1;
+              system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
+            }
+            {
+              homebrew = {
+                enable = true;
+
+                casks = [
+                  "raycast"
+                ];
+              };
+            }
           ];
         };
       };
@@ -206,7 +245,9 @@
           pkgs = import nixpkgsUnstable {
             inherit system;
 
-            overlays = [ ];
+            config.allowUnfree = true;
+
+            overlays = [ nur.overlay ];
           };
 
           extraModules = [
@@ -225,6 +266,20 @@
               ./users/mark/home/programs/git.nix
               ./users/mark/home/programs/kitty
               ./users/mark/home/programs/neomutt.nix
+
+              {
+                home.packages = with pkgs; [
+                  fira-code
+                  fira-code-symbols
+                  iosevka
+                  jetbrains-mono
+
+                  (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
+
+                  font-awesome
+                  font-awesome_5
+                ];
+              }
             ];
           };
         };
