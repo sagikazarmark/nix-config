@@ -8,6 +8,8 @@
 
     _1password-gui
     _1password
+
+    slack
   ];
 
   xdg.configFile = {
