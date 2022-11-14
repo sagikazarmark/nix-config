@@ -81,12 +81,14 @@
       };
 
       darwinConfigurations = {
-        Mark-M1-MacBook-Pro = darwin.lib.darwinSystem {
+        MARKSK-M-1WLF = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
 
           modules = [
+            ./modules/nix-darwin/modules/env.nix
             {
               programs.bash.enable = false;
+              # programs.zsh.enable = true;
             }
             {
               nix.extraOptions = ''
@@ -105,8 +107,54 @@
               homebrew = {
                 enable = true;
 
+                onActivation = {
+                  cleanup = "zap";
+                };
+
+                taps = [
+                  "homebrew/cask"
+                ];
+
+                brews = [
+                  "mas"
+                  "trash"
+                ];
+
                 casks = [
+                  # Apps
+                  "1password"
+                  "1password-cli"
+                  "caffeine"
+                  "calibre"
+                  "chromium"
+                  "colorsnapper"
+                  "daisydisk"
+                  "discord"
+                  "gpg-suite"
+                  "firefox"
+                  "flux"
+                  "insync"
+                  "karabiner-elements"
+                  "little-snitch"
+                  "micro-snitch"
+                  "microsoft-teams"
+                  "monitorcontrol"
+                  "notion"
+                  "obs"
+                  "obs-websocket"
+                  "spotify"
+                  "postbox"
+                  "telegram"
+                  # "telegram-desktop"
+                  "transmit"
+                  "tuxera-ntfs"
+                  "vuescan"
+                  "vlc"
                   "raycast"
+
+                  # Dev
+                  "docker"
+                  "tableplus"
                 ];
               };
             }
@@ -236,7 +284,7 @@
           };
         };
 
-        "marksk@Mark-M1-MacBook-Pro" = home-manager.lib.homeManagerConfiguration rec {
+        "marksk@MARKSK-M-1WLF" = home-manager.lib.homeManagerConfiguration rec {
           system = "aarch64-darwin";
 
           username = "marksk";
@@ -273,6 +321,13 @@
                   fira-code-symbols
                   iosevka
                   jetbrains-mono
+                  merriweather
+                  merriweather-sans
+                  roboto
+                  roboto-slab
+                  roboto-mono
+                  montserrat
+                  lato
 
                   (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
 
