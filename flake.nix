@@ -261,6 +261,8 @@
           pkgs = import nixpkgsUnstable {
             inherit system;
 
+            config.allowUnfree = true;
+
             overlays = [ ];
           };
 

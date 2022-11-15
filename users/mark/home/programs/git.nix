@@ -3,23 +3,12 @@
 {
   programs.lazygit = {
     enable = true;
-
-    settings = {
-      git = {
-        commit = {
-          signOff = true;
-        };
-      };
-    };
+    enableShellAliases = true;
   };
 
   programs.zsh = {
     oh-my-zsh = {
       plugins = [ "git" ];
-    };
-
-    shellAliases = {
-      lg = "lazygit";
     };
   };
 
