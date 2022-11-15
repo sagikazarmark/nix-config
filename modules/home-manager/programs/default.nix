@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./asdf-vim.nix ];
+  imports = [ ./asdf-vim.nix ./gron.nix ];
 }

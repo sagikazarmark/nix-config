@@ -8,7 +8,6 @@
     cue
     hostctl
     gh
-    gron
     k6
     # mitmproxy # does not build on silicone because of pyopenssl
     mkcert

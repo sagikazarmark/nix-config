@@ -80,6 +80,10 @@
   };
 
   programs.jq.enable = true;
+  programs.gron = {
+    enable = true;
+    enableShellAliases = true;
+  };
   programs.htop.enable = true;
   programs.command-not-found.enable = true;
 
@@ -199,10 +203,6 @@
       pu = "ps aux | grep -v grep | grep";
 
       rs = "exec $SHELL";
-
-      # Gron aliases
-      norg = "gron --ungrong";
-      ungron = "gron --ungron";
 
       favico = "convert -resize x32 -gravity center -crop 32x32+0+0 -flatten -colors 256 -background transparent";
 
