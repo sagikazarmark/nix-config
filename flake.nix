@@ -104,7 +104,7 @@
 
               # nix.useDaemon = true;
               services.nix-daemon.enable = true;
-              services.nix-daemon.enableSocketListener = true;
+              # services.nix-daemon.enableSocketListener = true;
             }
             {
               # Set keyboard speed
