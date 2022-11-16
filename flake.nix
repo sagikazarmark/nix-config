@@ -28,6 +28,9 @@
       systemOverlay = (
         final: prev: {
           keyd = prev.callPackage ./pkgs/keyd/default.nix { };
+          yabai = prev.yabai.overrideAttrs (finalAttrs: previousAttrs: {
+            src = ./bin/yabai-v5.0.1.tar.gz;
+          });
         }
       );
 
@@ -81,8 +84,12 @@
       };
 
       darwinConfigurations = {
-        MARKSK-M-1WLF = darwin.lib.darwinSystem {
+        MARKSK-M-1WLF = darwin.lib.darwinSystem rec {
           system = "aarch64-darwin";
+
+          pkgs = import nixpkgs {
+            inherit system;
+          };
 
           modules = [
             ./modules/nix-darwin/modules/env.nix
@@ -102,6 +109,18 @@
             {
               system.defaults.NSGlobalDomain.KeyRepeat = 1;
               system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
+            }
+            {
+              services.skhd.enable = true;
+
+              services.yabai = {
+                enable = true;
+                enableScriptingAddition = true;
+
+                package = pkgs.yabai.overrideAttrs (finalAttrs: previousAttrs: {
+                  src = ./bin/yabai-v5.0.1.tar.gz;
+                });
+              };
             }
             {
               homebrew = {
