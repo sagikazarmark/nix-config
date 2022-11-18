@@ -43,7 +43,7 @@ default < fn - o ; open
 open < fn - o ; default
 open < escape ; default
 
-open < f : open ~ ; skhd -k 'escape'
+open < f : skhd -k 'escape' ; open ~ 
 open < b : "$HOME/.local/bin/browser" ; skhd -k 'escape'
 
 
