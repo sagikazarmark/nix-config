@@ -117,6 +117,12 @@
               # Automatically hide and show the Dock
               system.defaults.dock.autohide = true;
 
+              # Disable automatic rearrange of spaces
+              system.defaults.dock.mru-spaces = false;
+
+              # Displays have separate spaces
+              system.defaults.spaces.spans-displays = true;
+
               # Smart settings
               # https://derflounder.wordpress.com/2014/02/01/disabling-smart-quotes-in-mavericks/
               system.defaults.NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
@@ -161,6 +167,7 @@
                   # Apps
                   "1password"
                   "1password-cli"
+                  "adobe-acrobat-reader"
                   "caffeine"
                   "calibre"
                   "chromium"
@@ -189,10 +196,16 @@
                   "vlc"
                   "raycast"
 
+                  "darktable"
+
                   # Dev
                   "docker"
                   "tableplus"
                 ];
+
+                masApps = {
+                  "DaVinci Resolve" = 571213070;
+                };
               };
             }
           ];
