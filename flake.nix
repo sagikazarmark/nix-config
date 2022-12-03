@@ -197,6 +197,7 @@
                   "raycast"
 
                   "darktable"
+                  "inkscape"
 
                   # Dev
                   "docker"
@@ -385,6 +386,8 @@
 
                   font-awesome
                   font-awesome_5
+
+                  go_1_19
                 ];
               }
             ];
