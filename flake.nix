@@ -343,7 +343,7 @@
             overlays = [ nur.overlay ];
           };
 
-          extraModules = [
+          modules = [
             ./modules/home-manager
             inputs.nix-colors.homeManagerModule
 
