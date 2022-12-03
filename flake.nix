@@ -2,13 +2,13 @@
   description = "My Nix(OS) configurations";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.05";
+    nixpkgs.url = "nixpkgs/nixos-22.11";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.05";
+      url = "github:nix-community/home-manager/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -215,13 +215,8 @@
 
       homeConfigurations = {
         "mark@mark-desktop" = home-manager.lib.homeManagerConfiguration rec {
-          system = "x86_64-linux";
-
-          username = "mark";
-          homeDirectory = "/home/mark";
-
           pkgs = import nixpkgs {
-            inherit system;
+            system = "x86_64-linux";
 
             config.allowUnfree = true;
 
@@ -230,34 +225,33 @@
             ];
           };
 
-          extraModules = [
+          modules = [
             ./modules/home-manager
             inputs.nix-colors.homeManagerModule
+
+            {
+              home = {
+                username = "mark";
+                homeDirectory = "/home/mark";
+                stateVersion = "20.09";
+              };
+            }
+
+            ./home.nix
+            ./users/mark/home/nix-colors.nix
+            ./users/mark/home/linux.nix
+            ./users/mark/home/dev.nix
+            ./users/mark/home/programs/git.nix
+            ./users/mark/home/programs/kitty
+            ./users/mark/home/programs/neomutt.nix
           ];
 
           extraSpecialArgs = { inherit inputs; };
-
-          configuration = {
-            imports = [
-              ./home.nix
-              ./users/mark/home/nix-colors.nix
-              ./users/mark/home/linux.nix
-              ./users/mark/home/dev.nix
-              ./users/mark/home/programs/git.nix
-              ./users/mark/home/programs/kitty
-              ./users/mark/home/programs/neomutt.nix
-            ];
-          };
         };
 
         "mark@mark-g15" = home-manager.lib.homeManagerConfiguration rec {
-          system = "x86_64-linux";
-
-          username = "mark";
-          homeDirectory = "/home/mark";
-
           pkgs = import nixpkgs {
-            inherit system;
+            system = "x86_64-linux";
 
             config.allowUnfree = true;
 
@@ -281,70 +275,68 @@
             ];
           };
 
-          extraModules = [
+          modules = [
             ./modules/home-manager
             inputs.nix-colors.homeManagerModule
+
+            {
+              home = {
+                username = "mark";
+                homeDirectory = "/home/mark";
+                stateVersion = "20.09";
+              };
+            }
+
+            ./home.nix
+            ./users/mark/home/nix-colors.nix
+            ./users/mark/home/gtk.nix
+            ./users/mark/home/linux.nix
+            ./users/mark/home/sway.nix
+            ./users/mark/home/dev.nix
+            ./users/mark/home/programs/git.nix
+            ./users/mark/home/programs/kitty
+            ./users/mark/home/programs/neomutt.nix
           ];
 
           extraSpecialArgs = { inherit inputs; };
-
-          configuration = {
-            imports = [
-              ./home.nix
-              ./users/mark/home/nix-colors.nix
-              ./users/mark/home/gtk.nix
-              ./users/mark/home/linux.nix
-              ./users/mark/home/sway.nix
-              ./users/mark/home/dev.nix
-              ./users/mark/home/programs/git.nix
-              ./users/mark/home/programs/kitty
-              ./users/mark/home/programs/neomutt.nix
-            ];
-          };
         };
 
         "marksk@MARKSK-M-J1W8" = home-manager.lib.homeManagerConfiguration rec {
-          system = "x86_64-darwin";
-
-          username = "marksk";
-          homeDirectory = "/Users/marksk";
-
           pkgs = import nixpkgsUnstable {
-            inherit system;
+            system = "x86_64-darwin";
 
             config.allowUnfree = true;
 
             overlays = [ ];
           };
 
-          extraModules = [
+          modules = [
             ./modules/home-manager
             inputs.nix-colors.homeManagerModule
+
+            {
+              home = {
+                username = "marksk";
+                homeDirectory = "/Users/marksk";
+                stateVersion = "20.09";
+              };
+            }
+
+            ./home.nix
+            ./home.darwin.nix
+            ./users/mark/home/nix-colors.nix
+            ./users/mark/home/dev.nix
+            ./users/mark/home/programs/git.nix
+            ./users/mark/home/programs/kitty
+            ./users/mark/home/programs/neomutt.nix
           ];
 
           extraSpecialArgs = { inherit inputs; };
-
-          configuration = {
-            imports = [
-              ./home.nix
-              ./home.darwin.nix
-              ./users/mark/home/nix-colors.nix
-              ./users/mark/home/dev.nix
-              ./users/mark/home/programs/git.nix
-              ./users/mark/home/programs/kitty
-              ./users/mark/home/programs/neomutt.nix
-            ];
-          };
         };
 
         "marksk@MARKSK-M-1WLF" = home-manager.lib.homeManagerConfiguration rec {
-          system = "aarch64-darwin";
-
-          username = "marksk";
-          homeDirectory = "/Users/marksk";
-
           pkgs = import nixpkgsUnstable {
-            inherit system;
+            system = "aarch64-darwin";
 
             config.allowUnfree = true;
 
@@ -354,44 +346,48 @@
           extraModules = [
             ./modules/home-manager
             inputs.nix-colors.homeManagerModule
+
+            {
+              home = {
+                username = "marksk";
+                homeDirectory = "/Users/marksk";
+                stateVersion = "20.09";
+              };
+            }
+
+            ./home.nix
+            ./home.darwin.nix
+            ./users/mark/home/nix-colors.nix
+            ./users/mark/home/dev.nix
+            ./users/mark/home/programs/git.nix
+            ./users/mark/home/programs/kitty
+            ./users/mark/home/programs/neomutt.nix
+
+            {
+              home.packages = with pkgs; [
+                fira-code
+                fira-code-symbols
+                iosevka
+                jetbrains-mono
+                merriweather
+                merriweather-sans
+                roboto
+                roboto-slab
+                roboto-mono
+                montserrat
+                lato
+
+                (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
+
+                font-awesome
+                font-awesome_5
+
+                go_1_19
+              ];
+            }
           ];
 
           extraSpecialArgs = { inherit inputs; };
-
-          configuration = {
-            imports = [
-              ./home.nix
-              ./home.darwin.nix
-              ./users/mark/home/nix-colors.nix
-              ./users/mark/home/dev.nix
-              ./users/mark/home/programs/git.nix
-              ./users/mark/home/programs/kitty
-              ./users/mark/home/programs/neomutt.nix
-
-              {
-                home.packages = with pkgs; [
-                  fira-code
-                  fira-code-symbols
-                  iosevka
-                  jetbrains-mono
-                  merriweather
-                  merriweather-sans
-                  roboto
-                  roboto-slab
-                  roboto-mono
-                  montserrat
-                  lato
-
-                  (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
-
-                  font-awesome
-                  font-awesome_5
-
-                  go_1_19
-                ];
-              }
-            ];
-          };
         };
       };
     } // inputs.flake-utils.lib.eachDefaultSystem (
