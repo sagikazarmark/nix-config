@@ -172,7 +172,7 @@
       fi
 
       # TODO: ZSH login shells probably need a different browser (qutebrowser?)
-      export BROWSER=firefox-developer-edition
+      export BROWSER=firefox
     '' + lib.optionalString (config.home.sessionPath != [ ]) ''
       export PATH="$PATH''${PATH:+:}${lib.concatStringsSep ":" config.home.sessionPath}"
     '';
