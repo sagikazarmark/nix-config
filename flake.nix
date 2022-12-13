@@ -161,6 +161,9 @@
                 brews = [
                   "mas"
                   "trash"
+
+                  # Nix version is broken at the moment
+                  "oci-cli"
                 ];
 
                 casks = [

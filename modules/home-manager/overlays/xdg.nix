@@ -64,6 +64,8 @@ in
       # otherwise global installed executables won't be accessible on the cli.
       npm_config_prefix = "${cfg.dataHome}/npm";
 
+      OCI_CLI_RC_FILE = "${cfg.configHome}/oci/oci_cli_rc";
+
       REDISCLI_RCFILE = "${cfg.configHome}/redis/redisclirc";
       REDISCLI_HISTFILE = "${cfg.dataHome}/rediscli/history";
       RIPGREP_CONFIG_PATH = "${cfg.configHome}/ripgrep/config";
