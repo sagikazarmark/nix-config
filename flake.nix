@@ -28,9 +28,6 @@
       systemOverlay = (
         final: prev: {
           keyd = prev.callPackage ./pkgs/keyd/default.nix { };
-          yabai = prev.yabai.overrideAttrs (finalAttrs: previousAttrs: {
-            src = ./bin/yabai-v5.0.1.tar.gz;
-          });
         }
       );
 
@@ -141,9 +138,9 @@
                 enable = true;
                 enableScriptingAddition = true;
 
-                package = pkgs.yabai.overrideAttrs (finalAttrs: previousAttrs: {
-                  src = ./bin/yabai-v5.0.1.tar.gz;
-                });
+                # package = pkgs.yabai.overrideAttrs (finalAttrs: previousAttrs: {
+                #   src = ./bin/yabai-v5.0.1.tar.gz;
+                # });
               };
             }
             {
@@ -156,6 +153,7 @@
 
                 taps = [
                   "homebrew/cask"
+                  "homebrew/cask-drivers"
                 ];
 
                 brews = [
@@ -205,6 +203,8 @@
                   # Dev
                   "docker"
                   "tableplus"
+
+                  "logitech-options"
                 ];
 
                 masApps = {
