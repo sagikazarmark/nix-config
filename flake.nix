@@ -28,6 +28,7 @@
       systemOverlay = (
         final: prev: {
           keyd = prev.callPackage ./pkgs/keyd/default.nix { };
+          yabai = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.yabai;
         }
       );
 
@@ -86,6 +87,12 @@
 
           pkgs = import nixpkgs {
             inherit system;
+
+            config.allowUnfree = true;
+
+            overlays = [
+              systemOverlay
+            ];
           };
 
           modules = [
@@ -136,7 +143,9 @@
 
               services.yabai = {
                 enable = true;
-                enableScriptingAddition = true;
+                enableScriptingAddition = false;
+
+                package = pkgs.yabai;
 
                 # package = pkgs.yabai.overrideAttrs (finalAttrs: previousAttrs: {
                 #   src = ./bin/yabai-v5.0.1.tar.gz;
