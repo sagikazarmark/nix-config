@@ -78,6 +78,7 @@ lvim.builtin.treesitter.ensure_installed = {
     "yaml",
     "vim",
     "nix",
+    "markdown",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -293,6 +294,27 @@ lvim.plugins = {
     },
     {
         "jjo/vim-cue"
+    },
+    {
+        "quarto-dev/quarto-nvim",
+        requires = {
+          "jmbuhr/otter.nvim"
+        },
+        config = function()
+            require 'quarto'.setup {
+                lspFeatures = {
+                    enabled = true,
+                    languages = { 'r', 'python', 'julia' },
+                    diagnostics = {
+                        enabled = true,
+                        triggers = { "BufWrite" }
+                    },
+                    completion = {
+                        enabled = true
+                    }
+                }
+            }
+        end
     }
 }
 
