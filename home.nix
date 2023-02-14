@@ -60,6 +60,8 @@
     tree-sitter
 
     woff2
+
+    gimp
   ];
 
   home.sessionPath = [
