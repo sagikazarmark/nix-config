@@ -83,7 +83,7 @@ In case of an NVMe SSD this could be `/dev/nvme0n1`.
 
 > You can use the `lsblk` to detect devices in your system.
 
-Launch a new parted shell:
+Launch a new `parted` shell:
 
 ```shell
 parted /dev/sda
@@ -120,12 +120,24 @@ mkpart primary linux-swap -8GiB 100%
 
 **Note:** Swap size depends on the amount of RAM.
 
+Exit `parted`:
+
+```shell
+quit
+```
+
 #### Encrypted root (and swap) partition with LVM
 
 Create a partition using the rest of the disk space:
 
 ```shell
 mkpart primary 512MiB 100%
+```
+
+Exit `parted`:
+
+```shell
+quit
 ```
 
 Set up LUKS:
