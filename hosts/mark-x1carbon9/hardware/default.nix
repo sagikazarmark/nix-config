@@ -19,6 +19,8 @@
     };
   };
 
+  networking.interfaces.wlp0s20f3.useDHCP = true;
+
   # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
 
