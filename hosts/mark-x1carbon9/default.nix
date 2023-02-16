@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware
 
     ../common/base.nix
     ../common/networking.nix
