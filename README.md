@@ -34,12 +34,32 @@ sudo systemctl restart wpa_supplicant
 
 **Option 2:**
 
+Start the `wpa_supplicant` service:
+
+```shell
+sudo systemctl start wpa_supplicant
+```
+
+Enter a `wpa_cli` prompt:
+
+```shell
+wpa_cli
+```
+
+Run the following commands:
+
 ```shell
 add_network
 set_network 0 ssid "myhomenetwork"
 set_network 0 psk "mypassword"
 set_network 0 key_mgmt WPA-PSK
 enable_network 0
+```
+
+Exit `wpa_cli`:
+
+```shell
+quit
 ```
 
 #### Performing installation remotely over SSH
@@ -83,7 +103,7 @@ In case of an NVMe SSD this could be `/dev/nvme0n1`.
 
 > You can use the `lsblk` to detect devices in your system.
 
-Launch a new `parted` shell:
+Launch a new `parted` prompt:
 
 ```shell
 parted /dev/sda
