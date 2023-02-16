@@ -16,6 +16,32 @@ Turn off Secure Boot if it's enabled.
 
 Before installing NixOS on a brand new computer, read the [Preparing a new machine](#preparing-a-new-machine) section.
 
+#### Connecting to the internet
+
+The installer needs a working internet connection in order to download packages,
+but it also makes remote installation possible through SSH.
+
+For supported interfaces, wired connections should work automatically.
+
+To connect to a wireless network, follow one of the following options:
+
+**Option 1:**
+
+```shell
+wpa_passphrase ESSID KEY | sudo tee /etc/wpa_supplicant.conf
+sudo systemctl restart wpa_supplicant
+```
+
+**Option 2:**
+
+```shell
+add_network
+set_network 0 ssid "myhomenetwork"
+set_network 0 psk "mypassword"
+set_network 0 key_mgmt WPA-PSK
+enable_network 0
+```
+
 #### Performing installation remotely over SSH
 
 When moving to a new machine with access to an existing one,
@@ -55,19 +81,25 @@ loadkeys hu
 **Note**: Replace `/dev/sda` below with your appropriate device.
 In case of an NVMe SSD this could be `/dev/nvme0n1`.
 
-You can use the `lsblk` command to detect devices in your system.
+> You can use the `lsblk` to detect devices in your system.
 
-Create a partition table:
+Launch a new parted shell:
 
 ```shell
-parted /dev/sda -- mklabel gpt
+parted /dev/sda
+```
+
+Create a new partition table:
+
+```shell
+mklabel gpt
 ```
 
 Create a boot partition:
 
 ```shell
-parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
-parted /dev/sda -- set 1 esp on
+mkpart ESP fat32 1MiB 512MiB
+set 1 esp on
 ```
 
 ⚠️⚠️⚠️ **Make sure you follow the right section below.** ⚠️⚠️⚠️
@@ -77,24 +109,23 @@ parted /dev/sda -- set 1 esp on
 Create a root partition:
 
 ```shell
-parted /dev/sda -- mkpart primary 512MiB -8GiB
+mkpart primary 512MiB -8GiB
 ```
 
 Create a swap partition:
 
 ```shell
-parted /dev/sda -- mkpart primary linux-swap -8GiB 100%
+mkpart primary linux-swap -8GiB 100%
 ```
 
 **Note:** Swap size depends on the amount of RAM.
-
 
 #### Encrypted root (and swap) partition with LVM
 
 Create a partition using the rest of the disk space:
 
 ```shell
-parted /dev/sda -- mkpart primary 512MiB 100%
+mkpart primary 512MiB 100%
 ```
 
 Set up LUKS:
@@ -200,12 +231,6 @@ Launch a new shell with git installed:
 nix-shell -p git
 ```
 
-**Important:** For the time being you need to use `nixUnstable`, so the above command changes to:
-
-```shell
-nix-shell -p git nixUnstable
-```
-
 Checkout this repository:
 
 ```shell
@@ -294,6 +319,7 @@ When installing NixOS for the first time, make sure you complete the following s
 ### Installation guides
 
 - https://nixos.org/manual/nixos/stable/index.html#sec-installation
+- https://nixos.wiki/wiki/NixOS_Installation_Guide
 - https://wiki.archlinux.org/title/installation_guide
 - https://blog.tuxinaut.de/2018/05/07/part-1-installing-nixos/
 
