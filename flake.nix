@@ -79,6 +79,23 @@
             ./modules/nixos/keyd.nix
           ];
         };
+
+        mark-x1carbon9 = lib.nixosSystem {
+          system = "x86_64-linux";
+
+          specialArgs = { inherit inputs; };
+
+          modules = [
+            {
+              nixpkgs.overlays = [ systemOverlay nur.overlay ];
+            }
+
+            ./hosts/mark-x1carbon9
+            ./users/mark/system
+
+            ./modules/nixos/keyd.nix
+          ];
+        };
       };
 
       darwinConfigurations = {
