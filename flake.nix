@@ -329,6 +329,41 @@
           extraSpecialArgs = { inherit inputs; };
         };
 
+        "mark@mark-x1carbon9" = home-manager.lib.homeManagerConfiguration rec {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+
+            config.allowUnfree = true;
+
+            overlays = [
+              linuxHomeOverlay
+            ];
+          };
+
+          modules = [
+            ./modules/home-manager
+            inputs.nix-colors.homeManagerModule
+
+            {
+              home = {
+                username = "mark";
+                homeDirectory = "/home/mark";
+                stateVersion = "20.09";
+              };
+            }
+
+            ./home.nix
+            ./users/mark/home/nix-colors.nix
+            ./users/mark/home/linux.nix
+            ./users/mark/home/dev.nix
+            ./users/mark/home/programs/git.nix
+            ./users/mark/home/programs/kitty
+            ./users/mark/home/programs/neomutt.nix
+          ];
+
+          extraSpecialArgs = { inherit inputs; };
+        };
+
         "marksk@MARKSK-M-J1W8" = home-manager.lib.homeManagerConfiguration rec {
           pkgs = import nixpkgsUnstable {
             system = "x86_64-darwin";
