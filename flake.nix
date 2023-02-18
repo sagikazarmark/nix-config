@@ -55,11 +55,10 @@
             {
               nixpkgs.overlays = [ systemOverlay nur.overlay ];
             }
+            ./modules/nixos
 
             ./hosts/mark-desktop
             ./users/mark/system
-
-            ./modules/nixos/keyd.nix
           ];
         };
 
@@ -72,11 +71,10 @@
             {
               nixpkgs.overlays = [ systemOverlay nur.overlay ];
             }
+            ./modules/nixos
 
             ./hosts/mark-g15
             ./users/mark/system
-
-            ./modules/nixos/keyd.nix
           ];
         };
 
@@ -89,11 +87,9 @@
             {
               nixpkgs.overlays = [ systemOverlay nur.overlay ];
             }
+            ./modules/nixos
 
             ./hosts/mark-x1carbon9
-            ./users/mark/system
-
-            ./modules/nixos/keyd.nix
           ];
         };
       };
