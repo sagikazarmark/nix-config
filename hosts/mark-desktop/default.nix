@@ -5,23 +5,14 @@
     ./hardware-configuration.nix
 
     ../common/base.nix
-    ../common/networking.nix
-    ../common/i18n.nix
-    ../common/nix.nix
-    ../common/users.nix
-    ../common/gnome.nix
-    ../common/wayland.nix
-    ../common/security.nix
-    ../common/audio.nix
-    ../common/fonts.nix
+    ../common/boot/efi.nix
+    ../common/desktop/gnome.nix
+    ../common/desktop/wayland.nix
+
     ../common/services/ssh.nix
 
     ../common/logitech.nix
   ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -31,13 +22,7 @@
   networking.interfaces.enp12s0f3u4.useDHCP = true;
   networking.interfaces.enp7s0.useDHCP = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-
   virtualisation.docker.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
