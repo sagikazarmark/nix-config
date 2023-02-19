@@ -27,7 +27,6 @@
 
       systemOverlay = (
         final: prev: {
-          keyd = prev.callPackage ./pkgs/keyd/default.nix { };
           yabai = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.yabai;
         }
       );
