@@ -36,6 +36,9 @@
     unzip
 
     onlyoffice-bin
+    obs-studio
+    vlc
+    obsidian
   ];
 
   programs.gpg = {
