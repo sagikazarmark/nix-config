@@ -29,5 +29,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
+  # Fingerprint reader
   services.fprintd.enable = true;
+
+  # Make top speakers work
+  environment.systemPackages = [
+    pkgs.easyeffects
+  ];
 }
