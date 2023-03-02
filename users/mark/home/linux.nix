@@ -39,6 +39,9 @@
     obs-studio
     vlc
     obsidian
+
+    darktable
+    rawtherapee
   ];
 
   programs.gpg = {
