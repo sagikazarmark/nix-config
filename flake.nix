@@ -227,6 +227,7 @@
                   # Dev
                   "docker"
                   "tableplus"
+                  "postman"
 
                   "logitech-options"
                 ];
