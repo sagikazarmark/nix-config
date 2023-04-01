@@ -123,6 +123,9 @@
               # services.nix-daemon.enableSocketListener = true;
             }
             {
+              security.pam.enableSudoTouchIdAuth = true;
+            }
+            {
               # Set keyboard speed
               system.defaults.NSGlobalDomain.KeyRepeat = 1;
               system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
