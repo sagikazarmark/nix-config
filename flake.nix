@@ -427,6 +427,12 @@
             ./users/mark/home/programs/neomutt.nix
 
             {
+              programs.wakatime = {
+                enable = true;
+              };
+            }
+
+            {
               home.packages = with pkgs; [
                 fira-code
                 fira-code-symbols
