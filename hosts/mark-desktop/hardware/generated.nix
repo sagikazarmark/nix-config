@@ -6,18 +6,13 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-
-    inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.common-gpu-amd
-    inputs.hardware.nixosModules.common-pc
-    inputs.hardware.nixosModules.common-pc-ssd
   ];
 
   boot.initrd.availableKernelModules =
     [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [];
+  boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/e66d1fea-3f2d-4aa5-9be6-01991edc2772";
@@ -30,8 +25,5 @@
   };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/b435ef70-634e-4b2a-9dc9-f3ca017f52e6"; } ];
-
-  # high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
+    [{ device = "/dev/disk/by-uuid/b435ef70-634e-4b2a-9dc9-f3ca017f52e6"; }];
 }
