@@ -453,6 +453,7 @@
 
                 font-awesome
                 font-awesome_5
+                # TODO: add SF pro
 
                 go_1_20
                 impl
