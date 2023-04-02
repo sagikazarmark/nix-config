@@ -8,6 +8,8 @@
     inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc
     inputs.hardware.nixosModules.common-pc-ssd
+
+    ../../common/hardware/logitech.nix
   ];
 
   networking.interfaces.enp12s0f3u4.useDHCP = true;

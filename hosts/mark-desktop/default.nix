@@ -10,8 +10,6 @@
     ../common/desktop/wayland.nix
 
     ../common/services/ssh.nix
-
-    ../common/logitech.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
