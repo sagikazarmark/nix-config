@@ -8,7 +8,6 @@
     ../common/core.nix
     ../common/boot/efi.nix
     ../common/desktop/wayland.nix
-    ../common/opengl.nix
 
     ../common/services/ssh.nix
   ];

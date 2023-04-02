@@ -5,6 +5,8 @@
     ./generated.nix
 
     inputs.hardware.nixosModules.asus-zephyrus-ga503
+
+    ../../common/hardware/opengl.nix
   ];
 
   boot.initrd.luks.devices = {
