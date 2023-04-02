@@ -454,7 +454,8 @@
                 font-awesome
                 font-awesome_5
 
-                go_1_19
+                go_1_20
+                impl
               ];
             }
           ];

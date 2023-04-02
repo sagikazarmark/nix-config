@@ -39,9 +39,10 @@
     scaleway-cli
 
     # Go
-    # go
+    go
     gofumpt
     gopls
+    impl
 
     # Rust
     cargo
