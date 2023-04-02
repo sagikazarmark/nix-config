@@ -2,13 +2,12 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware
 
     ../common/base.nix
     ../common/core.nix
     ../common/boot/efi.nix
     ../common/desktop/wayland.nix
-    ../common/opengl.nix
 
     ../common/services/ssh.nix
   ];
@@ -17,8 +16,6 @@
   # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "mark-g15"; # Define your hostname.
-
-  networking.interfaces.enp3s0.useDHCP = true;
 
   virtualisation.docker.enable = true;
 

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware
 
     ../common/base.nix
     ../common/boot/efi.nix
@@ -10,17 +10,11 @@
     ../common/desktop/wayland.nix
 
     ../common/services/ssh.nix
-
-    ../common/logitech.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "mark-desktop"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  networking.interfaces.enp12s0f3u4.useDHCP = true;
-  networking.interfaces.enp7s0.useDHCP = true;
 
   virtualisation.docker.enable = true;
 
