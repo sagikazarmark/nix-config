@@ -92,6 +92,27 @@
         "type": "github"
       }
     },
+    "home-managerUnstable": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgsUnstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1681586243,
+        "narHash": "sha256-vdP79IZuDZVNSl4RN1LgEuab1Tkbv4gCxiE8VLdRf7U=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "40ebb62101c83de81e5fd7c3cfe5cea2ed21b1ad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "nix-colors": {
       "inputs": {
         "base16-schemes": "base16-schemes",
@@ -177,6 +198,7 @@
         "flake-utils": "flake-utils",
         "hardware": "hardware",
         "home-manager": "home-manager",
+        "home-managerUnstable": "home-managerUnstable",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs",
         "nixpkgsUnstable": "nixpkgsUnstable",

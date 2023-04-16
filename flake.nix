@@ -11,6 +11,10 @@
       url = "github:nix-community/home-manager/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-managerUnstable = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgsUnstable";
+    };
 
     darwin = {
       url = "github:lnl7/nix-darwin/master";
@@ -21,7 +25,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, nixpkgsUnstable, nur, home-manager, darwin, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgsUnstable, nur, home-manager, home-managerUnstable, darwin, ... }@inputs:
     let
       lib = nixpkgs.lib;
 
@@ -367,7 +371,7 @@
           extraSpecialArgs = { inherit inputs; };
         };
 
-        "marksk@MARKSK-M-J1W8" = home-manager.lib.homeManagerConfiguration rec {
+        "marksk@MARKSK-M-J1W8" = home-managerUnstable.lib.homeManagerConfiguration rec {
           pkgs = import nixpkgsUnstable {
             system = "x86_64-darwin";
 
@@ -400,7 +404,7 @@
           extraSpecialArgs = { inherit inputs; };
         };
 
-        "marksk@MARKSK-M-1WLF" = home-manager.lib.homeManagerConfiguration rec {
+        "marksk@MARKSK-M-1WLF" = home-managerUnstable.lib.homeManagerConfiguration rec {
           pkgs = import nixpkgsUnstable {
             system = "aarch64-darwin";
 
