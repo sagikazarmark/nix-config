@@ -73,7 +73,7 @@ in
 
       WINEPREFIX = "${cfg.dataHome}/wineprefixes/default";
 
-      WAKATIME_HOME = "${cfg.configHome}/wakatime";
+      /* WAKATIME_HOME = "${cfg.configHome}/wakatime"; */
       WGETRC = "${cfg.configHome}/wgetrc";
       WD_CONFIG = "${cfg.configHome}/wd/warprc";
     };
