@@ -29,7 +29,7 @@ in
         };
       };
       description = ''
-        Configuration to use for Flameshot. See
+        Configuration to use for Wakatime CLI. See
         <link xlink:href="https://github.com/wakatime/wakatime-cli/blob/develop/USAGE.md#ini-config-file"/>
         for available options.
       '';
