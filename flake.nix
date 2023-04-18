@@ -435,10 +435,11 @@
 
             {
               programs.wakatime = {
-                enable = true;
+                # Wakatime sucks
+                enable = false;
                 settings = {
                   settings = {
-                    api_key_vault_cmd = "op read 'op://Personal/Wakatime API key/credential'";
+                    api_key_vault_cmd = "op read -n 'op://Personal/Wakatime\\ API\\ key/credential'";
                   };
                 };
               };
