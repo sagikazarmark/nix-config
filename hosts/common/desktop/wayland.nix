@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services.xserver = {
@@ -6,6 +6,10 @@
   };
 
   programs.xwayland.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    wl-clipboard
+  ];
 
   services.keyd = {
     enable = true;
