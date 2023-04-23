@@ -19,6 +19,11 @@
     nmap
     vault-bin
 
+    # Git
+    git
+    git-filter-repo
+
+    # LSP
     rnix-lsp
     terraform-ls
     nodePackages.yaml-language-server
