@@ -235,6 +235,7 @@
                   "docker"
                   "tableplus"
                   "postman"
+                  "kube-forwarder"
 
                   "logitech-options"
                 ];
