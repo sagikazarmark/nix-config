@@ -227,6 +227,7 @@
                   "postbox"
                   "telegram"
                   # "telegram-desktop"
+                  "whatsapp"
 
                   "darktable"
                   "inkscape"
