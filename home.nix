@@ -166,10 +166,10 @@
       # Preferred editor for local and remote sessions
       # TODO: test that it works properly for SSH login shells.
       if [ -n $SSH_CONNECTION ]; then
-          export EDITOR='lvim'
-          export GUIEDITOR='lvim'
+          export EDITOR='nvim'
+          export GUIEDITOR='nvim'
       else
-          export EDITOR='lvim'
+          export EDITOR='nvim'
           export GUIEDITOR='code'
       fi
 
@@ -195,7 +195,7 @@
       rmdot = "rm -rf .[!.]*";
 
       hm = "home-manager";
-      vim = "lvim";
+      vim = "nvim";
 
       # Find my IP address
       myip = "dig +short myip.opendns.com @resolver1.opendns.com";
