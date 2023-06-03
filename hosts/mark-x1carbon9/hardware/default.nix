@@ -21,9 +21,6 @@
 
   networking.interfaces.wlp0s20f3.useDHCP = true;
 
-  # Enable high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
-
   hardware.bluetooth.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).

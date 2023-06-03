@@ -6,6 +6,8 @@
     enable = true;
 
     openFirewall = true;
-    permitRootLogin = "no";
+    settings = {
+      PermitRootLogin = "no";
+    };
   };
 }
