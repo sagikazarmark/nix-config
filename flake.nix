@@ -2,13 +2,13 @@
   description = "My Nix(OS) configurations";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.11";
+    nixpkgs.url = "nixpkgs/nixos-23.05";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.11";
+      url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-managerUnstable = {
@@ -400,7 +400,6 @@
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
-            ./users/mark/home/programs/neomutt.nix
           ];
 
           extraSpecialArgs = { inherit inputs; };
@@ -433,7 +432,6 @@
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
-            ./users/mark/home/programs/neomutt.nix
 
             {
               programs.wakatime = {

@@ -20,7 +20,4 @@
 
   networking.interfaces.enp12s0f3u4.useDHCP = true;
   networking.interfaces.enp7s0.useDHCP = true;
-
-  # high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
 }

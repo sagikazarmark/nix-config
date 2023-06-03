@@ -14,13 +14,12 @@
 
   xdg.portal.enable = true;
   xdg.portal.wlr.enable = true;
-  xdg.portal.gtkUsePortal = true;
   xdg.portal.extraPortals = [
     pkgs.xdg-desktop-portal-gtk
   ];
 
   # Harmonize Qt5 application style and also make them use the portal for file chooser dialog.
-  qt5 = {
+  qt = {
     enable = true;
     platformTheme = "gnome";
     style = "adwaita";

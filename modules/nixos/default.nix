@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./keyd.nix
-  ];
+  imports = [ ];
 }
