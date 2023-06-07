@@ -106,7 +106,9 @@
 
     history.path = "${config.xdg.dataHome}/zsh/history";
 
-    sessionVariables = {
+    localVariables = {
+      LESSHISTFILE = "/dev/null";
+
       # TODO: ZSH login shells probably need a different browser (qutebrowser?)
       BROWSER = if pkgs.stdenv.isDarwin then "open" else "firefox";
     };
@@ -141,10 +143,6 @@
         src = ./dotfiles/zsh;
       }
     ];
-
-    localVariables = {
-      LESSHISTFILE = "/dev/null";
-    };
 
     initExtra = ''
       # Powerlevel10k config
