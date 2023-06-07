@@ -106,6 +106,11 @@
 
     history.path = "${config.xdg.dataHome}/zsh/history";
 
+    sessionVariables = {
+      # TODO: ZSH login shells probably need a different browser (qutebrowser?)
+      BROWSER = if pkgs.stdenv.isDarwin then "open" else "firefox";
+    };
+
     # p10k Home manager config: https://github.com/nix-community/home-manager/issues/1338#issuecomment-651807792
     initExtraBeforeCompInit = ''
       # p10k instant prompt
@@ -172,9 +177,6 @@
           export EDITOR='nvim'
           export GUIEDITOR='code'
       fi
-
-      # TODO: ZSH login shells probably need a different browser (qutebrowser?)
-      export BROWSER=firefox
     '' + lib.optionalString (config.home.sessionPath != [ ]) ''
       export PATH="$PATH''${PATH:+:}${lib.concatStringsSep ":" config.home.sessionPath}"
     '';
