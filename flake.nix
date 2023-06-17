@@ -144,7 +144,7 @@
               system.defaults.dock.mru-spaces = false;
 
               # Displays have separate spaces
-              system.defaults.spaces.spans-displays = true;
+              system.defaults.spaces.spans-displays = false;
 
               # Smart settings
               # https://derflounder.wordpress.com/2014/02/01/disabling-smart-quotes-in-mavericks/
@@ -177,6 +177,8 @@
 
                 onActivation = {
                   cleanup = "zap";
+                  autoUpdate = true;
+                  upgrade = true;
                 };
 
                 taps = [
@@ -239,6 +241,8 @@
                   "kube-forwarder"
 
                   "logitech-options"
+
+                  "morgen"
                 ];
 
                 masApps = {
