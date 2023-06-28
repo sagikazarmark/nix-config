@@ -30,11 +30,19 @@
     nodePackages.typescript-language-server
     sumneko-lua-language-server
 
+    # Lua
+    stylua
+    lua54Packages.luacheck
+
     # Nix
     nixfmt
     nixpkgs-fmt
     nixpkgs-review
     nixos-generators
+
+    statix
+    alejandra
+    deadnix
 
     # Cloud
     awscli2
@@ -45,12 +53,18 @@
 
     # Go
     go
-    gofumpt
     gopls
     impl
+    gomodifytags
+    golangci-lint
+    revive
+    go-tools
+    gofumpt
 
     # Rust
     cargo
+    rust-analyzer
+    lldb
 
     gnumake
     gcc
@@ -58,6 +72,14 @@
     # For protobuf formatting
     # clang
     clang-tools
+
+    # Docker
+    hadolint
+    nodePackages.dockerfile-language-server-nodejs
+    docker-compose-language-service
+
+    # TOML
+    taplo
 
     # Containers
     lima
@@ -106,6 +128,8 @@
 
     # Rust binaries
     "$HOME/.cargo/bin"
+    "$HOME/.local/share/cargo/bin"
+    "$HOME/.local/share/npm/bin"
 
     # NPM binaries
     "$XDG_DATA_HOME/npm/bin"

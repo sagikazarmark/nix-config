@@ -311,6 +311,13 @@
                       }
                     );
                   };
+                  sunsama = prev.appimageTools.wrapType2 {
+                    name = "Sunsama";
+                    src = prev.fetchurl {
+                      url = "https://desktop.sunsama.com/linux/appImage/x64";
+                      sha256 = "sha256-DUtfOkzEFnYUQ7D9dk+3HmB6620P8tbi8YiO6InEudo=";
+                    };
+                  };
                 }
               )
             ];
@@ -337,6 +344,10 @@
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
             ./users/mark/home/programs/neomutt.nix
+
+            {
+              home.packages = with pkgs; [ sunsama morgen ];
+            }
           ];
 
           extraSpecialArgs = { inherit inputs; };
