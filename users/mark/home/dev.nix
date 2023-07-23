@@ -28,7 +28,7 @@
     terraform-ls
     nodePackages.yaml-language-server
     nodePackages.typescript-language-server
-    sumneko-lua-language-server
+    # sumneko-lua-language-server
 
     # Lua
     stylua
