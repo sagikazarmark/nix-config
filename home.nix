@@ -111,6 +111,8 @@
 
       # TODO: ZSH login shells probably need a different browser (qutebrowser?)
       BROWSER = if pkgs.stdenv.isDarwin then "open" else "firefox";
+
+      GREP_OPTIONS = "--exclude-dir=.devenv";
     };
 
     # p10k Home manager config: https://github.com/nix-community/home-manager/issues/1338#issuecomment-651807792
