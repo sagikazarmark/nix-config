@@ -81,6 +81,9 @@
     # TOML
     taplo
 
+    # Terraform
+    terraform-ls
+
     # Containers
     lima
     # podman
