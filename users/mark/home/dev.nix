@@ -19,6 +19,9 @@
     nmap
     vault-bin
 
+    postgresql
+    jetbrains.datagrip
+
     # Git
     git
     git-filter-repo
