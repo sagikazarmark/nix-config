@@ -74,7 +74,7 @@
     clang-tools
 
     # Docker
-    hadolint
+    # hadolint
     nodePackages.dockerfile-language-server-nodejs
     docker-compose-language-service
 
