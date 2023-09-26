@@ -311,11 +311,12 @@
                       }
                     );
                   };
-                  sunsama = prev.appimageTools.wrapType2 {
+                  sunsama = prev.appimageTools.wrapType2 rec {
                     name = "Sunsama";
+                    version = "2.0.12";
                     src = prev.fetchurl {
-                      url = "https://desktop.sunsama.com/linux/appImage/x64";
-                      sha256 = "sha256-DUtfOkzEFnYUQ7D9dk+3HmB6620P8tbi8YiO6InEudo=";
+                      url = "https://desktop.sunsama.com/versions/${version}/linux/appImage/x64";
+                      sha256 = "sha256-MxXahIl1IbjZbeAlAoPcvpoll/Tsp4d4JRA4/lzFYjU=";
                     };
                   };
                 }
