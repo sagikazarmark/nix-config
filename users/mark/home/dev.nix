@@ -117,7 +117,7 @@
     argocd
     helm-docs
 
-    nodePackages.snyk
+    # nodePackages.snyk
 
     vagrant
     # openstackclient
