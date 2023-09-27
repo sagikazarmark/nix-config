@@ -191,7 +191,7 @@
                   "trash"
 
                   # Nix version is broken at the moment
-                  "oci-cli"
+                  # "oci-cli"
                 ];
 
                 casks = [
@@ -243,6 +243,8 @@
                   "logitech-options"
 
                   "morgen"
+
+                  "camtasia"
                 ];
 
                 masApps = {
