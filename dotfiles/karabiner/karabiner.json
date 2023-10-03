@@ -117,7 +117,7 @@
                             },
                             "to": [
                                 {
-                                    "apple_vendor_top_case_key_code": "illumination_down"
+                                    "apple_vendor_top_case_key_code": "dictation"
                                 }
                             ]
                         },
@@ -271,7 +271,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "dashboard"
+                            "key_code": "dictation"
                         }
                     ]
                 },
@@ -291,7 +291,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "illumination_increment"
+                            "key_code": "rewind"
                         }
                     ]
                 },
@@ -301,7 +301,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "rewind"
+                            "consumer_key_code": "play_or_pause"
                         }
                     ]
                 },
@@ -311,7 +311,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "play_or_pause"
+                            "consumer_key_code": "fast_forward"
                         }
                     ]
                 },
@@ -321,7 +321,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "fast_forward"
+                            "consumer_key_code": "mute"
                         }
                     ]
                 },
@@ -331,7 +331,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "mute"
+                            "consumer_key_code": "volume_decrement"
                         }
                     ]
                 },
@@ -341,7 +341,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "volume_decrement"
+                            "consumer_key_code": "volume_increment"
                         }
                     ]
                 }
