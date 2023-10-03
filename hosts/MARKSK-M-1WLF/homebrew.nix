@@ -32,7 +32,6 @@ in
 
     taps = [
       "homebrew/cask"
-      "homebrew/cask-drivers"
     ];
 
     brews = [
