@@ -116,6 +116,25 @@
             ./hosts/MARKSK-M-1WLF
           ];
         };
+
+        Mark-M2MBP = darwin.lib.darwinSystem rec {
+          system = "aarch64-darwin";
+
+          pkgs = import nixpkgs {
+            inherit system;
+
+            config.allowUnfree = true;
+
+            overlays = [
+              systemOverlay
+            ];
+          };
+
+          modules = [
+            ./modules/nix-darwin/modules/env.nix
+            ./hosts/MARKSK-M-1WLF
+          ];
+        };
       };
 
       homeConfigurations = {
@@ -347,6 +366,75 @@
 
                 go_1_20
                 impl
+              ];
+            }
+          ];
+
+          extraSpecialArgs = { inherit inputs; };
+        };
+
+        "mark@Mark-M2MBP" = home-managerUnstable.lib.homeManagerConfiguration rec {
+          pkgs = import nixpkgsUnstable {
+            system = "aarch64-darwin";
+
+            config.allowUnfree = true;
+
+            overlays = [ nur.overlay ];
+          };
+
+          modules = [
+            ./modules/home-manager
+            inputs.nix-colors.homeManagerModule
+
+            {
+              home = {
+                username = "mark";
+                homeDirectory = "/Users/mark";
+                stateVersion = "20.09";
+              };
+            }
+
+            ./home.nix
+            ./home.darwin.nix
+            ./users/mark/home/nix-colors.nix
+            ./users/mark/home/dev.nix
+            ./users/mark/home/programs/git.nix
+            ./users/mark/home/programs/kitty
+
+            {
+              programs.wakatime = {
+                # Wakatime sucks
+                enable = false;
+                settings = {
+                  settings = {
+                    api_key_vault_cmd = "op read -n op://Personal/WakatimeAPIkey/credential";
+                  };
+                };
+              };
+            }
+
+            {
+              home.packages = with pkgs; [
+                fira-code
+                fira-code-symbols
+                iosevka
+                jetbrains-mono
+                merriweather
+                merriweather-sans
+                roboto
+                roboto-slab
+                roboto-mono
+                montserrat
+                lato
+
+                (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
+
+                font-awesome
+                font-awesome_5
+                # TODO: add SF pro
+
+                # go_1_20
+                # impl
               ];
             }
           ];
