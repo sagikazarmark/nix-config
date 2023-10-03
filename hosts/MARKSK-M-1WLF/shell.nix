@@ -2,5 +2,5 @@
 
 {
   programs.bash.enable = false;
-  # programs.zsh.enable = true;
+  programs.zsh.enable = true;
 }

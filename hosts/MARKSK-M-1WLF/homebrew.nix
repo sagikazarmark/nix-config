@@ -1,6 +1,26 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+let
+  brewPrefix =
+    if pkgs.stdenv.hostPlatform.isAarch64
+    then "/opt/homebrew"
+    else "/usr/local";
+in
 {
+  # $ brew shellenv
+  #
+  # Based on:
+  #   - https://github.com/montchr/dotfield/commit/52f5b09927b9c68003331a5e386ed19cd9fae464
+  #   - https://github.com/LnL7/nix-darwin/issues/596
+  environment.systemPath = lib.mkBefore [ "${brewPrefix}/bin" "${brewPrefix}/sbin" ];
+  environment.variables = {
+    HOMEBREW_PREFIX = brewPrefix;
+    HOMEBREW_CELLAR = "${brewPrefix}/Cellar";
+    HOMEBREW_REPOSITORY = brewPrefix;
+    MANPATH = "${brewPrefix}/share/man\${MANPATH+:$MANPATH}:";
+    INFOPATH = "${brewPrefix}/share/info:\${INFOPATH:-}";
+  };
+
   homebrew = {
     enable = true;
 
