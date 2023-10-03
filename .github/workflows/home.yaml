@@ -55,9 +55,9 @@ jobs:
       matrix:
         include:
           - home: 'marksk@MARKSK-M-J1W8'
-            os: macos-latest-large
+            os: macos-12
           - home: 'marksk@MARKSK-M-1WLF'
-            os: macos-latest-xlarge
+            os: macos-13
 
     steps:
       - name: Checkout code

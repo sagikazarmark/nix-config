@@ -37,7 +37,7 @@ jobs:
 
   darwin:
     name: Darwin
-    runs-on: macos-latest-xlarge
+    runs-on: macos-13
 
     strategy:
       fail-fast: false
