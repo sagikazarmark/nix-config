@@ -10,6 +10,7 @@ jobs:
   linux:
     name: Linux
     runs-on: ubuntu-latest
+
     strategy:
       fail-fast: false
       matrix:
@@ -47,11 +48,16 @@ jobs:
 
   darwin:
     name: Darwin
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}
+
     strategy:
       fail-fast: false
       matrix:
-        home: ['marksk@MARKSK-M-J1W8']
+        include:
+          - home: 'marksk@MARKSK-M-J1W8'
+            os: macos-latest-large
+          - home: 'marksk@MARKSK-M-1WLF'
+            os: macos-latest-xlarge
 
     steps:
       - name: Checkout code
