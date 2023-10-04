@@ -364,6 +364,8 @@
                 font-awesome_5
                 # TODO: add SF pro
 
+                pkgs.nur.repos.sagikazarmark.clarity-city
+
                 go_1_20
                 impl
               ];
@@ -432,6 +434,8 @@
                 font-awesome
                 font-awesome_5
                 # TODO: add SF pro
+
+                pkgs.nur.repos.sagikazarmark.clarity-city
 
                 # go_1_20
                 # impl
