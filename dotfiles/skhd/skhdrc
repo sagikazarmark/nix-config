@@ -21,7 +21,7 @@
 # f1 :
 
 # open terminal
-cmd + alt - return : /Users/marksk/.nix-profile/bin/kitty --single-instance -d ~ &> /dev/null
+cmd + alt - return : /Users/mark/.nix-profile/bin/kitty --single-instance -d ~ &> /dev/null
 # cmd + alt - return : UNAME=Darwin /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
 # reload shkd
@@ -43,7 +43,7 @@ default < fn - o ; open
 open < fn - o ; default
 open < escape ; default
 
-open < f : skhd -k 'escape' ; open ~ 
+open < f : skhd -k 'escape' ; open ~
 open < b : "$HOME/.local/bin/browser" ; skhd -k 'escape'
 
 
