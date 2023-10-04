@@ -93,6 +93,7 @@ in
       "logitech-options"
 
       "morgen"
+      "sunsama"
 
       "camtasia"
 
