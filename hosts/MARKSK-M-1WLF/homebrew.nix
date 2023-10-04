@@ -81,6 +81,8 @@ in
 
       "darktable"
       "inkscape"
+      "affinity-designer"
+      "affinity-photo"
 
       # Dev
       "docker"
@@ -93,6 +95,8 @@ in
       "morgen"
 
       "camtasia"
+
+      "bartender"
     ];
 
     masApps = {
