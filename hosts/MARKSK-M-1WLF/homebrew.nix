@@ -73,16 +73,20 @@ in
       "vlc"
       "raycast"
 
+      "microsoft-office"
+
       "signal"
       "postbox"
       "telegram"
       # "telegram-desktop"
+      "webex"
       "whatsapp"
 
       "darktable"
       "inkscape"
       "affinity-designer"
       "affinity-photo"
+      "figma"
 
       # Dev
       "docker"
