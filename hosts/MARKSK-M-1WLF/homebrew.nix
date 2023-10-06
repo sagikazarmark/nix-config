@@ -74,6 +74,7 @@ in
       "raycast"
 
       "microsoft-office"
+      "grammarly"
 
       "signal"
       "postbox"
