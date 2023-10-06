@@ -75,6 +75,7 @@ in
 
       "microsoft-office"
       "grammarly"
+      "grammarly-desktop"
 
       "signal"
       "postbox"
