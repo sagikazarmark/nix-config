@@ -83,6 +83,7 @@ in
       # "telegram-desktop"
       "webex"
       "whatsapp"
+      "messenger"
 
       "darktable"
       "inkscape"
