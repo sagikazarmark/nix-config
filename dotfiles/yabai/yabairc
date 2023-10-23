@@ -19,34 +19,34 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
 # global settings
-yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          off
-yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
-yabai -m config window_shadow                on
-yabai -m config window_opacity               off
-yabai -m config window_opacity_duration      0.0
-yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.90
-yabai -m config window_border                off
-yabai -m config window_border_width          6
-yabai -m config active_window_border_color   0xff775759
-yabai -m config normal_window_border_color   0xff555555
-yabai -m config insert_feedback_color        0xffd75f5f
-yabai -m config split_ratio                  0.50
-yabai -m config auto_balance                 off
-yabai -m config mouse_modifier               fn
-yabai -m config mouse_action1                move
-yabai -m config mouse_action2                resize
-yabai -m config mouse_drop_action            swap
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
+yabai -m config window_placement second_child
+yabai -m config window_topmost off
+yabai -m config window_shadow on
+yabai -m config window_opacity off
+yabai -m config window_opacity_duration 0.0
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.90
+yabai -m config window_border off
+yabai -m config window_border_width 6
+yabai -m config active_window_border_color 0xff775759
+yabai -m config normal_window_border_color 0xff555555
+yabai -m config insert_feedback_color 0xffd75f5f
+yabai -m config split_ratio 0.50
+yabai -m config auto_balance off
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+yabai -m config mouse_drop_action swap
 
 # general space settings
-yabai -m config layout                       bsp
-yabai -m config top_padding                  12
-yabai -m config bottom_padding               12
-yabai -m config left_padding                 12
-yabai -m config right_padding                12
-yabai -m config window_gap                   06
+yabai -m config layout bsp
+yabai -m config top_padding 12
+yabai -m config bottom_padding 12
+yabai -m config left_padding 12
+yabai -m config right_padding 12
+yabai -m config window_gap 06
 
 # mission-control desktop labels
 yabai -m space 1 --label web
@@ -64,17 +64,20 @@ yabai -m rule --add app="^Notion$" space=notes
 yabai -m rule --add app="^Spotify$" space=media
 
 # don't manage the following applications/windows
-yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Finder$" title="^.* Info$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^1Password.*$" manage=off
-yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off
 yabai -m rule --add app="^Cisco Webex Meetings$" title="^Preferences$" manage=off
 yabai -m rule --add app="^GIMP-.*$" title="^Export Image$" manage=off
 yabai -m rule --add app="^GIMP-.*$" title="^Scale Image$" manage=off
 yabai -m rule --add app="^GIMP-.*$" title="^Set Image Canvas Size$" manage=off
-yabai -m rule --add app="^Code42$" title="^Code42$" manage=off
 yabai -m rule --add app="^Sunsama$" title="^Sunsama Add Task$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+
+# Old entries
+# yabai -m rule --add app="^Code42$" title="^Code42$" manage=off
+# yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off
 
 # https://github.com/koekeishiya/yabai/issues/384#issuecomment-753514066
 # https://github.com/koekeishiya/yabai/issues/350
