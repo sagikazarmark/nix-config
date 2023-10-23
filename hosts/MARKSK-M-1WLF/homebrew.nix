@@ -101,6 +101,7 @@ in
 
       "morgen"
       "sunsama"
+      "anytype"
 
       "camtasia"
 
