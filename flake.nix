@@ -194,14 +194,14 @@
                       }
                     );
                   };
-                  sunsama = prev.appimageTools.wrapType2 rec {
-                    name = "Sunsama";
-                    version = "2.0.12";
-                    src = prev.fetchurl {
-                      url = "https://desktop.sunsama.com/versions/${version}/linux/appImage/x64";
-                      sha256 = "sha256-MxXahIl1IbjZbeAlAoPcvpoll/Tsp4d4JRA4/lzFYjU=";
-                    };
-                  };
+                  # sunsama = prev.appimageTools.wrapType2 rec {
+                  #   name = "Sunsama";
+                  #   version = "2.0.13";
+                  #   src = prev.fetchurl {
+                  #     url = "https://desktop.sunsama.com/versions/${version}/linux/appImage/x64";
+                  #     sha256 = "sha256-MxXahIl1IbjZbeAlAoPcvpoll/Tsp4d4JRA4/lzFYjU=";
+                  #   };
+                  # };
                 }
               )
             ];
@@ -229,9 +229,9 @@
             ./users/mark/home/programs/kitty
             ./users/mark/home/programs/neomutt.nix
 
-            {
-              home.packages = with pkgs; [ sunsama morgen ];
-            }
+            # {
+            #   home.packages = with pkgs; [ sunsama morgen ];
+            # }
           ];
 
           extraSpecialArgs = { inherit inputs; };
