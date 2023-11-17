@@ -110,6 +110,7 @@ in
 
     masApps = {
       "DaVinci Resolve" = 571213070;
+      "Darkroom" = 953286746;
     };
   };
 }
