@@ -20,6 +20,6 @@
     font-awesome_5
 
     pkgs.nur.repos.sagikazarmark.sf-pro
-    pkgs.nur.repos.sagikazarmark.clarity-city
+    clarity-city
   ];
 }
