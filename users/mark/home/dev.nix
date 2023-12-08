@@ -119,9 +119,8 @@
 
     # nodePackages.snyk
 
-    vagrant
+    # vagrant # BROKEN on darwin aarch64
     # openstackclient
-
 
     # wkhtmltopdf
     plantuml
