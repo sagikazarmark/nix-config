@@ -2,6 +2,9 @@
 
 {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
