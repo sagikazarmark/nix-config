@@ -65,13 +65,15 @@ in
       "notion"
       "obs"
       "obs-websocket"
-      "spotify"
       "todoist"
       "transmit"
       "tuxera-ntfs"
       "vuescan"
       "vlc"
       "raycast"
+
+      "roon"
+      "spotify"
 
       "microsoft-office"
       "grammarly"
