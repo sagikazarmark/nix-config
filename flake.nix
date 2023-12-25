@@ -178,6 +178,9 @@
             system = "x86_64-linux";
 
             config.allowUnfree = true;
+            config.permittedInsecurePackages = [
+              "electron-25.9.0"
+            ];
 
             overlays = [
               linuxHomeOverlay
@@ -242,6 +245,9 @@
             system = "x86_64-linux";
 
             config.allowUnfree = true;
+            config.permittedInsecurePackages = [
+              "electron-25.9.0"
+            ];
 
             overlays = [
               linuxHomeOverlay
@@ -277,6 +283,9 @@
             system = "x86_64-darwin";
 
             config.allowUnfree = true;
+            config.permittedInsecurePackages = [
+              "electron-25.9.0"
+            ];
 
             overlays = [ ];
           };
@@ -309,6 +318,9 @@
             system = "aarch64-darwin";
 
             config.allowUnfree = true;
+            config.permittedInsecurePackages = [
+              "electron-25.9.0"
+            ];
 
             overlays = [ nur.overlay ];
           };
@@ -380,6 +392,9 @@
             system = "aarch64-darwin";
 
             config.allowUnfree = true;
+            config.permittedInsecurePackages = [
+              "electron-25.9.0"
+            ];
 
             overlays = [ nur.overlay ];
           };
