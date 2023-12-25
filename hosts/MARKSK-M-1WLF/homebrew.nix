@@ -74,6 +74,7 @@ in
 
       "roon"
       "spotify"
+      "xld"
 
       "microsoft-office"
       "grammarly"
