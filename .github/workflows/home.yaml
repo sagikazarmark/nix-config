@@ -58,7 +58,7 @@ jobs:
             os: macos-12
 
           # https://github.com/orgs/community/discussions/69211#discussioncomment-7941899
-          - home: "marksk@MARKSK-M-1WLF"
+          - home: "mark@Mark-M2MBP"
             os: flyci-macos-large-latest-m1
 
     steps:
