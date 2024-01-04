@@ -482,7 +482,16 @@
       in
       {
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ home-manager git ];
+          buildInputs = with pkgs; [
+            # home-manager
+            git
+
+            nixos-rebuild
+
+            sops
+            age
+            ssh-to-age
+          ];
         };
       }
     );
