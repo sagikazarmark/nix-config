@@ -54,8 +54,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - home: "marksk@MARKSK-M-J1W8"
-            os: macos-12
+          # - home: "marksk@MARKSK-M-J1W8"
+          #   os: macos-12
 
           # https://github.com/orgs/community/discussions/69211#discussioncomment-7941899
           - home: "mark@Mark-M2MBP"
