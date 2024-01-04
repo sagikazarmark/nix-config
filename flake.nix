@@ -95,6 +95,20 @@
             ./hosts/mark-x1carbon9
           ];
         };
+
+        moria = lib.nixosSystem {
+          system = "x86_64-linux";
+
+          specialArgs = { inherit inputs; };
+
+          modules = [
+            {
+              nixpkgs.overlays = [ systemOverlay nur.overlay ];
+            }
+
+            ./hosts/moria/configuration.nix
+          ];
+        };
       };
 
       darwinConfigurations = {
