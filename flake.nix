@@ -130,7 +130,7 @@
 
           modules = [
             ./modules/nix-darwin/modules/env.nix
-            ./hosts/MARKSK-M-1WLF
+            ./hosts/Mark-M2MBP/configuration.nix
           ];
         };
       };
