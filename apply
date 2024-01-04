@@ -1,0 +1,1 @@
+NIX_SSHOPTS='-A -o ControlPath=~/.ssh/control/%C -o ControlMaster=no' nixos-rebuild switch --fast --verbose --flake .#$1 --target-host $2 --build-host $2 --use-remote-sudo
