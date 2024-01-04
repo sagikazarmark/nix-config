@@ -12,6 +12,7 @@
     ../common/boot/efi.nix
     ../common/i18n.nix
     ../common/services/ssh.nix
+    ../common/shell.nix
 
     # Users
     ../../users/mark/system

@@ -11,6 +11,7 @@
     ./security.nix
     ./audio.nix
     ./fonts.nix
+    ./shell.nix
 
     # ./logitech.nix
   ];
@@ -25,14 +26,4 @@
     pciutils
     usbutils
   ];
-
-  # Required for the user to show up in GNOME
-  # https://www.reddit.com/r/NixOS/comments/ocimef/users_not_showing_up_in_gnome/
-  environment.shells = [ pkgs.zsh ];
-
-  # Required for home-manager ZSH module
-  # https://github.com/nix-community/home-manager/issues/2991
-  programs.zsh = {
-    enable = true;
-  };
 }
