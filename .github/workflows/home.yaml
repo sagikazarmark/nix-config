@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        home: ['mark@mark-desktop', 'mark@mark-g15', 'mark@mark-x1carbon9']
+        home: ["mark@mark-desktop", "mark@mark-g15", "mark@mark-x1carbon9"]
 
     steps:
       - name: Checkout code
@@ -54,10 +54,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - home: 'marksk@MARKSK-M-J1W8'
+          - home: "marksk@MARKSK-M-J1W8"
             os: macos-12
-          - home: 'marksk@MARKSK-M-1WLF'
-            os: macos-13
+
+          # https://github.com/orgs/community/discussions/69211#discussioncomment-7941899
+          - home: "mark@Mark-M2MBP"
+            os: flyci-macos-large-latest-m1
 
     steps:
       - name: Checkout code
@@ -78,6 +80,14 @@ jobs:
       # Needed because cachix is also installed by Home Manager
       - name: "Set priority flag for Cachix 🚩"
         run: nix-env --set-flag priority 0 cachix
+
+      # https://github.com/actions/runner-images/issues/2840#issuecomment-790492173
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
 
       - name: "Build home configuration 🏠"
         run: nix build .#homeConfigurations.${{ matrix.home }}.activationPackage
