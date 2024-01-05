@@ -13,6 +13,8 @@
     ../common/services/ssh.nix
     ../common/shell.nix
 
+    ./services/status.nix
+
     # Users
     ../../users/mark/system
   ];
