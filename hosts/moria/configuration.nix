@@ -13,6 +13,7 @@
     ../common/services/ssh.nix
     ../common/shell.nix
 
+    ./services/n8n.nix
     ./services/status.nix
 
     # Users
@@ -21,6 +22,10 @@
 
   networking.hostName = "moria";
   networking.domain = "skm.casa";
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "n8n"
+  ];
 
   security.pam.enableSSHAgentAuth = true;
   security.pam.services.sudo.sshAgentAuth = true;
