@@ -32,7 +32,7 @@ in
   wayland.windowManager.sway = {
     enable = true;
 
-    systemdIntegration = true;
+    systemd.enable = true;
     wrapperFeatures.gtk = true;
 
     config = rec {

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     cantarell-fonts
     dejavu_fonts
     source-code-pro # Default monospace font in 3.32
@@ -12,11 +12,17 @@
 
   services.power-profiles-daemon.enable = true;
 
-  xdg.portal.enable = true;
-  xdg.portal.wlr.enable = true;
-  xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-gtk
-  ];
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+
+    # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1050913
+    # config.sway.default = mkDefault [ "wlr" "gtk" ];
+  };
+
 
   # Harmonize Qt5 application style and also make them use the portal for file chooser dialog.
   qt = {

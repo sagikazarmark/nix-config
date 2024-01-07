@@ -9,12 +9,11 @@
     #     };
     #   })
 
-    (firefox-wayland.override
-      {
-        cfg = {
-          enableTridactylNative = true;
-        };
-      })
+    (firefox-wayland.override {
+      nativeMessagingHosts = [
+        pkgs.tridactyl-native
+      ];
+    })
 
     # _1password-gui
 
