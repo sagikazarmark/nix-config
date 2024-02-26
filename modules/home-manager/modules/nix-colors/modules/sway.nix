@@ -20,125 +20,125 @@ in
     # https://github.com/rkubosz/base16-sway
     wayland.windowManager.sway.config.colors = {
       focused = {
-        border = "${colorscheme.colors.base05}";
-        background = "${colorscheme.colors.base0D}";
-        text = "${colorscheme.colors.base00}";
-        indicator = "${colorscheme.colors.base0D}";
-        childBorder = "${colorscheme.colors.base0D}";
+        border = "${colorscheme.palette.base05}";
+        background = "${colorscheme.palette.base0D}";
+        text = "${colorscheme.palette.base00}";
+        indicator = "${colorscheme.palette.base0D}";
+        childBorder = "${colorscheme.palette.base0D}";
       };
 
       focusedInactive = {
-        border = "${colorscheme.colors.base01}";
-        background = "${colorscheme.colors.base01}";
-        text = "${colorscheme.colors.base05}";
-        indicator = "${colorscheme.colors.base03}";
-        childBorder = "${colorscheme.colors.base01}";
+        border = "${colorscheme.palette.base01}";
+        background = "${colorscheme.palette.base01}";
+        text = "${colorscheme.palette.base05}";
+        indicator = "${colorscheme.palette.base03}";
+        childBorder = "${colorscheme.palette.base01}";
       };
 
       unfocused = {
-        border = "${colorscheme.colors.base01}";
-        background = "${colorscheme.colors.base00}";
-        text = "${colorscheme.colors.base05}";
-        indicator = "${colorscheme.colors.base01}";
-        childBorder = "${colorscheme.colors.base01}";
+        border = "${colorscheme.palette.base01}";
+        background = "${colorscheme.palette.base00}";
+        text = "${colorscheme.palette.base05}";
+        indicator = "${colorscheme.palette.base01}";
+        childBorder = "${colorscheme.palette.base01}";
       };
 
       urgent = {
-        border = "${colorscheme.colors.base08}";
-        background = "${colorscheme.colors.base08}";
-        text = "${colorscheme.colors.base00}";
-        indicator = "${colorscheme.colors.base08}";
-        childBorder = "${colorscheme.colors.base08}";
+        border = "${colorscheme.palette.base08}";
+        background = "${colorscheme.palette.base08}";
+        text = "${colorscheme.palette.base00}";
+        indicator = "${colorscheme.palette.base08}";
+        childBorder = "${colorscheme.palette.base08}";
       };
 
       placeholder = {
-        border = "${colorscheme.colors.base00}";
-        background = "${colorscheme.colors.base00}";
-        text = "${colorscheme.colors.base05}";
-        indicator = "${colorscheme.colors.base00}";
-        childBorder = "${colorscheme.colors.base00}";
+        border = "${colorscheme.palette.base00}";
+        background = "${colorscheme.palette.base00}";
+        text = "${colorscheme.palette.base05}";
+        indicator = "${colorscheme.palette.base00}";
+        childBorder = "${colorscheme.palette.base00}";
       };
 
-      background = "${colorscheme.colors.base07}";
+      background = "${colorscheme.palette.base07}";
     };
 
     # wayland.windowManager.sway.config.colors = {
     #   focused = {
-    #     border = "${colorscheme.colors.base0C}";
-    #     background = "${colorscheme.colors.base00}";
-    #     text = "${colorscheme.colors.base05}";
-    #     indicator = "${colorscheme.colors.base09}";
-    #     childBorder = "${colorscheme.colors.base0C}";
+    #     border = "${colorscheme.palette.base0C}";
+    #     background = "${colorscheme.palette.base00}";
+    #     text = "${colorscheme.palette.base05}";
+    #     indicator = "${colorscheme.palette.base09}";
+    #     childBorder = "${colorscheme.palette.base0C}";
     #   };
 
     #   focusedInactive = {
-    #     border = "${colorscheme.colors.base03}";
-    #     background = "${colorscheme.colors.base00}";
-    #     text = "${colorscheme.colors.base04}";
-    #     indicator = "${colorscheme.colors.base03}";
-    #     childBorder = "${colorscheme.colors.base03}";
+    #     border = "${colorscheme.palette.base03}";
+    #     background = "${colorscheme.palette.base00}";
+    #     text = "${colorscheme.palette.base04}";
+    #     indicator = "${colorscheme.palette.base03}";
+    #     childBorder = "${colorscheme.palette.base03}";
     #   };
 
     #   unfocused = {
-    #     border = "${colorscheme.colors.base02}";
-    #     background = "${colorscheme.colors.base00}";
-    #     text = "${colorscheme.colors.base03}";
-    #     indicator = "${colorscheme.colors.base02}";
-    #     childBorder = "${colorscheme.colors.base02}";
+    #     border = "${colorscheme.palette.base02}";
+    #     background = "${colorscheme.palette.base00}";
+    #     text = "${colorscheme.palette.base03}";
+    #     indicator = "${colorscheme.palette.base02}";
+    #     childBorder = "${colorscheme.palette.base02}";
     #   };
 
     #   urgent = {
-    #     border = "${colorscheme.colors.base09}";
-    #     background = "${colorscheme.colors.base00}";
-    #     text = "${colorscheme.colors.base03}";
-    #     indicator = "${colorscheme.colors.base09}";
-    #     childBorder = "${colorscheme.colors.base09}";
+    #     border = "${colorscheme.palette.base09}";
+    #     background = "${colorscheme.palette.base00}";
+    #     text = "${colorscheme.palette.base03}";
+    #     indicator = "${colorscheme.palette.base09}";
+    #     childBorder = "${colorscheme.palette.base09}";
     #   };
     # };
 
     # https://aflab.fr/blog/my-custom-tilling-windows-manager-with-a-uniform-look/#sway
     # wayland.windowManager.sway.config.colors = {
     #   focused = {
-    #     border = "${colorscheme.colors.base00}";
-    #     background = "${colorscheme.colors.base02}";
-    #     text = "${colorscheme.colors.base05}";
-    #     indicator = "${colorscheme.colors.base0E}";
-    #     childBorder = "${colorscheme.colors.base00}";
+    #     border = "${colorscheme.palette.base00}";
+    #     background = "${colorscheme.palette.base02}";
+    #     text = "${colorscheme.palette.base05}";
+    #     indicator = "${colorscheme.palette.base0E}";
+    #     childBorder = "${colorscheme.palette.base00}";
     #   };
 
     #   focusedInactive = {
-    #     border = "${colorscheme.colors.base00}";
-    #     background = "${colorscheme.colors.base01}";
-    #     text = "${colorscheme.colors.base05}";
-    #     indicator = "${colorscheme.colors.base0E}";
-    #     childBorder = "${colorscheme.colors.base00}";
+    #     border = "${colorscheme.palette.base00}";
+    #     background = "${colorscheme.palette.base01}";
+    #     text = "${colorscheme.palette.base05}";
+    #     indicator = "${colorscheme.palette.base0E}";
+    #     childBorder = "${colorscheme.palette.base00}";
     #   };
 
     #   unfocused = {
-    #     border = "${colorscheme.colors.base00}";
-    #     background = "${colorscheme.colors.base01}";
-    #     text = "${colorscheme.colors.base05}";
-    #     indicator = "${colorscheme.colors.base0E}";
-    #     childBorder = "${colorscheme.colors.base00}";
+    #     border = "${colorscheme.palette.base00}";
+    #     background = "${colorscheme.palette.base01}";
+    #     text = "${colorscheme.palette.base05}";
+    #     indicator = "${colorscheme.palette.base0E}";
+    #     childBorder = "${colorscheme.palette.base00}";
     #   };
 
     #   urgent = {
-    #     border = "${colorscheme.colors.base00}";
-    #     background = "${colorscheme.colors.base0D}";
-    #     text = "${colorscheme.colors.base05}";
-    #     indicator = "${colorscheme.colors.base0E}";
-    #     childBorder = "${colorscheme.colors.base00}";
+    #     border = "${colorscheme.palette.base00}";
+    #     background = "${colorscheme.palette.base0D}";
+    #     text = "${colorscheme.palette.base05}";
+    #     indicator = "${colorscheme.palette.base0E}";
+    #     childBorder = "${colorscheme.palette.base00}";
     #   };
 
     #   placeholder = {
-    #     border = "${colorscheme.colors.base00}";
-    #     background = "${colorscheme.colors.base00}";
-    #     text = "${colorscheme.colors.base05}";
-    #     indicator = "${colorscheme.colors.base0E}";
-    #     childBorder = "${colorscheme.colors.base00}";
+    #     border = "${colorscheme.palette.base00}";
+    #     background = "${colorscheme.palette.base00}";
+    #     text = "${colorscheme.palette.base05}";
+    #     indicator = "${colorscheme.palette.base0E}";
+    #     childBorder = "${colorscheme.palette.base00}";
     #   };
 
-    #   background = "${colorscheme.colors.base00}";
+    #   background = "${colorscheme.palette.base00}";
     # };
   };
 }

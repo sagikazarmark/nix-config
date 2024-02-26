@@ -40,9 +40,9 @@
           */
 
           [ColorScheme]
-          active_colors=#ff${ scheme.colors.base0C }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base04 }, #ff${ scheme.colors.base0E }, #ff${ scheme.colors.base06 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base00 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base0E }, #ff${ scheme.colors.base09 }, #ff${ scheme.colors.base08 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base0E }, #8f${ scheme.colors.base0E }
-          disabled_colors=#ff${ scheme.colors.base0F }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base04 }, #ff${ scheme.colors.base0F }, #ff${ scheme.colors.base0F }, #ff${ scheme.colors.base0F }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base00 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base0E }, #ff${ scheme.colors.base09 }, #ff${ scheme.colors.base08 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base0F }, #8f${ scheme.colors.base0F }
-          inactive_colors=#ff${ scheme.colors.base0C }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base04 }, #ff${ scheme.colors.base0E }, #ff${ scheme.colors.base06 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base00 }, #ff${ scheme.colors.base03 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base0E }, #ff${ scheme.colors.base09 }, #ff${ scheme.colors.base08 }, #ff${ scheme.colors.base02 }, #ff${ scheme.colors.base05 }, #ff${ scheme.colors.base01 }, #ff${ scheme.colors.base0E }, #8f${ scheme.colors.base0E }
+          active_colors=#ff${ scheme.palette.base0C }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base05 }, #ff${ scheme.palette.base03 }, #ff${ scheme.palette.base04 }, #ff${ scheme.palette.base0E }, #ff${ scheme.palette.base06 }, #ff${ scheme.palette.base05 }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base00 }, #ff${ scheme.palette.base03 }, #ff${ scheme.palette.base02 }, #ff${ scheme.palette.base0E }, #ff${ scheme.palette.base09 }, #ff${ scheme.palette.base08 }, #ff${ scheme.palette.base02 }, #ff${ scheme.palette.base05 }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base0E }, #8f${ scheme.palette.base0E }
+          disabled_colors=#ff${ scheme.palette.base0F }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base05 }, #ff${ scheme.palette.base03 }, #ff${ scheme.palette.base04 }, #ff${ scheme.palette.base0F }, #ff${ scheme.palette.base0F }, #ff${ scheme.palette.base0F }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base00 }, #ff${ scheme.palette.base03 }, #ff${ scheme.palette.base02 }, #ff${ scheme.palette.base0E }, #ff${ scheme.palette.base09 }, #ff${ scheme.palette.base08 }, #ff${ scheme.palette.base02 }, #ff${ scheme.palette.base05 }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base0F }, #8f${ scheme.palette.base0F }
+          inactive_colors=#ff${ scheme.palette.base0C }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base05 }, #ff${ scheme.palette.base03 }, #ff${ scheme.palette.base04 }, #ff${ scheme.palette.base0E }, #ff${ scheme.palette.base06 }, #ff${ scheme.palette.base05 }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base00 }, #ff${ scheme.palette.base03 }, #ff${ scheme.palette.base02 }, #ff${ scheme.palette.base0E }, #ff${ scheme.palette.base09 }, #ff${ scheme.palette.base08 }, #ff${ scheme.palette.base02 }, #ff${ scheme.palette.base05 }, #ff${ scheme.palette.base01 }, #ff${ scheme.palette.base0E }, #8f${ scheme.palette.base0E }
         '';
       };
 
@@ -123,25 +123,25 @@
           shadowless_popup=false
 
           [GeneralColors]
-          alt.base.color=#${scheme.colors.base00}
-          base.color=#${scheme.colors.base00}
-          button.color=#${scheme.colors.base02}
-          button.text.color=#${scheme.colors.base06}
+          alt.base.color=#${scheme.palette.base00}
+          base.color=#${scheme.palette.base00}
+          button.color=#${scheme.palette.base02}
+          button.text.color=#${scheme.palette.base06}
           dark.color=#0d0d0d
           disabled.text.color=#818181
           highlight.color=#8ab4f83c
           highlight.text.color=white
           inactive.highlight.color=#8ab4f83c
-          light.color=#${scheme.colors.base02}
+          light.color=#${scheme.palette.base02}
           link.color=#8ab4f8
           link.visited.color=#ce93d8
           mid.color=#2e2e2e
           mid.light.color=#ffffff1e
-          progress.indicator.text.color=#${scheme.colors.base06}
-          text.color=#${scheme.colors.base06}
+          progress.indicator.text.color=#${scheme.palette.base06}
+          text.color=#${scheme.palette.base06}
           tooltip.text.color=white
-          window.color=#${scheme.colors.base00}
-          window.text.color=#${scheme.colors.base06}
+          window.color=#${scheme.palette.base00}
+          window.text.color=#${scheme.palette.base06}
 
           [Hacks]
           blur_translucent=false
@@ -179,9 +179,9 @@
           interior=true
           interior.element=button
           indicator.size=8
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
-          text.press.color=#${scheme.colors.base06}
+          text.press.color=#${scheme.palette.base06}
           text.toggle.color=#8ab4f8
           text.shadow=0
           text.margin=1
@@ -195,7 +195,7 @@
 
           [PanelButtonTool]
           inherits=PanelButtonCommand
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.bold=false
           indicator.element=arrow
           indicator.size=8
@@ -205,7 +205,7 @@
           frame.element=tbutton
           interior.element=tbutton
           indicator.element=tarrow
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           text.press.color=white
           text.toggle.color=white
@@ -220,13 +220,13 @@
           frame.bottom=1
           frame.left=1
           frame.right=1
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
 
           [DockTitle]
           inherits=PanelButtonCommand
           frame=false
           interior=false
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           text.bold=false
 
@@ -240,7 +240,7 @@
           frame.right=2
           indicator.element=spin
           indicator.size=8
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.margin.top=2
           text.margin.bottom=2
           text.margin.left=2
@@ -250,7 +250,7 @@
           inherits=PanelButtonCommand
           frame=false
           interior.element=radio
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           min_width=+0.3font
           min_height=+0.3font
@@ -259,7 +259,7 @@
           inherits=PanelButtonCommand
           frame=false
           interior.element=checkbox
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           min_width=+0.3font
           min_height=+0.3font
@@ -325,8 +325,8 @@
 
           [ToolboxTab]
           inherits=PanelButtonCommand
-          text.normal.color=#${scheme.colors.base06}
-          text.press.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
+          text.press.color=#${scheme.palette.base06}
           text.focus.color=white
 
           [Tab]
@@ -343,8 +343,8 @@
           frame.bottom=2
           frame.left=2
           frame.right=2
-          text.normal.color=#${scheme.colors.base06}
-          text.focus.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
+          text.focus.color=#${scheme.palette.base06}
           text.toggle.color=#8ab4f8
           frame.expansion=0
           text.bold=false
@@ -372,7 +372,7 @@
           frame.bottom=1
           frame.left=0
           frame.right=1
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           text.press.color=white
           text.toggle.color=white
@@ -388,7 +388,7 @@
           text.margin=0
           interior.element=menubar
           frame.element=menubar
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           frame.left=0
           frame.right=0
@@ -416,10 +416,10 @@
           frame.element=progress
           interior.element=progress
           text.margin=0
-          text.normal.color=#${scheme.colors.base06}
-          text.focus.color=#${scheme.colors.base06}
-          text.press.color=#${scheme.colors.base06}
-          text.toggle.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
+          text.focus.color=#${scheme.palette.base06}
+          text.press.color=#${scheme.palette.base06}
+          text.toggle.color=#${scheme.palette.base06}
           text.bold=false
           frame.expansion=8
 
@@ -442,7 +442,7 @@
           text.margin.bottom=2
           text.margin.left=4
           text.margin.right=4
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           text.press.color=white
           text.toggle.color=white
@@ -480,8 +480,8 @@
           frame.element=menuitem
           interior.element=menuitem
           indicator.element=menuitem
-          text.normal.color=#${scheme.colors.base06}
-          text.focus.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
+          text.focus.color=#${scheme.palette.base06}
           text.margin.top=2
           text.margin.bottom=2
           text.margin.left=4
@@ -497,7 +497,7 @@
           frame.element=menubar
           interior.element=menubar
           frame.bottom=0
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           frame.expansion=0
           text.bold=false
 
@@ -514,7 +514,7 @@
           text.margin.right=4
           text.margin.top=0
           text.margin.bottom=0
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           text.bold=false
           min_width=+0.3font
@@ -532,7 +532,7 @@
           indicator.size=16
           indicator.element=mdi
           text.normal.color=#787878
-          text.focus.color=#${scheme.colors.base06}
+          text.focus.color=#${scheme.palette.base06}
           text.bold=false
           text.italic=true
           frame.expansion=0
@@ -551,7 +551,7 @@
           text.margin.left=6
           text.margin.right=6
           text.focus.color=white
-          text.press.color=#${scheme.colors.base06}
+          text.press.color=#${scheme.palette.base06}
           text.toggle.color=white
           frame.expansion=0
 
@@ -563,7 +563,7 @@
           frame.right=3
           frame.element=menu
           interior.element=menu
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           frame.expansion=0
 
           [GroupBox]
@@ -571,7 +571,7 @@
           frame=false
           text.shadow=0
           text.margin=0
-          text.normal.color=#${scheme.colors.base06}
+          text.normal.color=#${scheme.palette.base06}
           text.focus.color=white
           text.bold=false
           frame.expansion=0
