@@ -19,9 +19,9 @@ in
   config = mkIf cfg.nix-colors.enable {
     programs.fzf.defaultOptions = [
       # https://github.com/fnune/base16-fzf
-      "--color=bg+:#${ colorscheme.colors.base01 },bg:#${ colorscheme.colors.base00 },spinner:#${ colorscheme.colors.base0C },hl:#${ colorscheme.colors.base0D }"
-      "--color=fg:#${ colorscheme.colors.base04 },header:#${ colorscheme.colors.base0D },info:#${ colorscheme.colors.base0A },pointer:#${ colorscheme.colors.base0C }"
-      "--color=marker:#${ colorscheme.colors.base0C },fg+:#${ colorscheme.colors.base06 },prompt:#${ colorscheme.colors.base0A },hl+:#${ colorscheme.colors.base0D }"
+      "--color=bg+:#${ colorscheme.palette.base01 },bg:#${ colorscheme.palette.base00 },spinner:#${ colorscheme.palette.base0C },hl:#${ colorscheme.palette.base0D }"
+      "--color=fg:#${ colorscheme.palette.base04 },header:#${ colorscheme.palette.base0D },info:#${ colorscheme.palette.base0A },pointer:#${ colorscheme.palette.base0C }"
+      "--color=marker:#${ colorscheme.palette.base0C },fg+:#${ colorscheme.palette.base06 },prompt:#${ colorscheme.palette.base0A },hl+:#${ colorscheme.palette.base0D }"
     ];
   };
 }

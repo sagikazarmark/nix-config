@@ -39,13 +39,13 @@ in
            */
 
           * {
-              red:                         #${ colorscheme.colors.base08 }FF;
-              blue:                        #${ colorscheme.colors.base0D }FF;
-              lightfg:                     #${ colorscheme.colors.base06 }FF;
-              lightbg:                     #${ colorscheme.colors.base01 }FF;
-              foreground:                  #${ colorscheme.colors.base05 }FF;
-              background:                  #${ colorscheme.colors.base00 }FF;
-              background-color:            #${ colorscheme.colors.base00 }00;
+              red:                         #${ colorscheme.palette.base08 }FF;
+              blue:                        #${ colorscheme.palette.base0D }FF;
+              lightfg:                     #${ colorscheme.palette.base06 }FF;
+              lightbg:                     #${ colorscheme.palette.base01 }FF;
+              foreground:                  #${ colorscheme.palette.base05 }FF;
+              background:                  #${ colorscheme.palette.base00 }FF;
+              background-color:            #${ colorscheme.palette.base00 }00;
               separatorcolor:              @foreground;
               border-color:                @foreground;
               selected-normal-foreground:  @lightbg;

@@ -19,37 +19,37 @@ in
   config = mkIf cfg.nix-colors.enable {
     # https://github.com/kdrag0n/base16-kitty
     programs.kitty.settings = {
-      foreground = "#${colorscheme.colors.base05}";
-      background = "#${colorscheme.colors.base00}";
-      selection_background = "#${colorscheme.colors.base05}";
-      selection_foreground = "#${colorscheme.colors.base00}";
-      url_color = "#${colorscheme.colors.base04}";
-      cursor = "#${colorscheme.colors.base05}";
-      active_border_color = "#${colorscheme.colors.base03}";
-      inactive_border_color = "#${colorscheme.colors.base01}";
-      active_tab_background = "#${colorscheme.colors.base00}";
-      active_tab_foreground = "#${colorscheme.colors.base05}";
-      inactive_tab_background = "#${colorscheme.colors.base01}";
-      inactive_tab_foreground = "#${colorscheme.colors.base04}";
-      tab_bar_background = "#${colorscheme.colors.base01}";
+      foreground = "#${colorscheme.palette.base05}";
+      background = "#${colorscheme.palette.base00}";
+      selection_background = "#${colorscheme.palette.base05}";
+      selection_foreground = "#${colorscheme.palette.base00}";
+      url_color = "#${colorscheme.palette.base04}";
+      cursor = "#${colorscheme.palette.base05}";
+      active_border_color = "#${colorscheme.palette.base03}";
+      inactive_border_color = "#${colorscheme.palette.base01}";
+      active_tab_background = "#${colorscheme.palette.base00}";
+      active_tab_foreground = "#${colorscheme.palette.base05}";
+      inactive_tab_background = "#${colorscheme.palette.base01}";
+      inactive_tab_foreground = "#${colorscheme.palette.base04}";
+      tab_bar_background = "#${colorscheme.palette.base01}";
 
-      color0 = "#${colorscheme.colors.base00}";
-      color1 = "#${colorscheme.colors.base08}";
-      color2 = "#${colorscheme.colors.base0B}";
-      color3 = "#${colorscheme.colors.base0A}";
-      color4 = "#${colorscheme.colors.base0D}";
-      color5 = "#${colorscheme.colors.base0E}";
-      color6 = "#${colorscheme.colors.base0C}";
-      color7 = "#${colorscheme.colors.base05}";
+      color0 = "#${colorscheme.palette.base00}";
+      color1 = "#${colorscheme.palette.base08}";
+      color2 = "#${colorscheme.palette.base0B}";
+      color3 = "#${colorscheme.palette.base0A}";
+      color4 = "#${colorscheme.palette.base0D}";
+      color5 = "#${colorscheme.palette.base0E}";
+      color6 = "#${colorscheme.palette.base0C}";
+      color7 = "#${colorscheme.palette.base05}";
 
-      color8 = "#${colorscheme.colors.base03}";
-      color9 = "#${colorscheme.colors.base09}";
-      color10 = "#${colorscheme.colors.base01}";
-      color11 = "#${colorscheme.colors.base02}";
-      color12 = "#${colorscheme.colors.base04}";
-      color13 = "#${colorscheme.colors.base06}";
-      color14 = "#${colorscheme.colors.base0F}";
-      color15 = "#${colorscheme.colors.base07}";
+      color8 = "#${colorscheme.palette.base03}";
+      color9 = "#${colorscheme.palette.base09}";
+      color10 = "#${colorscheme.palette.base01}";
+      color11 = "#${colorscheme.palette.base02}";
+      color12 = "#${colorscheme.palette.base04}";
+      color13 = "#${colorscheme.palette.base06}";
+      color14 = "#${colorscheme.palette.base0F}";
+      color15 = "#${colorscheme.palette.base07}";
     };
   };
 }

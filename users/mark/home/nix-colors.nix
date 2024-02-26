@@ -9,7 +9,7 @@ in
   programs.kitty.nix-colors = {
     enable = true;
     colorscheme = lib.recursiveUpdate colorschemes.tokyo-night-terminal-storm {
-      colors = {
+      palette = {
         base05 = "A9B1D6";
       };
     };
