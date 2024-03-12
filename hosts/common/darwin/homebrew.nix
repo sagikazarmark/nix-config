@@ -103,6 +103,7 @@ in
       "morgen"
       "sunsama"
       "anytype"
+      "linear"
 
       "camtasia"
 
