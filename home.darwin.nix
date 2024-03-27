@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     obsidian
 
+    vscode
     vscodium
 
     # _1password-gui
