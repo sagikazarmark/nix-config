@@ -111,8 +111,9 @@ in
     ];
 
     masApps = {
-      "DaVinci Resolve" = 571213070;
+      # "DaVinci Resolve" = 571213070;
       "Darkroom" = 953286746;
+      "Tailscale" = 1475387142;
     };
   };
 }
