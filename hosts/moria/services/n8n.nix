@@ -36,6 +36,16 @@
         '';
       };
 
+      locations."~ ^/rest/oauth2-credential/callback" = {
+        proxyPass = "http://127.0.0.1:${toString config.services.n8n.settings.port}";
+
+        extraConfig = ''
+          chunked_transfer_encoding off;
+          proxy_buffering off;
+          proxy_cache off;
+        '';
+      };
+
       locations."/" = {
         proxyPass = "http://127.0.0.1:${toString config.services.n8n.settings.port}";
         proxyWebsockets = true;
