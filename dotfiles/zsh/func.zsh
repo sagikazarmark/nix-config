@@ -102,3 +102,7 @@ gcloudconf() {
 regpg() {
     kill -9 `pidof scdaemon` && kill -9 `pidof gpg-agent`
 }
+
+dagsearch() {
+    open "https://daggerverse.dev/search?q=$1"
+}
