@@ -168,6 +168,7 @@
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
             ./users/mark/home/programs/neomutt.nix
+            ./users/mark/home/programs/wezterm
           ];
 
           extraSpecialArgs = { inherit inputs; };
@@ -232,6 +233,7 @@
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
             ./users/mark/home/programs/neomutt.nix
+            ./users/mark/home/programs/wezterm
 
             # {
             #   home.packages = with pkgs; [ sunsama morgen ];
@@ -275,6 +277,7 @@
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
             ./users/mark/home/programs/neomutt.nix
+            ./users/mark/home/programs/wezterm
           ];
 
           extraSpecialArgs = { inherit inputs; };
@@ -311,6 +314,7 @@
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
+            ./users/mark/home/programs/wezterm
 
             {
               programs.wakatime = {
