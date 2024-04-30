@@ -23,6 +23,7 @@
 
     flake-utils.url = "github:numtide/flake-utils";
     nix-colors.url = "github:misterio77/nix-colors";
+    catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     matrix-appservices.url = "gitlab:coffeetables/nix-matrix-appservices";
@@ -161,6 +162,7 @@
 
             ./home.nix
             ./users/mark/home/nix-colors.nix
+            ./users/mark/home/theme.nix
             ./users/mark/home/linux.nix
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
@@ -222,6 +224,7 @@
 
             ./home.nix
             ./users/mark/home/nix-colors.nix
+            ./users/mark/home/theme.nix
             ./users/mark/home/gtk.nix
             ./users/mark/home/linux.nix
             ./users/mark/home/sway.nix
@@ -266,6 +269,7 @@
 
             ./home.nix
             ./users/mark/home/nix-colors.nix
+            ./users/mark/home/theme.nix
             ./users/mark/home/linux.nix
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
@@ -303,6 +307,7 @@
             ./home.nix
             ./home.darwin.nix
             ./users/mark/home/nix-colors.nix
+            ./users/mark/home/theme.nix
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
