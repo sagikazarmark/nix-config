@@ -17,6 +17,9 @@ in
 
   programs.fzf.nix-colors.enable = true;
 
+  # this is required otherwise colorscheme is messed up
+  programs.fzf.nix-colors.colorscheme = colorschemes.tokyo-night-storm;
+
   # gtk.nix-colors.enable = true;
 
   wayland.windowManager.sway.nix-colors.enable = true;
