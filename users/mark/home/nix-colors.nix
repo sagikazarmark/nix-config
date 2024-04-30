@@ -2,13 +2,15 @@
 
 let
   colorschemes = inputs.nix-colors.colorSchemes;
+  colorscheme = colorschemes.catppuccin-macchiato;
 in
 {
-  colorscheme = colorschemes.tokyo-night-storm;
+  colorscheme = colorscheme;
+  colorScheme = colorscheme;
 
   programs.kitty.nix-colors = {
     enable = true;
-    colorscheme = lib.recursiveUpdate colorschemes.tokyo-night-terminal-storm {
+    colorscheme = lib.recursiveUpdate colorscheme {
       palette = {
         base05 = "A9B1D6";
       };
@@ -18,7 +20,7 @@ in
   programs.fzf.nix-colors.enable = true;
 
   # this is required otherwise colorscheme is messed up
-  programs.fzf.nix-colors.colorscheme = colorschemes.tokyo-night-storm;
+  programs.fzf.nix-colors.colorscheme = colorscheme;
 
   # gtk.nix-colors.enable = true;
 
