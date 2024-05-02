@@ -19,7 +19,7 @@
     userEmail = "mark.sagikazar@gmail.com";
 
     signing = {
-      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIForP2C1arwqCWU+GvAR6qFIpxiVImoqsPbVRfFz9ir0";
+      key = "F4C5C90E";
       signByDefault = true;
     };
 
@@ -39,12 +39,6 @@
       # url."git@github.com:".insteadOf = "https://github.com";
 
       init.defaultBranch = "main";
-
-      gpg = {
-        format = "ssh";
-      };
-
-      gpg."ssh".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
 
       diff = {
         tool = "kitty";
