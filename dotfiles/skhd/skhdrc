@@ -25,10 +25,11 @@ cmd + alt - return : /Users/mark/.nix-profile/bin/kitty --single-instance -d ~ &
 # cmd + alt - return : UNAME=Darwin /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
 # reload shkd
-fn - escape : skhd -r
+fn - escape : sudo launchctl kickstart -k "gui/${UID}/org.nixos.skhd"
+# fn - escape : skhd -r
 
 # reload yabai
-fn + shift - escape : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+fn + shift - escape : sudo launchctl kickstart -k "gui/${UID}/org.nixos.yabai"
 # fn + shift - escape : brew services restart yabai
 
 

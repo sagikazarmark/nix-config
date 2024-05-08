@@ -33,4 +33,15 @@
       recursive = true;
     };
   };
+
+  programs.jankyborders = {
+    enable = true;
+    options = {
+      style = "round";
+      width = "8.0";
+      hidpi = "on";
+      active_color = "0xffADE7A7";
+      inactive_color = "0xff1A192A";
+    };
+  };
 }

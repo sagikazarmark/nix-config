@@ -17,4 +17,6 @@
     #   src = ./bin/yabai-v5.0.1.tar.gz;
     # });
   };
+
+  services.jankyborders.enable = true;
 }

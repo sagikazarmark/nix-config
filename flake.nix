@@ -36,6 +36,7 @@
       systemOverlay = (
         final: prev: {
           yabai = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.yabai;
+          jankyborders = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.jankyborders;
         }
       );
 
@@ -130,7 +131,7 @@
           };
 
           modules = [
-            ./modules/nix-darwin/modules/env.nix
+            ./modules/nix-darwin
             ./hosts/Mark-M2MBP/configuration.nix
           ];
         };

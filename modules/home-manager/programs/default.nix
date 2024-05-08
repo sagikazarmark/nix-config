@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./asdf-vim.nix ./gron.nix ./wakatime.nix ];
+  imports = [ ./asdf-vim.nix ./gron.nix ./jankyborders.nix ./wakatime.nix ];
 }
