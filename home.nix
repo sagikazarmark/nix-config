@@ -27,7 +27,6 @@
     duf
     freshfetch
     fd
-    ripgrep
     du-dust
     sd
     hyperfine
@@ -73,6 +72,18 @@
 
   programs.bat = {
     enable = true;
+  };
+
+  programs.ripgrep = {
+    enable = true;
+
+    arguments = [
+      "--glob"
+      "'!.direnv/'"
+
+      "--glob"
+      "'!.devenv/'"
+    ];
   };
 
   programs.lsd = {

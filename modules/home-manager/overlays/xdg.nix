@@ -68,7 +68,6 @@ in
 
       REDISCLI_RCFILE = "${cfg.configHome}/redis/redisclirc";
       REDISCLI_HISTFILE = "${cfg.dataHome}/rediscli/history";
-      RIPGREP_CONFIG_PATH = "${cfg.configHome}/ripgrep/config";
       RUSTUP_HOME = "${cfg.dataHome}/rustup";
 
       WINEPREFIX = "${cfg.dataHome}/wineprefixes/default";
