@@ -1,4 +1,4 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
   programs.lazygit = {
@@ -41,17 +41,22 @@
       init.defaultBranch = "main";
 
       diff = {
-        tool = "kitty";
-        guitool = "kitty.gui";
+        colorMoved = "default";
       };
 
-      difftool = {
-        prompt = false;
-        trustExitCode = true;
+      merge = {
+        conflictstyle = "diff3";
       };
+    };
 
-      difftool."kitty".cmd = "kitty +kitten diff $LOCAL $REMOTE";
-      difftool."kitty.gui".cmd = "kitty +kitten diff $LOCAL $REMOTE";
+    delta = {
+      enable = true;
+      catppuccin.enable = true;
+
+      options = {
+        features = lib.mkForce "decorations catppuccin-${config.programs.git.delta.catppuccin.flavour}";
+        side-by-side = true;
+      };
     };
 
     includes = [
