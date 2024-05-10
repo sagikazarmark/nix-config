@@ -106,3 +106,7 @@ regpg() {
 dagsearch() {
     open "https://daggerverse.dev/search?q=$1"
 }
+
+dagup() {
+    cat dagger.json | jq -r '.dependencies[].source' | cut -d '@' -f 1 | xargs -L1 dagger install
+}
