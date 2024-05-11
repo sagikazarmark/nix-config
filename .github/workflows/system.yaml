@@ -39,7 +39,7 @@ jobs:
     name: Darwin
 
     # https://github.com/orgs/community/discussions/69211#discussioncomment-7941899
-    runs-on: flyci-macos-large-latest-m1
+    runs-on: macos-14
 
     strategy:
       fail-fast: false
