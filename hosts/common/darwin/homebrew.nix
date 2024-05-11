@@ -97,6 +97,7 @@ in
       "tableplus"
       "postman"
       "kube-forwarder"
+      "gitbutler"
 
       "logitech-options"
 
