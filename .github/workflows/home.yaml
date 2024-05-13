@@ -59,7 +59,7 @@ jobs:
 
           # https://github.com/orgs/community/discussions/69211#discussioncomment-7941899
           - home: "mark@Mark-M2MBP"
-            os: flyci-macos-large-latest-m1
+            os: macos-14
 
     steps:
       - name: Checkout code
