@@ -75,6 +75,7 @@ in
       "xld"
 
       "microsoft-office"
+      "notion-calendar"
       "grammarly"
       "grammarly-desktop"
 
