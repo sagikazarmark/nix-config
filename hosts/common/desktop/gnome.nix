@@ -15,7 +15,7 @@
     pkgs.gnome-photos
     pkgs.gnome.gnome-music
     pkgs.gnome.gnome-terminal
-    pkgs.gnome.gedit
+    pkgs.gedit
     pkgs.epiphany
     pkgs.evince
     pkgs.gnome.gnome-characters
