@@ -189,16 +189,16 @@
 
               (
                 final: prev: {
-                  libsForQt5 = prev.libsForQt5 // {
-                    qtstyleplugin-kvantum = prev.libsForQt5.qtstyleplugin-kvantum.overrideAttrs (
-                      o: rec {
-                        patches = [ ./pkgs/kvantum/kvantum.patch ];
-                        patchFlags = [ "-p2" ];
-                        cmakeFlags = [ "-DCMAKE_INSTALL_PREFIX=$(out)" ];
-                        makeFlags = [ "PREFIX=$(out)" ];
-                      }
-                    );
-                  };
+                  # libsForQt5 = prev.libsForQt5 // {
+                  #   qtstyleplugin-kvantum = prev.libsForQt5.qtstyleplugin-kvantum.overrideAttrs (
+                  #     o: rec {
+                  #       patches = [ ./pkgs/kvantum/kvantum.patch ];
+                  #       patchFlags = [ "-p2" ];
+                  #       cmakeFlags = [ "-DCMAKE_INSTALL_PREFIX=$(out)" ];
+                  #       makeFlags = [ "PREFIX=$(out)" ];
+                  #     }
+                  #   );
+                  # };
                   # sunsama = prev.appimageTools.wrapType2 rec {
                   #   name = "Sunsama";
                   #   version = "2.0.13";
