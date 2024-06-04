@@ -7,7 +7,7 @@
   ];
 
   # https://github.com/catppuccin/nix
-  catppuccin.flavour = "macchiato";
+  catppuccin.flavor = "macchiato";
 
   programs.bat.catppuccin.enable = true;
   programs.fzf.catppuccin.enable = true;

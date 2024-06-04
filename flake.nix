@@ -2,13 +2,13 @@
   description = "My Nix(OS) configurations";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-managerUnstable = {
@@ -189,16 +189,16 @@
 
               (
                 final: prev: {
-                  libsForQt5 = prev.libsForQt5 // {
-                    qtstyleplugin-kvantum = prev.libsForQt5.qtstyleplugin-kvantum.overrideAttrs (
-                      o: rec {
-                        patches = [ ./pkgs/kvantum/kvantum.patch ];
-                        patchFlags = [ "-p2" ];
-                        cmakeFlags = [ "-DCMAKE_INSTALL_PREFIX=$(out)" ];
-                        makeFlags = [ "PREFIX=$(out)" ];
-                      }
-                    );
-                  };
+                  # libsForQt5 = prev.libsForQt5 // {
+                  #   qtstyleplugin-kvantum = prev.libsForQt5.qtstyleplugin-kvantum.overrideAttrs (
+                  #     o: rec {
+                  #       patches = [ ./pkgs/kvantum/kvantum.patch ];
+                  #       patchFlags = [ "-p2" ];
+                  #       cmakeFlags = [ "-DCMAKE_INSTALL_PREFIX=$(out)" ];
+                  #       makeFlags = [ "PREFIX=$(out)" ];
+                  #     }
+                  #   );
+                  # };
                   # sunsama = prev.appimageTools.wrapType2 rec {
                   #   name = "Sunsama";
                   #   version = "2.0.13";
