@@ -110,3 +110,7 @@ dagsearch() {
 dagup() {
     cat dagger.json | jq -r '.dependencies[].source' | cut -d '@' -f 1 | xargs -L1 dagger install
 }
+
+daghere() {
+    alias dagger='nix run github:dagger/nix#dagger --'
+}
