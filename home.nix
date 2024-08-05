@@ -41,6 +41,8 @@
 
     youtube-dl
     asciinema
+    # Work with webp images
+    libwebp
 
     ranger
     nnn
