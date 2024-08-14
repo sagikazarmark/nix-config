@@ -42,6 +42,8 @@
       hidpi = "on";
       active_color = "0xffADE7A7";
       inactive_color = "0xff1A192A";
+
+      blacklist = "Loom";
     };
   };
 }

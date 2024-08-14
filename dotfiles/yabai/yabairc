@@ -76,6 +76,7 @@ yabai -m rule --add app="^GIMP-.*$" title="^Scale Image$" manage=off
 yabai -m rule --add app="^GIMP-.*$" title="^Set Image Canvas Size$" manage=off
 yabai -m rule --add app="^Sunsama$" title="^Sunsama Add Task$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Loom$" manage=off
 
 # Old entries
 # yabai -m rule --add app="^Code42$" title="^Code42$" manage=off
