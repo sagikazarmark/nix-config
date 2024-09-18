@@ -39,7 +39,10 @@
 
     zstd
 
-    youtube-dl
+    # Deprecated
+    # youtube-dl
+    yt-dlp
+
     asciinema
     # Work with webp images
     libwebp

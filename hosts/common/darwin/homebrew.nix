@@ -102,7 +102,7 @@ in
 
       "logitech-options"
 
-      "morgen"
+      # "morgen"
       "sunsama"
       "anytype"
       "linear-linear"

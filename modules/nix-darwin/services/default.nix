@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./jankyborders.nix
+    # ./jankyborders.nix
   ];
 }

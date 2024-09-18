@@ -18,5 +18,15 @@
     # });
   };
 
-  services.jankyborders.enable = true;
+  services.jankyborders = {
+    enable = true;
+
+    style = "round";
+    width = 8.0;
+    hidpi = true;
+    active_color = "0xffADE7A7";
+    inactive_color = "0xff1A192A";
+
+    blacklist = [ "Loom" ];
+  };
 }

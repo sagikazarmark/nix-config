@@ -131,6 +131,9 @@
           };
 
           modules = [
+            {
+              system.stateVersion = 5;
+            }
             ./modules/nix-darwin
             ./hosts/Mark-M2MBP/configuration.nix
           ];
