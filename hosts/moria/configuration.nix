@@ -27,8 +27,15 @@
     "n8n"
   ];
 
-  security.pam.enableSSHAgentAuth = true;
-  security.pam.services.sudo.sshAgentAuth = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "olm-3.2.16"
+  ];
+
+  security.pam = {
+    sshAgentAuth.enable = true;
+
+    services.sudo.sshAgentAuth = true;
+  };
 
   security.acme = {
     defaults = {
