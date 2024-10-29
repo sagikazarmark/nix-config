@@ -19,6 +19,10 @@
     };
   };
 
+  boot.initrd.systemd.enable = true;
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "breeze";
+
   networking.interfaces.wlp0s20f3.useDHCP = true;
 
   hardware.bluetooth.enable = true;
