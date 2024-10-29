@@ -12,6 +12,6 @@
   };
 
   # Configure keymap in X11
-  services.xserver.layout = "hu";
+  services.xserver.xkb.layout = "hu";
   # services.xserver.xkbOptions = "eurosign:e";
 }
