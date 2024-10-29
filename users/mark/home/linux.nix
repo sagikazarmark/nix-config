@@ -24,9 +24,9 @@
 
     tdesktop
     slack
-    jitsi-meet
-    jitsi-meet-prosody
-    jitsi-meet-electron
+    # jitsi-meet
+    # jitsi-meet-prosody
+    # jitsi-meet-electron
 
     python310Packages.pip
 
