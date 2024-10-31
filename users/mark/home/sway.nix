@@ -94,11 +94,11 @@ in
         };
       };
 
-      output = {
-        "*" = {
-          bg = "~/Pictures/Wallpaper/wallhaven-m9o9e9.jpg fill";
-        };
-      };
+      # output = {
+      #   "*" = {
+      #     bg = "~/Pictures/Wallpaper/wallhaven-m9o9e9.jpg fill";
+      #   };
+      # };
 
       startup = [
         # { command = "${config.programs.waybar.package}/bin/waybar"; }
@@ -135,11 +135,11 @@ in
   };
 
   # TODO: move to overlay in sway?
-  programs.zsh.loginExtra = lib.mkBefore ''
-    if [[ "$(tty)" == /dev/tty1 ]]; then
-      exec sway &> /dev/null
-    fi
-  '';
+  # programs.zsh.loginExtra = lib.mkBefore ''
+  #   if [[ "$(tty)" == /dev/tty1 ]]; then
+  #     exec sway &> /dev/null
+  #   fi
+  # '';
 
   programs.fish.loginShellInit = lib.mkBefore ''
     if test (tty) = /dev/tty1
@@ -193,136 +193,136 @@ in
     terminal = "${pkgs.kitty}/bin/kitty";
   };
 
-  programs.waybar = {
-    enable = true;
-
-    systemd = {
-      enable = true;
-      target = "sway-session.target";
-    };
-
-    settings = {
-      mainBar = {
-        height = 40;
-        modules-left = [ "sway/workspaces" "sway/mode" ];
-        modules-center = [ ];
-        modules-right = [
-          "pulseaudio"
-          "idle_inhibitor"
-          "network"
-          "temperature"
-          "memory"
-          "cpu"
-          "battery"
-          "clock"
-          "tray"
-        ];
-
-        # backlight = {
-        #   format = "{icon}";
-        #   format-alt = "{percent}% {icon}";
-        #   format-alt-click = "click-right";
-        #   format-icons = [ "○" "◐" "●" ];
-        #   on-scroll-down = "light -U 10";
-        #   on-scroll-up = "light -A 10";
-        # };
-        battery = {
-          format = "{capacity}% {icon}";
-          format-icons = [ "" "" "" "" "" ];
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-        };
-        clock = {
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = "{:%A, %d %b}";
-        };
-        cpu = {
-          format = "{usage}% ";
-        };
-        idle_inhibitor = {
-          format = "{icon}";
-          format-icons = {
-            activated = "";
-            deactivated = "";
-          };
-        };
-        memory = {
-          format = "{}% ";
-          format-alt = "{used:0.1f}G/{total:0.1f}G ";
-        };
-        network = {
-          format = "{ifname}";
-          format-alt = "⬇️ {bandwidthDownBits} / ⬆️ {bandwidthUpBits}";
-          format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ipaddr}/{cidr} ";
-          format-linked = "no ip ";
-          format-disconnected = "Disconnected ";
-          tooltip-format = "{ifname} via {gwaddr} ";
-          tooltip-format-wifi = "{essid} ({signalStrength}%) ";
-          tooltip-format-ethernet = "{ifname} ";
-          tooltip-format-disconnected = "Disconnected";
-
-          on-click-middle = "nm-connection-editor";
-        };
-        pulseaudio = {
-          format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
-          format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
-            phone = "";
-            portable = "";
-            car = "";
-            default = [ "" "" ];
-          };
-          scroll-step = 1;
-          on-click = "pavucontrol";
-        };
-        temperature = {
-          format = "{temperatureC}°C ";
-        };
-        tray = {
-          spacing = 10;
-        };
-        "sway/workspaces" = {
-          all-outputs = true;
-          format = "{icon}";
-          format-icons = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
-            "6" = "";
-            "7" = "";
-            "9" = "";
-            "10" = "";
-            focused = "";
-            urgent = "";
-            default = "";
-          };
-        };
-        # "custom/media#0" = mkIf audioSupport (media { number = 0; });
-        # "custom/media#1" = mkIf audioSupport (media { number = 1; });
-        # "custom/power" = {
-        #   format = "";
-        #   on-click = "nwgbar -o 0.2";
-        #   escape = true;
-        #   tooltip = false;
-        # };
-      };
-    };
-
-
-    style = builtins.readFile ../../../dotfiles/waybar/styles/desert.css;
-  };
+  # programs.waybar = {
+  #   enable = true;
+  #
+  #   systemd = {
+  #     enable = true;
+  #     target = "sway-session.target";
+  #   };
+  #
+  #   settings = {
+  #     mainBar = {
+  #       height = 40;
+  #       modules-left = [ "sway/workspaces" "sway/mode" ];
+  #       modules-center = [ ];
+  #       modules-right = [
+  #         "pulseaudio"
+  #         "idle_inhibitor"
+  #         "network"
+  #         "temperature"
+  #         "memory"
+  #         "cpu"
+  #         "battery"
+  #         "clock"
+  #         "tray"
+  #       ];
+  #
+  #       # backlight = {
+  #       #   format = "{icon}";
+  #       #   format-alt = "{percent}% {icon}";
+  #       #   format-alt-click = "click-right";
+  #       #   format-icons = [ "○" "◐" "●" ];
+  #       #   on-scroll-down = "light -U 10";
+  #       #   on-scroll-up = "light -A 10";
+  #       # };
+  #       battery = {
+  #         format = "{capacity}% {icon}";
+  #         format-icons = [ "" "" "" "" "" ];
+  #         states = {
+  #           warning = 30;
+  #           critical = 15;
+  #         };
+  #       };
+  #       clock = {
+  #         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+  #         format-alt = "{:%A, %d %b}";
+  #       };
+  #       cpu = {
+  #         format = "{usage}% ";
+  #       };
+  #       idle_inhibitor = {
+  #         format = "{icon}";
+  #         format-icons = {
+  #           activated = "";
+  #           deactivated = "";
+  #         };
+  #       };
+  #       memory = {
+  #         format = "{}% ";
+  #         format-alt = "{used:0.1f}G/{total:0.1f}G ";
+  #       };
+  #       network = {
+  #         format = "{ifname}";
+  #         format-alt = "⬇️ {bandwidthDownBits} / ⬆️ {bandwidthUpBits}";
+  #         format-wifi = "{essid} ({signalStrength}%) ";
+  #         format-ethernet = "{ipaddr}/{cidr} ";
+  #         format-linked = "no ip ";
+  #         format-disconnected = "Disconnected ";
+  #         tooltip-format = "{ifname} via {gwaddr} ";
+  #         tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+  #         tooltip-format-ethernet = "{ifname} ";
+  #         tooltip-format-disconnected = "Disconnected";
+  #
+  #         on-click-middle = "nm-connection-editor";
+  #       };
+  #       pulseaudio = {
+  #         format = "{volume}% {icon} {format_source}";
+  #         format-bluetooth = "{volume}% {icon} {format_source}";
+  #         format-bluetooth-muted = " {icon} {format_source}";
+  #         format-muted = " {format_source}";
+  #         format-source = "{volume}% ";
+  #         format-source-muted = "";
+  #         format-icons = {
+  #           headphone = "";
+  #           hands-free = "";
+  #           headset = "";
+  #           phone = "";
+  #           portable = "";
+  #           car = "";
+  #           default = [ "" "" ];
+  #         };
+  #         scroll-step = 1;
+  #         on-click = "pavucontrol";
+  #       };
+  #       temperature = {
+  #         format = "{temperatureC}°C ";
+  #       };
+  #       tray = {
+  #         spacing = 10;
+  #       };
+  #       "sway/workspaces" = {
+  #         all-outputs = true;
+  #         format = "{icon}";
+  #         format-icons = {
+  #           "1" = "";
+  #           "2" = "";
+  #           "3" = "";
+  #           "4" = "";
+  #           "5" = "";
+  #           "6" = "";
+  #           "7" = "";
+  #           "9" = "";
+  #           "10" = "";
+  #           focused = "";
+  #           urgent = "";
+  #           default = "";
+  #         };
+  #       };
+  #       # "custom/media#0" = mkIf audioSupport (media { number = 0; });
+  #       # "custom/media#1" = mkIf audioSupport (media { number = 1; });
+  #       # "custom/power" = {
+  #       #   format = "";
+  #       #   on-click = "nwgbar -o 0.2";
+  #       #   escape = true;
+  #       #   tooltip = false;
+  #       # };
+  #     };
+  #   };
+  #
+  #
+  #   style = builtins.readFile ../../../dotfiles/waybar/styles/desert.css;
+  # };
 
   services.dunst = {
     enable = true;

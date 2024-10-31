@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -11,6 +11,32 @@
 
     ../common/services/ssh.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+
+    # systemd.setPath.enable = true;
+  };
+
+  programs.hyprlock.enable = true;
+  # services.hypridle.enable = true;
+
+  environment.systemPackages = with pkgs; [
+
+    wofi
+    clinfo
+    davinci-resolve-studio
+  ];
+
+  environment.sessionVariables = {
+    #If your cursor becomes invisible
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    #Hint electron apps to use wayland
+    #NIXOS_OZONE_WL = "1";
+  };
 
   # https://github.com/NixOS/nixpkgs/issues/166410
   # boot.kernelPackages = pkgs.linuxPackages_latest;

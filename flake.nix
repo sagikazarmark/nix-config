@@ -37,6 +37,7 @@
         final: prev: {
           yabai = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.yabai;
           jankyborders = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.jankyborders;
+          # davinci-resolve-studio = (import inputs.nixpkgsUnstable { system = prev.system; config.allowUnfree = true; }).davinci-resolve-studio;
         }
       );
 
@@ -70,13 +71,20 @@
           ];
         };
 
-        mark-g15 = lib.nixosSystem {
+        mark-g15 = inputs.nixpkgsUnstable.lib.nixosSystem rec {
           system = "x86_64-linux";
 
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            pkgs-unstable = import inputs.nixpkgsUnstable {
+              config.allowUnfree = true;
+              localSystem = { inherit system; };
+            };
+          };
 
           modules = [
             {
+              nixpkgs.config.allowUnfree = true;
               nixpkgs.overlays = [ systemOverlay nur.overlay ];
             }
             ./modules/nixos
@@ -178,8 +186,8 @@
           extraSpecialArgs = { inherit inputs; };
         };
 
-        "mark@mark-g15" = home-manager.lib.homeManagerConfiguration rec {
-          pkgs = import nixpkgs {
+        "mark@mark-g15" = home-managerUnstable.lib.homeManagerConfiguration rec {
+          pkgs = import inputs.nixpkgsUnstable {
             system = "x86_64-linux";
 
             config.allowUnfree = true;
@@ -189,29 +197,6 @@
 
             overlays = [
               linuxHomeOverlay
-
-              (
-                final: prev: {
-                  # libsForQt5 = prev.libsForQt5 // {
-                  #   qtstyleplugin-kvantum = prev.libsForQt5.qtstyleplugin-kvantum.overrideAttrs (
-                  #     o: rec {
-                  #       patches = [ ./pkgs/kvantum/kvantum.patch ];
-                  #       patchFlags = [ "-p2" ];
-                  #       cmakeFlags = [ "-DCMAKE_INSTALL_PREFIX=$(out)" ];
-                  #       makeFlags = [ "PREFIX=$(out)" ];
-                  #     }
-                  #   );
-                  # };
-                  # sunsama = prev.appimageTools.wrapType2 rec {
-                  #   name = "Sunsama";
-                  #   version = "2.0.13";
-                  #   src = prev.fetchurl {
-                  #     url = "https://desktop.sunsama.com/versions/${version}/linux/appImage/x64";
-                  #     sha256 = "sha256-MxXahIl1IbjZbeAlAoPcvpoll/Tsp4d4JRA4/lzFYjU=";
-                  #   };
-                  # };
-                }
-              )
             ];
           };
 
@@ -232,6 +217,7 @@
             ./users/mark/home/theme.nix
             ./users/mark/home/gtk.nix
             ./users/mark/home/linux.nix
+            ./users/mark/home/linux/hypr.nix
             ./users/mark/home/sway.nix
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix

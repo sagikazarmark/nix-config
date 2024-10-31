@@ -3,8 +3,8 @@
 {
   home.packages = [
     pkgs.libsForQt5.qt5.qtwayland
-    pkgs.qt5ct
-    # pkgs.libsForQt5.qt5.qt5ct
+    # pkgs.qt5ct
+    pkgs.libsForQt5.qt5ct
     # pkgs.libsForQt5.qtstyleplugin-kvantum
 
     pkgs.adwaita-qt

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, inputs, ... }:
+{ config, lib, pkgs, modulesPath, inputs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -6,7 +6,7 @@
 
     inputs.hardware.nixosModules.asus-zephyrus-ga503
 
-    ../../common/hardware/opengl.nix
+    # ../../common/hardware/opengl.nix
   ];
 
   boot.initrd.luks.devices = {
@@ -25,14 +25,40 @@
 
   # hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
+  services.asusd.enable = true;
+
   hardware.bluetooth.enable = true;
 
+  boot.kernelParams = [
+    # Required to make OpenCL (and Davinci Resolve) work
+    # https://github.com/NixOS/nixpkgs/issues/325378#issuecomment-2212732797
+    # https://github.com/NixOS/nixpkgs/issues/324252#issuecomment-2205385051
+    "nvidia.NVreg_EnableGpuFirmware=0"
+  ];
+
   hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+
     powerManagement = {
       enable = true;
       finegrained = true;
     };
 
+    # Required to make OpenCL (and Davinci Resolve) work
+    open = false;
+
+    # Required for Wayland
     modesetting.enable = true;
+    nvidiaSettings = true;
+  };
+
+  hardware.opengl = {
+    enable = true;
+    # driSupport = true;
+    # driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      ocl-icd
+      # rocmPackages.clr.icd
+    ];
   };
 }
