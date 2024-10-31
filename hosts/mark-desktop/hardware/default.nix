@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, inputs, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -9,7 +9,7 @@
     inputs.hardware.nixosModules.common-pc
     inputs.hardware.nixosModules.common-pc-ssd
 
-    ../../common/hardware/logitech.nix
+    ../../common/nixos/hardware/logitech.nix
   ];
 
   # Focusrite Scarlet Solo driver

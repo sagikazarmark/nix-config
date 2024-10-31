@@ -17,7 +17,7 @@
 
     _1password-gui
 
-    nautilus
+    # nautilus
 
     spotify
     gnomeExtensions.spotify-tray

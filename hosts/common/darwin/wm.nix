@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = [
     # Install skhd for manual invocations (the module does not install it in path)
     pkgs.skhd
   ];
+
   services.skhd.enable = true;
 
   services.yabai = {

@@ -143,7 +143,7 @@
               system.stateVersion = 5;
             }
             ./modules/nix-darwin
-            ./hosts/Mark-M2MBP/configuration.nix
+            ./hosts/Mark-M1MBP/configuration.nix
           ];
         };
         Mark-M2MBP = darwin.lib.darwinSystem rec {
@@ -196,7 +196,7 @@
             ./home.nix
             ./users/mark/home/nix-colors.nix
             ./users/mark/home/theme.nix
-            ./users/mark/home/linux.nix
+            ./users/mark/home/nixos/linux.nix
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
@@ -236,10 +236,10 @@
             ./home.nix
             ./users/mark/home/nix-colors.nix
             ./users/mark/home/theme.nix
-            ./users/mark/home/gtk.nix
-            ./users/mark/home/linux.nix
-            ./users/mark/home/linux/hypr.nix
-            ./users/mark/home/sway.nix
+            ./users/mark/home/nixos/gtk.nix
+            ./users/mark/home/nixos/linux.nix
+            ./users/mark/home/nixos/hypr.nix
+            ./users/mark/home/nixos/sway.nix
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
@@ -283,7 +283,7 @@
             ./home.nix
             ./users/mark/home/nix-colors.nix
             ./users/mark/home/theme.nix
-            ./users/mark/home/linux.nix
+            ./users/mark/home/nixos/linux.nix
             ./users/mark/home/dev.nix
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty

@@ -1,16 +1,18 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
-  # Enable sound.
-  # sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
+
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
+
     jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,

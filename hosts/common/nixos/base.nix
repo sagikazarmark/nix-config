@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
   imports = [
     ./defaults.nix
     ./i18n.nix
@@ -12,8 +11,6 @@
     ./audio.nix
     ./fonts.nix
     ./shell.nix
-
-    # ./logitech.nix
   ];
 
   boot.supportedFilesystems = [ "ntfs" ];
