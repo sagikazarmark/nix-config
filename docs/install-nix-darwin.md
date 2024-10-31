@@ -1,13 +1,23 @@
 # Installing Nix on Darwin
 
+This page explains installing my Nix setup on an empty Darwin (macOS) computer.
+If you've just unboxed or wiped your computer, you are ready to go.
+
+Most of the instructions should work for any Flake-based setups (using [nix-darwin](https://github.com/LnL7/nix-darwin) and [Home Manager](https://github.com/nix-community/home-manager)).
+
+> [!TIP]
+> Open this page in Safari to follow the instructions or enable SSH under _General_ -> _Sharing_ -> _Remote Login_ and run commands in a remote terminal.
+
 ## Preparation
+
+### Disable SIP
 
 If you intend to use [Yabai](https://github.com/koekeishiya/yabai),
 follow [these](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
-steps before proceeding with installation.
+steps before proceeding with installation to disable SIP (System Integrity Protection).
 
 > [!NOTE]
-> **Pro tip:** Open this page in Safari to follow the instructions or enable SSH under _General_ -> _Sharing_ -> _Remote Login_ and run commands in a remote terminal.
+> Technically, this step is optional, but **highly recommended** for an optimal experience.
 
 ### Install XCode command line tools
 
