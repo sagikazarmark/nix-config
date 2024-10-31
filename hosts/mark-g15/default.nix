@@ -1,15 +1,15 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
     ./hardware
 
-    ../common/base.nix
-    ../common/core.nix
-    ../common/boot/efi.nix
-    ../common/desktop/wayland.nix
+    ../common/nixos/base.nix
+    ../common/nixos/core.nix
+    ../common/nixos/boot/efi.nix
+    ../common/nixos/desktop/wayland.nix
 
-    ../common/services/ssh.nix
+    ../common/nixos/services/ssh.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

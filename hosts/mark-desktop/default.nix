@@ -1,15 +1,15 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./hardware
 
-    ../common/base.nix
-    ../common/boot/efi.nix
-    ../common/desktop/gnome.nix
-    ../common/desktop/wayland.nix
+    ../common/nixos/base.nix
+    ../common/nixos/boot/efi.nix
+    ../common/nixos/desktop/gnome.nix
+    ../common/nixos/desktop/wayland.nix
 
-    ../common/services/ssh.nix
+    ../common/nixos/services/ssh.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

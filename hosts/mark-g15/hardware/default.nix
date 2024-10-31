@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, inputs, pkgs-unstable, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -6,7 +6,7 @@
 
     inputs.hardware.nixosModules.asus-zephyrus-ga503
 
-    # ../../common/hardware/opengl.nix
+    # ../../common/nixos/hardware/opengl.nix
   ];
 
   boot.initrd.luks.devices = {
@@ -52,13 +52,12 @@
     nvidiaSettings = true;
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     # driSupport = true;
     # driSupport32Bit = true;
     extraPackages = with pkgs; [
       ocl-icd
-      # rocmPackages.clr.icd
     ];
   };
 }

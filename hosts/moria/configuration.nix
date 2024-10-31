@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, inputs, ... }:
 
 {
   imports = [
@@ -8,10 +8,10 @@
     inputs.sops-nix.nixosModules.sops
     inputs.matrix-appservices.nixosModule
 
-    ../common/boot/efi.nix
-    ../common/i18n.nix
-    ../common/services/ssh.nix
-    ../common/shell.nix
+    ../common/nixos/boot/efi.nix
+    ../common/nixos/i18n.nix
+    ../common/nixos/services/ssh.nix
+    ../common/nixos/shell.nix
 
     ./services/n8n.nix
     ./services/status.nix
