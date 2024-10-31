@@ -45,12 +45,6 @@ sudo scutil --set LocalHostName YOUR_HOSTNAME
 sudo scutil --set ComputerName YOUR_HOSTNAME
 ```
 
-### Install Homebrew
-
-Go to the [Homebrew website](https://brew.sh/) and follow the installation instructions.
-
-**Do not run the post-install steps.**
-
 ## Installing Nix
 
 Run the following command to install Nix:
