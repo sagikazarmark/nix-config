@@ -44,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        host: ["Mark-M2MBP"]
+        host: ["Mark-M1MBP", "Mark-M2MBP"]
 
     steps:
       - name: Checkout code
