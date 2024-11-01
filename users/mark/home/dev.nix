@@ -36,6 +36,7 @@
     nodePackages.yaml-language-server
     nodePackages.typescript-language-server
     lua-language-server
+    vscode-langservers-extracted
 
     # Lua
     stylua
@@ -56,7 +57,8 @@
     awscli2
     aws-vault
     # azure-cli
-    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    (google-cloud-sdk.withExtraComponents
+      [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     scaleway-cli
 
     # Go
@@ -158,18 +160,14 @@
       AWS_MIN_TTL = "8h";
     };
 
-    dirHashes = {
-      proj = "$HOME/Projects";
-    };
+    dirHashes = { proj = "$HOME/Projects"; };
 
-    oh-my-zsh = {
-      plugins = [ "kubectl" "helm" "gcloud" "asdf" ];
-    };
+    oh-my-zsh = { plugins = [ "kubectl" "helm" "gcloud" "asdf" ]; };
 
     shellAliases = {
       doco = "docker compose";
 
-      ghcurl = "curl -H \"Authorization: token $GITHUB_TOKEN\"";
+      ghcurl = ''curl -H "Authorization: token $GITHUB_TOKEN"'';
     };
   };
 }
