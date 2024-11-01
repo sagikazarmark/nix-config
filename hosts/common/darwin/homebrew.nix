@@ -76,7 +76,6 @@ in
 
       "microsoft-office"
       "notion-calendar"
-      "grammarly"
       "grammarly-desktop"
 
       "signal"
@@ -110,6 +109,8 @@ in
       "camtasia"
 
       "bartender"
+
+      "launchcontrol"
     ];
 
     masApps = {
