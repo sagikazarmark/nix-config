@@ -8,5 +8,6 @@
     ../common/darwin/settings.nix
     ../common/darwin/wm.nix
     ../common/darwin/homebrew.nix
+    ../common/darwin/keyboard
   ];
 }
