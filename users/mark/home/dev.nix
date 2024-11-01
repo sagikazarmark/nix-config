@@ -31,11 +31,12 @@
     terraform-ls
     nodePackages.yaml-language-server
     nodePackages.typescript-language-server
-    # sumneko-lua-language-server
+    lua-language-server
 
     # Lua
     stylua
     lua54Packages.luacheck
+    selene
 
     # Nix
     nixfmt
