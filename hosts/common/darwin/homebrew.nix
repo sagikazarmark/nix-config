@@ -85,6 +85,7 @@ in
       "webex"
       "whatsapp"
       "messenger"
+      "beeper"
 
       "darktable"
       "inkscape"
