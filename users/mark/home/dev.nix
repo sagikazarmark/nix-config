@@ -26,9 +26,13 @@
     git
     git-filter-repo
 
+    # Nix
+    nil
+
     # LSP
     # rnix-lsp
     terraform-ls
+    helm-ls
     nodePackages.yaml-language-server
     nodePackages.typescript-language-server
     lua-language-server
@@ -84,6 +88,10 @@
 
     # TOML
     taplo
+
+    # Markdown
+    marksman
+    markdownlint-cli2
 
     # Terraform
     terraform-ls
