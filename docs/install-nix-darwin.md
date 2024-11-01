@@ -45,6 +45,9 @@ sudo scutil --set LocalHostName YOUR_HOSTNAME
 sudo scutil --set ComputerName YOUR_HOSTNAME
 ```
 
+> [!NOTE]
+> The `HostName` on macOS often ends with something like `.localdoman`. You can most certainly keep that, but you will need to adjust the hostname in your configuration.
+
 ### Install Homebrew
 
 Go to the [Homebrew website](https://brew.sh/) and follow the installation instructions.
