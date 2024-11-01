@@ -8,6 +8,9 @@
     ../common/darwin/settings.nix
     ../common/darwin/wm.nix
     ../common/darwin/homebrew.nix
-    ../common/darwin/keyboard
+
+    # This messes with existing keyboard selection
+    # TODO: move this to an initial setup
+    # ../common/darwin/keyboard
   ];
 }
