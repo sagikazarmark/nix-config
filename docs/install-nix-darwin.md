@@ -40,7 +40,7 @@ hostname -s
 If it doesn't, change your computer name and host name using the following commands:
 
 ```shell
-sudo scutil --set HostName YOUR_HOSTNAME.localdomain
+sudo scutil --set HostName YOUR_HOSTNAME
 sudo scutil --set LocalHostName YOUR_HOSTNAME
 sudo scutil --set ComputerName YOUR_HOSTNAME
 ```
