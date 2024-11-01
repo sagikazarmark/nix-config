@@ -100,6 +100,7 @@ in
       "gitbutler"
 
       "logitech-options"
+      "logi-options+"
 
       # "morgen"
       "sunsama"
