@@ -47,6 +47,8 @@
     extraConfig = (builtins.readFile ../../../../dotfiles/hypr/hyprlock.conf);
   };
 
+  services.hyprpolkitagent.enable = true;
+
   services.swww = {
     enable = true;
   };
@@ -64,7 +66,10 @@
     settings = {
       mainBar = {
         height = 40;
-        modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/submap"
+        ];
         modules-center = [ ];
         modules-right = [
           "pulseaudio"
@@ -88,7 +93,13 @@
         # };
         battery = {
           format = "{capacity}% {icon}";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
           states = {
             warning = 30;
             critical = 15;
@@ -140,7 +151,10 @@
             phone = "";
             portable = "";
             car = "";
-            default = [ "" "" ];
+            default = [
+              ""
+              ""
+            ];
           };
           scroll-step = 1;
           on-click = "pavucontrol";
@@ -179,7 +193,6 @@
         # };
       };
     };
-
 
     style = builtins.readFile ../../../../dotfiles/waybar/styles/desert.css;
   };

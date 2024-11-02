@@ -44,7 +44,9 @@
     selene
 
     # Nix
-    nixfmt
+    # nixfmt
+    # nixfmt-classic
+    nixfmt-rfc-style
     nixpkgs-fmt
     nixpkgs-review
     nixos-generators
