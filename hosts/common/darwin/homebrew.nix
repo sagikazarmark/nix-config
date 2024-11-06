@@ -35,6 +35,7 @@ in {
     brews = [
       "mas"
       "trash"
+      "cocoapods"
 
       # Nix version is broken at the moment
       # "oci-cli"
@@ -113,8 +114,6 @@ in {
       "bartender"
 
       "launchcontrol"
-
-      "cocoapods"
     ];
 
     masApps = {
