@@ -108,3 +108,14 @@ Stretch your legs while Nix does it's thing. 🚶
 Reboot your computer to make sure every configuration is reloaded.
 
 Enjoy!
+
+## Optional steps
+
+### Hungarian PC keyboard layout
+
+Install the Hungarian PC keyboard layout:
+
+```shell
+sudo cp hosts/common/darwin/keyboard/Hungarian_Win_v2.keylayout "/Library/Keyboard Layouts/Hungarian_Win_v2.keylayout"
+sudo touch "/Library/Keyboard Layouts"
+```
