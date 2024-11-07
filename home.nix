@@ -1,10 +1,14 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -62,6 +66,15 @@
     ## Neovim
     # Lunarvim requires fd and ripgrep as well.
     neovim
+    # (wrapNeovim neovim-unwrapped {
+    #   extraMakeWrapperArgs = ''--prefix PATH : "${
+    #     lib.makeBinPath [
+    #       ripgrep
+    #       fd
+    #       fzf
+    #     ]
+    #   }"'';
+    # })
     nodePackages.neovim
     python39Packages.pynvim
     tree-sitter
@@ -71,9 +84,7 @@
     gimp
   ];
 
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
+  home.sessionPath = [ "$HOME/.local/bin" ];
 
   programs.bat = {
     enable = true;
@@ -83,11 +94,8 @@
     enable = true;
 
     arguments = [
-      "--glob"
-      "'!.direnv/'"
-
-      "--glob"
-      "'!.devenv/'"
+      "--glob=!.direnv/"
+      "--glob=!.devenv/"
     ];
   };
 
@@ -187,24 +195,29 @@
       # unalias duf
     '';
 
-    profileExtra = ''
-      # Preferred editor for local and remote sessions
-      # TODO: test that it works properly for SSH login shells.
-      if [ -n $SSH_CONNECTION ]; then
-          export EDITOR='nvim'
-          export GUIEDITOR='nvim'
-      else
-          export EDITOR='nvim'
-          export GUIEDITOR='code'
-      fi
-    '' + lib.optionalString (config.home.sessionPath != [ ]) ''
-      export PATH="$PATH''${PATH:+:}${lib.concatStringsSep ":" config.home.sessionPath}"
-    '';
+    profileExtra =
+      ''
+        # Preferred editor for local and remote sessions
+        # TODO: test that it works properly for SSH login shells.
+        if [ -n $SSH_CONNECTION ]; then
+            export EDITOR='nvim'
+            export GUIEDITOR='nvim'
+        else
+            export EDITOR='nvim'
+            export GUIEDITOR='code'
+        fi
+      ''
+      + lib.optionalString (config.home.sessionPath != [ ]) ''
+        export PATH="$PATH''${PATH:+:}${lib.concatStringsSep ":" config.home.sessionPath}"
+      '';
 
     oh-my-zsh = {
       enable = true;
 
-      plugins = [ "common-aliases" "sudo" ];
+      plugins = [
+        "common-aliases"
+        "sudo"
+      ];
     };
 
     shellAliases = {
@@ -248,10 +261,12 @@
   # xdg.userDirs.enable = true; # Not supported on darwin
   xdg.configFile = {
     # Not supported on darwin
-    /* # Required for user dirs
+    /*
+      # Required for user dirs
       "user-dirs.locale" = {
       text = "en_US";
-      }; */
+      };
+    */
 
     # "asdf/tool-versions" = {
     #   source = ./dotfiles/asdf/tool-versions;
