@@ -28,6 +28,7 @@
 
     yq-go
 
+    btop
     duf
     freshfetch
     fd
@@ -39,6 +40,8 @@
     bandwhich
     grex
     zoxide
+    tre
+    hishtory
     # delta
 
     zstd
@@ -63,6 +66,10 @@
 
     todoist
 
+    # git stuff
+    serie
+    diffnav
+
     ## Neovim
     # Lunarvim requires fd and ripgrep as well.
     neovim
@@ -82,6 +89,7 @@
     woff2
 
     gimp
+
   ];
 
   home.sessionPath = [ "$HOME/.local/bin" ];
