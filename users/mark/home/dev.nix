@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.packages = with pkgs; [
@@ -15,7 +15,7 @@
     yarn
     protobuf
     tunnelto
-    lnav
+    # lnav
     nmap
     vault-bin
 
@@ -138,7 +138,10 @@
     # wkhtmltopdf
     plantuml
     graphviz
-  ];
+  ]
+    # https://github.com/NixOS/nixpkgs/pull/357675#issuecomment-2504709640
+    ++ lib.optional (!pkgs.stdenv.isDarwin) pkgs.lnav
+  ;
 
   home.sessionPath = [
     # Go binaries

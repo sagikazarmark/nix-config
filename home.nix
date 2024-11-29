@@ -8,7 +8,9 @@
 
 {
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -82,8 +84,9 @@
     #     ]
     #   }"'';
     # })
-    nodePackages.neovim
-    python39Packages.pynvim
+    # nodePackages.neovim
+    neovim-node-client
+    python312Packages.pynvim
     tree-sitter
 
     woff2

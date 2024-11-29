@@ -34,8 +34,8 @@
     gnomeExtensions.appindicator
   ];
 
-  services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
-  services.dbus.packages = with pkgs; [ gnome2.GConf ];
+  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  services.dbus.packages = with pkgs; [ gnome2.GConf ]; # is this still necessary?
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;

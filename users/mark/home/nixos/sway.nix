@@ -13,7 +13,7 @@ in
   home.packages = with pkgs; [
     wl-clipboard
 
-    gnome.eog
+    eog
 
 
     # for dunst
