@@ -116,6 +116,8 @@ in
       "launchcontrol"
 
       "shottr"
+
+      "typefully"
     ];
 
     masApps = {
