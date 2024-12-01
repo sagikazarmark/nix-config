@@ -2,13 +2,13 @@
   description = "My Nix(OS) configurations";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.11";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-managerUnstable = {
@@ -38,6 +38,9 @@
           yabai = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.yabai;
           jankyborders = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.jankyborders;
           # davinci-resolve-studio = (import inputs.nixpkgsUnstable { system = prev.system; config.allowUnfree = true; }).davinci-resolve-studio;
+
+          # Until 25.05
+          nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
         }
       );
 
@@ -50,6 +53,10 @@
           whitesur-gtk-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-gtk-theme;
           whitesur-icon-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-icon-theme;
           lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix { };
+
+          # Until 25.05
+          neovim-node-client = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim-node-client;
+          nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
         }
       );
     in
@@ -353,7 +360,10 @@
                 montserrat
                 lato
 
-                (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
+                # (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
+                nerd-fonts.fira-code
+                nerd-fonts.iosevka
+                nerd-fonts.jetbrains-mono
 
                 font-awesome
                 font-awesome_5
@@ -429,7 +439,10 @@
                 montserrat
                 lato
 
-                (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
+                # (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
+                nerd-fonts.fira-code
+                nerd-fonts.iosevka
+                nerd-fonts.jetbrains-mono
 
                 font-awesome
                 font-awesome_5
