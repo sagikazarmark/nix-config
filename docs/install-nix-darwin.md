@@ -46,7 +46,7 @@ sudo scutil --set ComputerName YOUR_HOSTNAME
 ```
 
 > [!NOTE]
-> The `HostName` on macOS often ends with something like `.localdoman`. You can most certainly keep that, but you will need to adjust the hostname in your configuration.
+> The `HostName` on macOS often ends with something like `.localdomain`. You can most certainly keep that, but you will need to adjust the hostname in your configuration.
 
 ### Install Homebrew
 
@@ -97,7 +97,7 @@ After applying the configuration for the first time, you can run the following c
 darwin-rebuild switch --flake .
 ```
 
-Apply the Darwin configuration for your host:
+Apply the Home Manager configuration for your host:
 
 ```shell
 nix run --no-write-lock-file github:nix-community/home-manager/master -- switch --flake .
