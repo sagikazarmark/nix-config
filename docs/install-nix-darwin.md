@@ -89,6 +89,9 @@ nix --extra-experimental-features nix-command --extra-experimental-features flak
 
 Stretch your legs while Nix does it's magic. 🚶
 
+> [!NOTE]
+> Brew may ask you to enter your password a few times.
+
 **Open a new terminal to reload the shell.**
 
 After applying the configuration for the first time, you can run the following command instead:
