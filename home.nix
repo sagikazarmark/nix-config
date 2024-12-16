@@ -95,7 +95,10 @@
 
   ];
 
-  home.sessionPath = [ "$HOME/.local/bin" ];
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$ASDF_DIR/asdf.sh"
+  ];
 
   programs.bat = {
     enable = true;
