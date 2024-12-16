@@ -28,7 +28,7 @@ in
 
       ASDF_CONFIG_FILE = "${cfg.configHome}/asdf/asdfrc";
       ASDF_DATA_DIR = "${cfg.dataHome}/asdf";
-      ASDF_DEFAULT_TOOL_VERSIONS_FILENAME = "${cfg.configHome}/asdf/tool-versions";
+      # ASDF_DEFAULT_TOOL_VERSIONS_FILENAME = "${cfg.configHome}/asdf/tool-versions";
 
       AZURE_CONFIG_DIR = "${cfg.dataHome}/azure";
       AWS_SHARED_CREDENTIALS_FILE = "${cfg.configHome}/aws/credentials";
