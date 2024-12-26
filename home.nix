@@ -98,6 +98,7 @@
   home.sessionPath = [
     "$HOME/.local/bin"
     "$ASDF_DIR/asdf.sh"
+    "$HOME/.pub-cache/bin"
   ];
 
   programs.bat = {
