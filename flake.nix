@@ -27,6 +27,9 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     matrix-appservices.url = "gitlab:coffeetables/nix-matrix-appservices";
+
+    # Until https://github.com/nix-community/home-manager/pull/6235 is merged
+    ghostty.url = "github:clo4/ghostty-hm-module";
   };
 
   outputs = { self, nixpkgs, nixpkgsUnstable, nur, home-manager, home-managerUnstable, darwin, ... }@inputs:
@@ -316,6 +319,20 @@
           modules = [
             ./modules/home-manager
             inputs.nix-colors.homeManagerModule
+
+            inputs.ghostty.homeModules.default
+            {
+              programs.ghostty = {
+                enable = true;
+                shellIntegration.enableZshIntegration = true;
+
+                settings = {
+                  font-family = "Iosevka Nerd Font Mono";
+                  theme = "dark:catppuccin-macchiato,light:catppuccin-latte";
+                };
+
+              };
+            }
 
             {
               home = {

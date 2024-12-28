@@ -118,6 +118,8 @@ in
       "shottr"
 
       "typefully"
+
+      "ghostty"
     ];
 
     masApps = {

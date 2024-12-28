@@ -86,4 +86,8 @@ yabai -m rule --add app="^Loom$" manage=off
 # https://github.com/koekeishiya/yabai/issues/350
 yabai -m rule --add app="^Firefox.*$" title="^Opening .*$" manage=off
 
+# https://ghostty.org/docs/help/macos-tiling-wms#yabai
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+
 echo "yabai configuration loaded.."
