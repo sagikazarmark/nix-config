@@ -120,6 +120,8 @@ in
       "typefully"
 
       "ghostty"
+
+      "zen-browser"
     ];
 
     masApps = {
