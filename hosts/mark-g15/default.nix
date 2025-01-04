@@ -8,6 +8,7 @@
     ../common/nixos/core.nix
     ../common/nixos/boot/efi.nix
     ../common/nixos/desktop/wayland.nix
+    ../common/nixos/theme.nix
 
     ../common/nixos/services/ssh.nix
   ];
@@ -17,9 +18,14 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    # withUWSM = true;
 
     # systemd.setPath.enable = true;
   };
+
+  # programs.uwsm.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
 
   programs.hyprlock.enable = true;
   # services.hypridle.enable = true;

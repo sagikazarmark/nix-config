@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -35,9 +40,10 @@
     # https://github.com/NixOS/nixpkgs/issues/324252#issuecomment-2205385051
     "nvidia.NVreg_EnableGpuFirmware=0"
   ];
+  boot.plymouth.enable = true;
 
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    # package = config.boot.kernelPackages.nvidiaPackages.beta;
 
     powerManagement = {
       enable = true;
@@ -60,4 +66,19 @@
       ocl-icd
     ];
   };
+
+  # services.auto-cpufreq = {
+  #   enable = true;
+  #
+  #   # settings = {
+  #   #   battery = {
+  #   #     governor = "powersave";
+  #   #     turbo = "never";
+  #   #   };
+  #   #   charger = {
+  #   #     governor = "powersave";
+  #   #     turbo = "never";
+  #   #   };
+  #   # };
+  # };
 }

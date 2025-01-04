@@ -23,7 +23,16 @@
 
     flake-utils.url = "github:numtide/flake-utils";
     nix-colors.url = "github:misterio77/nix-colors";
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgsUnstable";
+        nixpkgs-stable.follows = "nixpkgs";
+        home-manager.follows = "home-managerUnstable";
+        home-manager-stable.follows = "home-manager";
+      };
+    };
+
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     matrix-appservices.url = "gitlab:coffeetables/nix-matrix-appservices";
@@ -32,7 +41,17 @@
     ghostty.url = "github:clo4/ghostty-hm-module";
   };
 
-  outputs = { self, nixpkgs, nixpkgsUnstable, nur, home-manager, home-managerUnstable, darwin, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgsUnstable,
+      nur,
+      home-manager,
+      home-managerUnstable,
+      darwin,
+      ...
+    }@inputs:
     let
       lib = nixpkgs.lib;
 
@@ -47,6 +66,17 @@
 
           hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
           hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
+          aquamarine = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.aquamarine;
+
+          # https://github.com/NixOS/nixpkgs/issues/332812
+          plymouth = prev.plymouth.overrideAttrs ({ src, ... }: {
+            version = "24.004.60-unstable-2024-12-15";
+
+            src = src.override {
+              rev = "a0e8b6cf50114482e8b5d17ac2e99ff0f274d4c5";
+              hash = "sha256-XRSWdmGnckIGdsX7ihXK0RV3X9OphtGZcKQ6IW9FUBo=";
+            };
+          });
         }
       );
 
@@ -66,6 +96,7 @@
 
           hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
           hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
+          aquamarine = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.aquamarine;
         }
       );
     in
@@ -78,7 +109,10 @@
 
           modules = [
             {
-              nixpkgs.overlays = [ systemOverlay nur.overlay ];
+              nixpkgs.overlays = [
+                systemOverlay
+                nur.overlay
+              ];
             }
             ./modules/nixos
 
@@ -101,8 +135,12 @@
           modules = [
             {
               nixpkgs.config.allowUnfree = true;
-              nixpkgs.overlays = [ systemOverlay nur.overlay ];
+              nixpkgs.overlays = [
+                systemOverlay
+                nur.overlay
+              ];
             }
+
             ./modules/nixos
 
             ./hosts/mark-g15
@@ -117,7 +155,10 @@
 
           modules = [
             {
-              nixpkgs.overlays = [ systemOverlay nur.overlay ];
+              nixpkgs.overlays = [
+                systemOverlay
+                nur.overlay
+              ];
             }
             ./modules/nixos
 
@@ -132,7 +173,10 @@
 
           modules = [
             {
-              nixpkgs.overlays = [ systemOverlay nur.overlay ];
+              nixpkgs.overlays = [
+                systemOverlay
+                nur.overlay
+              ];
             }
 
             ./hosts/moria/configuration.nix
@@ -482,7 +526,8 @@
           extraSpecialArgs = { inherit inputs; };
         };
       };
-    } // inputs.flake-utils.lib.eachDefaultSystem (
+    }
+    // inputs.flake-utils.lib.eachDefaultSystem (
       system:
       let
         pkgs = import nixpkgs { inherit system; };
