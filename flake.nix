@@ -44,6 +44,9 @@
 
           # Until 25.05
           nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
+
+          hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
+          hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
         }
       );
 
@@ -60,6 +63,9 @@
           # Until 25.05
           neovim-node-client = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim-node-client;
           nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
+
+          hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
+          hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
         }
       );
     in
