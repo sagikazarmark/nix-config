@@ -36,9 +36,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     matrix-appservices.url = "gitlab:coffeetables/nix-matrix-appservices";
-
-    # Until https://github.com/nix-community/home-manager/pull/6235 is merged
-    ghostty.url = "github:clo4/ghostty-hm-module";
   };
 
   outputs =
@@ -69,14 +66,17 @@
           aquamarine = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.aquamarine;
 
           # https://github.com/NixOS/nixpkgs/issues/332812
-          plymouth = prev.plymouth.overrideAttrs ({ src, ... }: {
-            version = "24.004.60-unstable-2024-12-15";
+          plymouth = prev.plymouth.overrideAttrs (
+            { src, ... }:
+            {
+              version = "24.004.60-unstable-2024-12-15";
 
-            src = src.override {
-              rev = "a0e8b6cf50114482e8b5d17ac2e99ff0f274d4c5";
-              hash = "sha256-XRSWdmGnckIGdsX7ihXK0RV3X9OphtGZcKQ6IW9FUBo=";
-            };
-          });
+              src = src.override {
+                rev = "a0e8b6cf50114482e8b5d17ac2e99ff0f274d4c5";
+                hash = "sha256-XRSWdmGnckIGdsX7ihXK0RV3X9OphtGZcKQ6IW9FUBo=";
+              };
+            }
+          );
         }
       );
 
@@ -370,19 +370,18 @@
             ./modules/home-manager
             inputs.nix-colors.homeManagerModule
 
-            inputs.ghostty.homeModules.default
-            {
-              programs.ghostty = {
-                enable = true;
-                shellIntegration.enableZshIntegration = true;
-
-                settings = {
-                  font-family = "Iosevka Nerd Font Mono";
-                  theme = "dark:catppuccin-macchiato,light:catppuccin-latte";
-                };
-
-              };
-            }
+            # {
+            #   programs.ghostty = {
+            #     enable = true;
+            #     # shellIntegration.enableZshIntegration = true;
+            #
+            #     settings = {
+            #       font-family = "Iosevka Nerd Font Mono";
+            #       theme = "dark:catppuccin-macchiato,light:catppuccin-latte";
+            #     };
+            #
+            #   };
+            # }
 
             {
               home = {
