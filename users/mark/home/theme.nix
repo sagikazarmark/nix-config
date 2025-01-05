@@ -1,18 +1,19 @@
 { inputs, ... }:
 
 {
-
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
   # https://github.com/catppuccin/nix
-  catppuccin.flavor = "macchiato";
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
 
   programs.bat.catppuccin.enable = true;
   programs.fzf.catppuccin.enable = true;
   programs.kitty.catppuccin.enable = true;
-
 
   wayland.windowManager.sway.catppuccin.enable = true;
   # programs.waybar.catppuccin.enable = true;
