@@ -50,6 +50,7 @@
     nixpkgs-fmt
     nixpkgs-review
     nixos-generators
+    nixd
 
     statix
     alejandra
