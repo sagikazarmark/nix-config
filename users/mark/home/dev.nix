@@ -51,6 +51,7 @@
     nixpkgs-review
     nixos-generators
     nixd
+    nil
 
     statix
     alejandra
