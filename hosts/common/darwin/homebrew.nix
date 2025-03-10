@@ -122,6 +122,8 @@ in
       "ghostty"
 
       "zen-browser"
+
+      "obsidian"
     ];
 
     masApps = {

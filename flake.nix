@@ -18,7 +18,7 @@
 
     darwin = {
       url = "github:lnl7/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgsUnstable";
     };
 
     flake-utils.url = "github:numtide/flake-utils";
@@ -188,7 +188,7 @@
         Mark-M1MBP = darwin.lib.darwinSystem rec {
           system = "aarch64-darwin";
 
-          pkgs = import nixpkgs {
+          pkgs = import nixpkgsUnstable {
             inherit system;
 
             config.allowUnfree = true;
@@ -209,7 +209,7 @@
         Mark-M2MBP = darwin.lib.darwinSystem rec {
           system = "aarch64-darwin";
 
-          pkgs = import nixpkgs {
+          pkgs = import nixpkgsUnstable {
             inherit system;
 
             config.allowUnfree = true;

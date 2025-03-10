@@ -1,8 +1,13 @@
-{ lib, inputs, ... }:
+{ pkgs, ... }:
 
 {
   programs.kitty = {
     enable = true;
+
+    package = pkgs.kitty.overrideAttrs (oldAttrs: {
+      # https://github.com/NixOS/nixpkgs/issues/388020
+      doInstallCheck = false;
+    });
 
     font = {
       name = "Iosevka Nerd Font Mono"; # Previously: JetBrainsMono Nerd Font

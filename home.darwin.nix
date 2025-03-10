@@ -2,7 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    obsidian
+    # Broken on darwin
+    # obsidian
 
     vscode
     vscodium
