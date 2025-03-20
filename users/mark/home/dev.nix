@@ -140,6 +140,8 @@
     # wkhtmltopdf
     plantuml
     graphviz
+
+    ollama
   ]
     # https://github.com/NixOS/nixpkgs/pull/357675#issuecomment-2504709640
     ++ lib.optional (!pkgs.stdenv.isDarwin) pkgs.lnav
