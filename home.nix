@@ -53,6 +53,8 @@
     yt-dlp
 
     asciinema
+    vhs
+
     # Work with webp images
     libwebp
 
