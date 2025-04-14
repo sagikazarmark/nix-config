@@ -15,6 +15,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  home.sessionVariables = {
+    SOPS_AGE_KEY_CMD = "op item get vxhe5lpngghsftv46zlhf76clm --fields label=password --reveal";
+  };
+
   home.packages = with pkgs; [
     # ZSH packages
     zsh-powerlevel10k
