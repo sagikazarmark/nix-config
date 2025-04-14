@@ -124,6 +124,8 @@ in
       "zen-browser"
 
       "obsidian"
+
+      "zed"
     ];
 
     masApps = {
