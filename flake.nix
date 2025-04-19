@@ -629,6 +629,8 @@
 
                 clarity-city
 
+                ibm-plex
+
                 # go_1_20
                 # impl
               ];
