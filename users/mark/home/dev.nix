@@ -1,151 +1,151 @@
 { pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs; [
-    asdf-vm
-    terraform
-    caddy
-    cue
-    hostctl
-    gh
-    k6
-    # mitmproxy # does not build on silicone because of pyopenssl
-    mkcert
-    nodejs
-    yarn
-    protobuf
-    tunnelto
-    # lnav
-    nmap
-    vault-bin
+  home.packages =
+    with pkgs;
+    [
+      asdf-vm
+      terraform
+      caddy
+      cue
+      hostctl
+      gh
+      k6
+      # mitmproxy # does not build on silicone because of pyopenssl
+      mkcert
+      nodejs
+      yarn
+      protobuf
+      tunnelto
+      # lnav
+      nmap
+      vault-bin
 
-    postgresql
-    jetbrains.datagrip
+      postgresql
+      jetbrains.datagrip
 
-    # Git
-    git
-    git-filter-repo
+      # Git
+      git
+      git-filter-repo
 
-    # Nix
-    nil
+      # Nix
+      nil
 
-    # LSP
-    # rnix-lsp
-    terraform-ls
-    helm-ls
-    nodePackages.yaml-language-server
-    nodePackages.typescript-language-server
-    lua-language-server
-    vscode-langservers-extracted
+      # LSP
+      # rnix-lsp
+      terraform-ls
+      helm-ls
+      nodePackages.yaml-language-server
+      nodePackages.typescript-language-server
+      lua-language-server
+      vscode-langservers-extracted
 
-    # Lua
-    stylua
-    lua54Packages.luacheck
-    selene
+      # Lua
+      stylua
+      lua54Packages.luacheck
+      selene
 
-    # Nix
-    # nixfmt
-    # nixfmt-classic
-    nixfmt-rfc-style
-    nixpkgs-fmt
-    nixpkgs-review
-    nixos-generators
-    nixd
-    nil
+      # Nix
+      # nixfmt
+      # nixfmt-classic
+      nixfmt-rfc-style
+      nixpkgs-fmt
+      nixpkgs-review
+      nixos-generators
+      nixd
+      nil
 
-    statix
-    alejandra
-    deadnix
+      statix
+      alejandra
+      deadnix
 
-    # Cloud
-    awscli2
-    aws-vault
-    # azure-cli
-    (google-cloud-sdk.withExtraComponents
-      [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
-    scaleway-cli
+      # Cloud
+      awscli2
+      aws-vault
+      # azure-cli
+      (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+      scaleway-cli
 
-    # Go
-    go
-    gopls
-    impl
-    gomodifytags
-    golangci-lint
-    revive
-    go-tools
-    gofumpt
+      # Go
+      go
+      gopls
+      impl
+      gomodifytags
+      golangci-lint
+      revive
+      go-tools
+      gofumpt
 
-    # Rust
-    cargo
-    rust-analyzer
-    lldb
+      # Rust
+      cargo
+      rust-analyzer
+      lldb
 
-    gnumake
-    gcc
+      gnumake
+      gcc
 
-    # For protobuf formatting
-    # clang
-    clang-tools
+      # For protobuf formatting
+      # clang
+      clang-tools
 
-    # Docker
-    hadolint
-    nodePackages.dockerfile-language-server-nodejs
-    docker-compose-language-service
+      # Docker
+      hadolint
+      nodePackages.dockerfile-language-server-nodejs
+      docker-compose-language-service
 
-    # TOML
-    taplo
+      # TOML
+      taplo
 
-    # Markdown
-    marksman
-    markdownlint-cli2
+      # Markdown
+      marksman
+      markdownlint-cli2
 
-    # Terraform
-    terraform-ls
+      # Terraform
+      terraform-ls
 
-    # Containers
-    lima
-    # podman
-    # podman-compose # Not supported on darwin
-    skopeo
+      # Containers
+      lima
+      # podman
+      # podman-compose # Not supported on darwin
+      skopeo
 
-    # Kubernetes
-    kubectl
-    krew
-    kubetail
-    kubectx
-    kubie
-    rakkess
-    minikube
-    kubernetes-helm
-    kind
-    # kail # Not maintained
-    # popeye # Not supported on darwin
-    # k3s # Not supported on darwin
-    k9s
-    skaffold
-    stern
-    fluxctl
-    kustomize
-    # kubeval # Not maintained
-    aws-iam-authenticator
-    telepresence2
-    argocd
-    helm-docs
+      # Kubernetes
+      kubectl
+      krew
+      kubetail
+      kubectx
+      kubie
+      rakkess
+      minikube
+      kubernetes-helm
+      kind
+      # kail # Not maintained
+      # popeye # Not supported on darwin
+      # k3s # Not supported on darwin
+      k9s
+      skaffold
+      stern
+      fluxctl
+      kustomize
+      # kubeval # Not maintained
+      aws-iam-authenticator
+      telepresence2
+      argocd
+      helm-docs
 
-    # nodePackages.snyk
+      # nodePackages.snyk
 
-    # vagrant # BROKEN on darwin aarch64
-    # openstackclient
+      # vagrant # BROKEN on darwin aarch64
+      # openstackclient
 
-    # wkhtmltopdf
-    plantuml
-    graphviz
+      # wkhtmltopdf
+      plantuml
+      graphviz
 
-    ollama
-  ]
+      ollama
+    ]
     # https://github.com/NixOS/nixpkgs/pull/357675#issuecomment-2504709640
-    ++ lib.optional (!pkgs.stdenv.isDarwin) pkgs.lnav
-  ;
+    ++ lib.optional (!pkgs.stdenv.isDarwin) pkgs.lnav;
 
   home.sessionPath = [
     # Go binaries
@@ -169,9 +169,18 @@
       AWS_MIN_TTL = "8h";
     };
 
-    dirHashes = { proj = "$HOME/Projects"; };
+    dirHashes = {
+      proj = "$HOME/Projects";
+    };
 
-    oh-my-zsh = { plugins = [ "kubectl" "helm" "gcloud" "asdf" ]; };
+    oh-my-zsh = {
+      plugins = [
+        "kubectl"
+        "helm"
+        "gcloud"
+        "asdf"
+      ];
+    };
 
     shellAliases = {
       doco = "docker compose";
