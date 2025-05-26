@@ -2,13 +2,13 @@
   description = "My Nix(OS) configurations";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-managerUnstable = {
@@ -27,9 +27,6 @@
       url = "github:catppuccin/nix";
       inputs = {
         nixpkgs.follows = "nixpkgsUnstable";
-        nixpkgs-stable.follows = "nixpkgs";
-        home-manager.follows = "home-managerUnstable";
-        home-manager-stable.follows = "home-manager";
       };
     };
 
@@ -59,7 +56,7 @@
           # davinci-resolve-studio = (import inputs.nixpkgsUnstable { system = prev.system; config.allowUnfree = true; }).davinci-resolve-studio;
 
           # Until 25.05
-          nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
+          # nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
 
           hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
           hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
@@ -91,8 +88,8 @@
           lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix { };
 
           # Until 25.05
-          neovim-node-client = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim-node-client;
-          nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
+          # neovim-node-client = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim-node-client;
+          # nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
 
           hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
           hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
