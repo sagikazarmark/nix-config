@@ -47,7 +47,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        host: ["Mark-M1MBP", "Mark-M2MBP", "Mark-M4MBP"]
+        host: ["Mark-M4MBP"]
 
     steps:
       - name: Checkout repository
