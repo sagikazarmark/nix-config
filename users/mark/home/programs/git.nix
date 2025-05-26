@@ -51,10 +51,9 @@
 
     delta = {
       enable = true;
-      catppuccin.enable = true;
 
       options = {
-        features = lib.mkForce "decorations catppuccin-${config.programs.git.delta.catppuccin.flavor}";
+        features = lib.mkForce "decorations catppuccin-${config.catppuccin.delta.flavor}";
         side-by-side = true;
       };
     };

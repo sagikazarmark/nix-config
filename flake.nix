@@ -108,7 +108,7 @@
             {
               nixpkgs.overlays = [
                 systemOverlay
-                nur.overlay
+                nur.overlays.default
               ];
             }
             ./modules/nixos
@@ -154,7 +154,7 @@
             {
               nixpkgs.overlays = [
                 systemOverlay
-                nur.overlay
+                nur.overlays.default
               ];
             }
             ./modules/nixos
@@ -172,7 +172,7 @@
             {
               nixpkgs.overlays = [
                 systemOverlay
-                nur.overlay
+                nur.overlays.default
               ];
             }
 
@@ -381,7 +381,7 @@
               "electron-25.9.0"
             ];
 
-            overlays = [ nur.overlay ];
+            overlays = [ nur.overlays.default ];
           };
 
           modules = [
@@ -473,7 +473,7 @@
               "electron-25.9.0"
             ];
 
-            overlays = [ nur.overlay ];
+            overlays = [ nur.overlayd.default ];
           };
 
           modules = [
@@ -552,7 +552,7 @@
               "electron-25.9.0"
             ];
 
-            overlays = [ nur.overlay ];
+            overlays = [ nur.overlays.default ];
           };
 
           modules = [

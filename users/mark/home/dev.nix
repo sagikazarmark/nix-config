@@ -125,7 +125,6 @@
       k9s
       skaffold
       stern
-      fluxctl
       kustomize
       # kubeval # Not maintained
       aws-iam-authenticator

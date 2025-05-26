@@ -19,6 +19,11 @@
     SOPS_AGE_KEY_CMD = "op item get vxhe5lpngghsftv46zlhf76clm --fields label=password --reveal";
   };
 
+  home.shell = {
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+  };
+
   home.packages = with pkgs; [
     # ZSH packages
     zsh-powerlevel10k
@@ -123,7 +128,6 @@
   programs.lsd = {
     enable = true;
 
-    enableAliases = true;
     settings = {
       icons.separator = "  ";
     };
@@ -163,17 +167,44 @@
 
       GREP_OPTIONS = "--exclude-dir=.devenv";
     };
+    initContent =
+      let
+        # p10k Home manager config: https://github.com/nix-community/home-manager/issues/1338#issuecomment-651807792
+        initBeforeCompletion = lib.mkOrder 550 ''
+          # p10k instant prompt
+          local P10K_INSTANT_PROMPT="${config.xdg.cacheHome}/p10k-instant-prompt-''${(%):-%n}.zsh"
+          [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
 
-    # p10k Home manager config: https://github.com/nix-community/home-manager/issues/1338#issuecomment-651807792
-    initExtraBeforeCompInit = ''
-      # p10k instant prompt
-      local P10K_INSTANT_PROMPT="${config.xdg.cacheHome}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
+          # Custom completions
+          # TODO: get rid of it?
+          fpath+=("$XDG_DATA_HOME/zsh/completions")
+        '';
 
-      # Custom completions
-      # TODO: get rid of it?
-      fpath+=("$XDG_DATA_HOME/zsh/completions")
-    '';
+        init = lib.mkOrder 1000 ''
+          # Powerlevel10k config
+          typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=
+          typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+          typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+          if [[ -f $XDG_DATA_HOME/zsh/zshrc ]]; then source $XDG_DATA_HOME/zsh/zshrc; fi
+
+
+          # Use vim keys in tab complete menu:
+          bindkey -M menuselect 'h' vi-backward-char
+          bindkey -M menuselect 'k' vi-up-line-or-history
+          bindkey -M menuselect 'l' vi-forward-char
+          bindkey -M menuselect 'j' vi-down-line-or-history
+
+
+          # Unset 'duf' alias set by ohmyzsh in OMZ::plugins/common-aliases/common-aliases.plugin.zsh
+          # Not necessary anymore
+          # unalias duf
+        '';
+      in
+      lib.mkMerge [
+        initBeforeCompletion
+        init
+      ];
 
     plugins = [
       {
@@ -194,27 +225,6 @@
         src = ./dotfiles/zsh;
       }
     ];
-
-    initExtra = ''
-      # Powerlevel10k config
-      typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=
-      typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-      typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
-      if [[ -f $XDG_DATA_HOME/zsh/zshrc ]]; then source $XDG_DATA_HOME/zsh/zshrc; fi
-
-
-      # Use vim keys in tab complete menu:
-      bindkey -M menuselect 'h' vi-backward-char
-      bindkey -M menuselect 'k' vi-up-line-or-history
-      bindkey -M menuselect 'l' vi-forward-char
-      bindkey -M menuselect 'j' vi-down-line-or-history
-
-
-      # Unset 'duf' alias set by ohmyzsh in OMZ::plugins/common-aliases/common-aliases.plugin.zsh
-      # Not necessary anymore
-      # unalias duf
-    '';
 
     profileExtra =
       ''
