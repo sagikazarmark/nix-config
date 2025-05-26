@@ -2,16 +2,14 @@
 
 {
   home.packages = [
-    pkgs.libsForQt5.qt5.qtwayland
-    # pkgs.qt5ct
-    pkgs.libsForQt5.qt5ct
-    # pkgs.libsForQt5.qtstyleplugin-kvantum
-
     pkgs.adwaita-qt
     pkgs.libadwaita
     pkgs.materia-theme
     pkgs.materia-kde-theme
-    pkgs.dolphin
+
+    pkgs.kdePackages.dolphin
+    pkgs.kdePackages.qtwayland
+    pkgs.kdePackages.qt6ct
   ];
 
   wayland.windowManager.sway = {

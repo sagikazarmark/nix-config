@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
   ];
 
   # https://github.com/catppuccin/nix
@@ -11,12 +11,13 @@
     flavor = "mocha";
   };
 
-  programs.bat.catppuccin.enable = true;
-  programs.fzf.catppuccin.enable = true;
-  programs.kitty.catppuccin.enable = true;
+  catppuccin.bat.enable = true;
+  catppuccin.fzf.enable = true;
+  catppuccin.kitty.enable = true;
+  catppuccin.delta.enable = true;
 
-  wayland.windowManager.sway.catppuccin.enable = true;
-  # programs.waybar.catppuccin.enable = true;
-  programs.rofi.catppuccin.enable = true;
-  services.dunst.catppuccin.enable = true;
+  catppuccin.sway.enable = true;
+  # catppuccin.waybar.enable = true;
+  catppuccin.rofi.enable = true;
+  catppuccin.dunst.enable = true;
 }

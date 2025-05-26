@@ -54,14 +54,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # https://github.com/orgs/community/discussions/69211#discussioncomment-7941899
-          - home: "mark@Mark-M1MBP"
-            os: macos-14
-
-          # https://github.com/orgs/community/discussions/69211#discussioncomment-7941899
-          - home: "mark@Mark-M2MBP"
-            os: macos-14
-
           - home: "mark@Mark-M4MBP"
             os: macos-14
 

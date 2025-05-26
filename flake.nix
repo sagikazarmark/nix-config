@@ -2,13 +2,13 @@
   description = "My Nix(OS) configurations";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-managerUnstable = {
@@ -27,9 +27,6 @@
       url = "github:catppuccin/nix";
       inputs = {
         nixpkgs.follows = "nixpkgsUnstable";
-        nixpkgs-stable.follows = "nixpkgs";
-        home-manager.follows = "home-managerUnstable";
-        home-manager-stable.follows = "home-manager";
       };
     };
 
@@ -59,7 +56,7 @@
           # davinci-resolve-studio = (import inputs.nixpkgsUnstable { system = prev.system; config.allowUnfree = true; }).davinci-resolve-studio;
 
           # Until 25.05
-          nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
+          # nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
 
           hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
           hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
@@ -91,8 +88,8 @@
           lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix { };
 
           # Until 25.05
-          neovim-node-client = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim-node-client;
-          nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
+          # neovim-node-client = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.neovim-node-client;
+          # nerd-fonts = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.nerd-fonts;
 
           hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
           hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
@@ -111,7 +108,7 @@
             {
               nixpkgs.overlays = [
                 systemOverlay
-                nur.overlay
+                nur.overlays.default
               ];
             }
             ./modules/nixos
@@ -157,7 +154,7 @@
             {
               nixpkgs.overlays = [
                 systemOverlay
-                nur.overlay
+                nur.overlays.default
               ];
             }
             ./modules/nixos
@@ -175,7 +172,7 @@
             {
               nixpkgs.overlays = [
                 systemOverlay
-                nur.overlay
+                nur.overlays.default
               ];
             }
 
@@ -185,48 +182,6 @@
       };
 
       darwinConfigurations = {
-        Mark-M1MBP = darwin.lib.darwinSystem rec {
-          system = "aarch64-darwin";
-
-          pkgs = import nixpkgsUnstable {
-            inherit system;
-
-            config.allowUnfree = true;
-
-            overlays = [
-              systemOverlay
-            ];
-          };
-
-          modules = [
-            {
-              system.stateVersion = 5;
-            }
-            ./modules/nix-darwin
-            ./hosts/Mark-M1MBP/configuration.nix
-          ];
-        };
-        Mark-M2MBP = darwin.lib.darwinSystem rec {
-          system = "aarch64-darwin";
-
-          pkgs = import nixpkgsUnstable {
-            inherit system;
-
-            config.allowUnfree = true;
-
-            overlays = [
-              systemOverlay
-            ];
-          };
-
-          modules = [
-            {
-              system.stateVersion = 5;
-            }
-            ./modules/nix-darwin
-            ./hosts/Mark-M2MBP/configuration.nix
-          ];
-        };
         Mark-M4MBP = darwin.lib.darwinSystem rec {
           system = "aarch64-darwin";
 
@@ -375,177 +330,6 @@
           extraSpecialArgs = { inherit inputs; };
         };
 
-        "mark@Mark-M1MBP" = home-managerUnstable.lib.homeManagerConfiguration rec {
-          pkgs = import nixpkgsUnstable {
-            system = "aarch64-darwin";
-
-            config.allowUnfree = true;
-            config.permittedInsecurePackages = [
-              "electron-25.9.0"
-            ];
-
-            overlays = [ nur.overlay ];
-          };
-
-          modules = [
-            ./modules/home-manager
-            inputs.nix-colors.homeManagerModule
-
-            # {
-            #   programs.ghostty = {
-            #     enable = true;
-            #     # shellIntegration.enableZshIntegration = true;
-            #
-            #     settings = {
-            #       font-family = "Iosevka Nerd Font Mono";
-            #       theme = "dark:catppuccin-macchiato,light:catppuccin-latte";
-            #     };
-            #
-            #   };
-            # }
-
-            {
-              home = {
-                username = "mark";
-                homeDirectory = "/Users/mark";
-                stateVersion = "20.09";
-              };
-            }
-
-            ./home.nix
-            ./home.darwin.nix
-            ./users/mark/home/nix-colors.nix
-            ./users/mark/home/theme.nix
-            ./users/mark/home/dev.nix
-            ./users/mark/home/programs/git.nix
-            ./users/mark/home/programs/kitty
-            ./users/mark/home/programs/wezterm
-
-            {
-              programs.wakatime = {
-                # Wakatime sucks
-                enable = false;
-                settings = {
-                  settings = {
-                    api_key_vault_cmd = "op read -n op://Personal/WakatimeAPIkey/credential";
-                  };
-                };
-              };
-            }
-
-            {
-              home.packages = with pkgs; [
-                fira-code
-                fira-code-symbols
-                iosevka
-                jetbrains-mono
-                merriweather
-                merriweather-sans
-                roboto
-                roboto-slab
-                roboto-mono
-                montserrat
-                lato
-
-                # (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
-                nerd-fonts.fira-code
-                nerd-fonts.iosevka
-                nerd-fonts.jetbrains-mono
-
-                font-awesome
-                font-awesome_5
-                # TODO: add SF pro
-
-                clarity-city
-
-                # go_1_20
-                # impl
-              ];
-            }
-          ];
-
-          extraSpecialArgs = { inherit inputs; };
-        };
-
-        "mark@Mark-M2MBP" = home-managerUnstable.lib.homeManagerConfiguration rec {
-          pkgs = import nixpkgsUnstable {
-            system = "aarch64-darwin";
-
-            config.allowUnfree = true;
-            config.permittedInsecurePackages = [
-              "electron-25.9.0"
-            ];
-
-            overlays = [ nur.overlay ];
-          };
-
-          modules = [
-            ./modules/home-manager
-            inputs.nix-colors.homeManagerModule
-
-            {
-              home = {
-                username = "mark";
-                homeDirectory = "/Users/mark";
-                stateVersion = "20.09";
-              };
-            }
-
-            ./home.nix
-            ./home.darwin.nix
-            ./users/mark/home/nix-colors.nix
-            ./users/mark/home/theme.nix
-            ./users/mark/home/dev.nix
-            ./users/mark/home/programs/git.nix
-            ./users/mark/home/programs/kitty
-            ./users/mark/home/programs/wezterm
-
-            {
-              programs.wakatime = {
-                # Wakatime sucks
-                enable = false;
-                settings = {
-                  settings = {
-                    api_key_vault_cmd = "op read -n op://Personal/WakatimeAPIkey/credential";
-                  };
-                };
-              };
-            }
-
-            {
-              home.packages = with pkgs; [
-                fira-code
-                fira-code-symbols
-                iosevka
-                jetbrains-mono
-                merriweather
-                merriweather-sans
-                roboto
-                roboto-slab
-                roboto-mono
-                montserrat
-                lato
-
-                # (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
-                nerd-fonts.fira-code
-                nerd-fonts.iosevka
-                nerd-fonts.jetbrains-mono
-
-                font-awesome
-                font-awesome_5
-                # TODO: add SF pro
-
-                clarity-city
-
-                # go_1_20
-                # impl
-              ];
-            }
-          ];
-
-          extraSpecialArgs = { inherit inputs; };
-        };
-
         "mark@Mark-M4MBP" = home-managerUnstable.lib.homeManagerConfiguration rec {
           pkgs = import nixpkgsUnstable {
             system = "aarch64-darwin";
@@ -555,7 +339,7 @@
               "electron-25.9.0"
             ];
 
-            overlays = [ nur.overlay ];
+            overlays = [ nur.overlays.default ];
           };
 
           modules = [
