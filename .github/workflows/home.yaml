@@ -34,7 +34,7 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
       - name: "Set up Cachix ❄️"
-        uses: cachix/cachix-action@v15
+        uses: cachix/cachix-action@v16
         with:
           name: skm-nixos
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
@@ -68,7 +68,7 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
       - name: "Set up Cachix ❄️"
-        uses: cachix/cachix-action@v15
+        uses: cachix/cachix-action@v16
         with:
           name: skm-nixos
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
