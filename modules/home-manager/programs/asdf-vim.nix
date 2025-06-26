@@ -1,11 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
 let
-
   cfg = config.programs.asdf-vm;
-
 in
 {
   options.programs.asdf-vm = {
@@ -19,7 +22,17 @@ in
     };
   };
 
-  config = mkIf cfg.enable (mkMerge [
-    { }
-  ]);
+  config = mkIf cfg.enable {
+    home.packages = [ cfg.package ];
+
+    home.sessionVariables = {
+      ASDF_CONFIG_FILE = "${config.xdg.configHome}/asdf/asdfrc";
+      ASDF_DATA_DIR = "${config.xdg.dataHome}/asdf";
+      # ASDF_DEFAULT_TOOL_VERSIONS_FILENAME = "${config.xdg.configHome}/asdf/tool-versions";
+    };
+
+    home.sessionPath = [
+      "$ASDF_DIR/asdf.sh"
+    ];
+  };
 }

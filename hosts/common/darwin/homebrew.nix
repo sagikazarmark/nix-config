@@ -95,7 +95,7 @@ in
       "figma"
 
       # Dev
-      "docker"
+      # "docker"
       "tableplus"
       "postman"
       "kube-forwarder"

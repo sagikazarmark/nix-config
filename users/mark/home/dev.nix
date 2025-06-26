@@ -4,7 +4,6 @@
   home.packages =
     with pkgs;
     [
-      asdf-vm
       terraform
       caddy
       cue
@@ -188,5 +187,10 @@
 
       ghcurl = ''curl -H "Authorization: token $GITHUB_TOKEN"'';
     };
+  };
+
+  programs.asdf-vm = {
+    enable = true;
+    package = pkgs.nur.repos.sagikazarmark.asdf-vm;
   };
 }
