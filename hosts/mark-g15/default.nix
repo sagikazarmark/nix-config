@@ -34,7 +34,7 @@
 
     wofi
     clinfo
-    davinci-resolve-studio
+    # davinci-resolve-studio
   ];
 
   environment.sessionVariables = {

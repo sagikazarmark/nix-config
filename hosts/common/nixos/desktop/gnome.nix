@@ -13,8 +13,8 @@
   environment.gnome.excludePackages = [
     pkgs.cheese
     pkgs.gnome-photos
-    pkgs.gnome.gnome-music
-    pkgs.gnome.gnome-terminal
+    pkgs.gnome-music
+    pkgs.gnome-terminal
     pkgs.gedit
     pkgs.epiphany
     pkgs.evince
