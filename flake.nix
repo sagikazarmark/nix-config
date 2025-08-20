@@ -214,6 +214,7 @@
 
             overlays = [
               linuxHomeOverlay
+              nur.overlays.default
             ];
           };
 
@@ -254,6 +255,7 @@
 
             overlays = [
               linuxHomeOverlay
+              nur.overlays.default
             ];
           };
 
@@ -301,6 +303,7 @@
 
             overlays = [
               linuxHomeOverlay
+              nur.overlays.default
             ];
           };
 
