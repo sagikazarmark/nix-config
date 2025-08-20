@@ -21,7 +21,7 @@
 
     iconTheme = {
       name = lib.mkForce "WhiteSur-dark";
-      package = pkgs.whitesur-icon-theme;
+      package = lib.mkForce pkgs.whitesur-icon-theme;
 
       # name = "Papirus-Dark";
       # package = pkgs.papirus-icon-theme;

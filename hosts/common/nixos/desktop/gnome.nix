@@ -11,7 +11,7 @@
   };
 
   environment.gnome.excludePackages = [
-    pkgs.gnome.cheese
+    pkgs.cheese
     pkgs.gnome-photos
     pkgs.gnome.gnome-music
     pkgs.gnome.gnome-terminal

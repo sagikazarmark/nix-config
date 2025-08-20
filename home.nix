@@ -82,13 +82,13 @@
     # git stuff
     # serie
     # https://github.com/NixOS/nixpkgs/pull/435013
-    (serie.overrideAttrs (oldAttrs: {
-      version = "0.4.6";
-      src = oldAttrs.src.overrideAttrs (oldAttrs: {
-        hash = "sha256-26B/bwXz60fcZrh6H1RPROiML44S1Pt1J3VrJh2gRrI=";
-      });
-      cargoHash = "sha256-Bdk553tECJiMxJlXj147Sv2LzH+nM+/Cm5BpBr78I4o=";
-    }))
+    # (serie.overrideAttrs (oldAttrs: {
+    #   version = "0.4.6";
+    #   src = oldAttrs.src.overrideAttrs (oldAttrs: {
+    #     hash = "sha256-26B/bwXz60fcZrh6H1RPROiML44S1Pt1J3VrJh2gRrI=";
+    #   });
+    #   cargoHash = "sha256-Bdk553tECJiMxJlXj147Sv2LzH+nM+/Cm5BpBr78I4o=";
+    # }))
     diffnav
 
     ## Neovim
