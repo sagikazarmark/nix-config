@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # home.packages = [
@@ -11,15 +11,17 @@
 
     theme = {
       name = "WhiteSur-dark";
-      package = (pkgs.whitesur-gtk-theme.override {
-        altVariants = [ "all" ];
-        themeVariants = [ "all" ];
-      });
+      package = (
+        pkgs.whitesur-gtk-theme.override {
+          altVariants = [ "all" ];
+          themeVariants = [ "all" ];
+        }
+      );
     };
 
     iconTheme = {
-      name = "WhiteSur-dark";
-      package = pkgs.whitesur-icon-theme;
+      name = lib.mkForce "WhiteSur-dark";
+      package = lib.mkForce pkgs.whitesur-icon-theme;
 
       # name = "Papirus-Dark";
       # package = pkgs.papirus-icon-theme;

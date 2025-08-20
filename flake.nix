@@ -214,6 +214,7 @@
 
             overlays = [
               linuxHomeOverlay
+              nur.overlays.default
             ];
           };
 
@@ -254,6 +255,7 @@
 
             overlays = [
               linuxHomeOverlay
+              nur.overlays.default
             ];
           };
 
@@ -301,6 +303,7 @@
 
             overlays = [
               linuxHomeOverlay
+              nur.overlays.default
             ];
           };
 
@@ -394,8 +397,8 @@
                 fira-code-symbols
                 iosevka
                 jetbrains-mono
-                merriweather
-                merriweather-sans
+                # merriweather
+                # merriweather-sans
                 roboto
                 roboto-slab
                 roboto-mono
@@ -411,7 +414,8 @@
                 font-awesome_5
                 # TODO: add SF pro
 
-                clarity-city
+                # woff2 directory name?
+                # clarity-city
 
                 ibm-plex
 

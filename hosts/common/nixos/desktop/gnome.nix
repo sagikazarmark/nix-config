@@ -11,21 +11,21 @@
   };
 
   environment.gnome.excludePackages = [
-    pkgs.gnome.cheese
+    pkgs.cheese
     pkgs.gnome-photos
-    pkgs.gnome.gnome-music
-    pkgs.gnome.gnome-terminal
+    pkgs.gnome-music
+    pkgs.gnome-terminal
     pkgs.gedit
     pkgs.epiphany
     pkgs.evince
-    pkgs.gnome.gnome-characters
-    pkgs.gnome.totem
-    pkgs.gnome.tali
-    pkgs.gnome.iagno
-    pkgs.gnome.hitori
-    pkgs.gnome.atomix
+    pkgs.gnome-characters
+    pkgs.totem
+    pkgs.tali
+    pkgs.iagno
+    pkgs.hitori
+    pkgs.atomix
     pkgs.gnome-tour
-    pkgs.gnome.geary
+    pkgs.geary
   ];
 
   # List packages installed in system profile. To search, run:
@@ -34,7 +34,7 @@
     gnomeExtensions.appindicator
   ];
 
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  services.udev.packages = with pkgs; [ gnome-settings-daemon ];
   services.dbus.packages = with pkgs; [ gnome2.GConf ]; # is this still necessary?
 
   # Enable touchpad support (enabled default in most desktopManager).
