@@ -18,14 +18,14 @@
     pkgs.gedit
     pkgs.epiphany
     pkgs.evince
-    pkgs.gnome.gnome-characters
-    pkgs.gnome.totem
-    pkgs.gnome.tali
-    pkgs.gnome.iagno
-    pkgs.gnome.hitori
-    pkgs.gnome.atomix
+    pkgs.gnome-characters
+    pkgs.totem
+    pkgs.tali
+    pkgs.iagno
+    pkgs.hitori
+    pkgs.atomix
     pkgs.gnome-tour
-    pkgs.gnome.geary
+    pkgs.geary
   ];
 
   # List packages installed in system profile. To search, run:
