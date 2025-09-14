@@ -8,6 +8,7 @@
     ../common/nixos/boot/efi.nix
     ../common/nixos/desktop/gnome.nix
     ../common/nixos/desktop/wayland.nix
+    ../common/nixos/virtualization.nix
 
     # Users
     ../../users/mark/system

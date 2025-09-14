@@ -126,6 +126,8 @@ in
       "obsidian"
 
       "zed"
+
+      "utm"
     ];
 
     masApps = {
