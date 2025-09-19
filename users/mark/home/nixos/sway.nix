@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   colorscheme = config.colorscheme;
@@ -14,7 +20,6 @@ in
     wl-clipboard
 
     eog
-
 
     # for dunst
     notify-desktop
@@ -59,7 +64,8 @@ in
           "${modifier}+Alt+r" = "reload";
 
           # Exit sway
-          "${modifier}+Alt+q" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+          "${modifier}+Alt+q" =
+            "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
 
           # Make the current focus fullscreen
           "${modifier}+m" = "fullscreen toggle";
@@ -183,7 +189,6 @@ in
   programs.rofi = {
     enable = true;
 
-    package = pkgs.rofi-wayland;
     plugins = [
       pkgs.rofi-power-menu
       pkgs.rofi-calc
@@ -327,7 +332,6 @@ in
   services.dunst = {
     enable = true;
   };
-
 
   xdg.mimeApps = {
     enable = true;
