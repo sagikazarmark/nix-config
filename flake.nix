@@ -83,7 +83,6 @@
           whitesur-gtk-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-gtk-theme;
           whitesur-icon-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-icon-theme;
           lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix { };
-          vivid = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.vivid;
 
           hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
           hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
@@ -200,7 +199,7 @@
       };
 
       homeConfigurations = {
-        "mark@mark-desktop" = home-manager.lib.homeManagerConfiguration rec {
+        "mark@mark-desktop" = home-managerUnstable.lib.homeManagerConfiguration rec {
           pkgs = import nixpkgs {
             system = "x86_64-linux";
 
@@ -286,7 +285,7 @@
           extraSpecialArgs = { inherit inputs; };
         };
 
-        "mark@mark-x1carbon9" = home-manager.lib.homeManagerConfiguration rec {
+        "mark@mark-x1carbon9" = home-managerUnstable.lib.homeManagerConfiguration rec {
           pkgs = import nixpkgs {
             system = "x86_64-linux";
 
