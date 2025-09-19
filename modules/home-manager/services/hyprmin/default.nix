@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -14,7 +19,9 @@ in
     home.packages = [ pkgs.socat ];
 
     systemd.user.services.hyprmin = {
-      Install = { WantedBy = [ "graphical-session.target" ]; };
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
 
       Unit = {
         ConditionEnvironment = "WAYLAND_DISPLAY";
@@ -24,7 +31,7 @@ in
       };
 
       Service = {
-        ExecStart = ./hook.sh;
+        ExecStart = "${./hook.sh}";
         Restart = "always";
         RestartSec = "10";
       };
