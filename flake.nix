@@ -83,6 +83,7 @@
           whitesur-gtk-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-gtk-theme;
           whitesur-icon-theme = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.whitesur-icon-theme;
           lr-tech-rofi-themes = prev.callPackage ./pkgs/lr-tech-rofi-themes/default.nix { };
+          vivid = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.vivid;
 
           hyprland = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprland;
           hyprlock = inputs.nixpkgsUnstable.legacyPackages.${prev.system}.hyprlock;
