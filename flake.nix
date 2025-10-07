@@ -33,6 +33,10 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     matrix-appservices.url = "gitlab:coffeetables/nix-matrix-appservices";
+
+    devenv-latest = {
+      url = "github:cachix/devenv/tags/latest";
+    };
   };
 
   outputs =
@@ -335,7 +339,10 @@
               "electron-25.9.0"
             ];
 
-            overlays = [ nur.overlays.default ];
+            overlays = [
+              nur.overlays.default
+              inputs.devenv-latest.overlays.default
+            ];
           };
 
           modules = [
