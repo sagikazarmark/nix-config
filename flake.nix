@@ -341,7 +341,7 @@
 
             overlays = [
               nur.overlays.default
-              inputs.devenv-latest.overlays.default
+              # inputs.devenv-latest.overlays.default
             ];
           };
 

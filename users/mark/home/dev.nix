@@ -59,7 +59,10 @@
       deadnix
 
       # Cloud
-      awscli2
+      (awscli2.overridePythonAttrs (o: {
+        # Tests take a long time to run for some reason
+        doCheck = false;
+      }))
       aws-vault
       # azure-cli
       (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
@@ -96,7 +99,7 @@
       taplo
 
       # Markdown
-      marksman
+      # marksman # fails to build
       markdownlint-cli2
 
       # Terraform
