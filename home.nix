@@ -110,8 +110,8 @@
 
     woff2
 
-    gimp
-
+    # Doesn't work on macOS
+    # gimp
   ];
 
   home.sessionPath = [
@@ -233,21 +233,20 @@
       }
     ];
 
-    profileExtra =
-      ''
-        # Preferred editor for local and remote sessions
-        # TODO: test that it works properly for SSH login shells.
-        if [ -n $SSH_CONNECTION ]; then
-            export EDITOR='nvim'
-            export GUIEDITOR='nvim'
-        else
-            export EDITOR='nvim'
-            export GUIEDITOR='code'
-        fi
-      ''
-      + lib.optionalString (config.home.sessionPath != [ ]) ''
-        export PATH="$PATH''${PATH:+:}${lib.concatStringsSep ":" config.home.sessionPath}"
-      '';
+    profileExtra = ''
+      # Preferred editor for local and remote sessions
+      # TODO: test that it works properly for SSH login shells.
+      if [ -n $SSH_CONNECTION ]; then
+          export EDITOR='nvim'
+          export GUIEDITOR='nvim'
+      else
+          export EDITOR='nvim'
+          export GUIEDITOR='code'
+      fi
+    ''
+    + lib.optionalString (config.home.sessionPath != [ ]) ''
+      export PATH="$PATH''${PATH:+:}${lib.concatStringsSep ":" config.home.sessionPath}"
+    '';
 
     oh-my-zsh = {
       enable = true;
