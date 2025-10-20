@@ -21,8 +21,9 @@
 # f1 :
 
 # open terminal
-cmd + alt - return : /Users/mark/.nix-profile/bin/kitty --single-instance -d ~ &> /dev/null
+# cmd + alt - return : /Users/mark/.nix-profile/bin/kitty --single-instance -d ~ &> /dev/null
 # cmd + alt - return : UNAME=Darwin /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
+cmd + alt - return -> : open -a Ghostty.app --args --quit-after-last-window-closed=true
 
 # reload shkd
 fn - escape : sudo launchctl kickstart -k "gui/${UID}/org.nixos.skhd"
