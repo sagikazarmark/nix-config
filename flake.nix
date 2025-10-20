@@ -378,6 +378,7 @@
             ./users/mark/home/programs/git.nix
             ./users/mark/home/programs/kitty
             ./users/mark/home/programs/wezterm
+            ./users/mark/home/programs/ghostty.nix
 
             {
               programs.wakatime = {
