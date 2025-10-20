@@ -214,16 +214,16 @@
       ];
 
     plugins = [
-      {
-        file = "powerlevel10k.zsh-theme";
-        name = "powerlevel10k";
-        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
-      }
-      {
-        file = "p10k.zsh";
-        name = "powerlevel10k-config";
-        src = ./dotfiles/zsh;
-      }
+      # {
+      #   file = "powerlevel10k.zsh-theme";
+      #   name = "powerlevel10k";
+      #   src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+      # }
+      # {
+      #   file = "p10k.zsh";
+      #   name = "powerlevel10k-config";
+      #   src = ./dotfiles/zsh;
+      # }
 
       # TODO: find a better way to load custom functions (eg. read file? custom ZSH source load?)
       {
@@ -281,6 +281,25 @@
       favico = "convert -resize x32 -gravity center -crop 32x32+0+0 -flatten -colors 256 -background transparent";
 
       icat = "kitty +kitten icat";
+    };
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      # add_newline = false;
+
+      # character = {
+      #   success_symbol = "[➜](bold green)";
+      #   error_symbol = "[➜](bold red)";
+      # };
+
+      # package.disabled = true;
+
+      # TODO: maybe use detect_env_vars
+      gcloud.disabled = true;
     };
   };
 
