@@ -37,6 +37,9 @@ in
       "trash"
       "cocoapods"
 
+      # Required for mkcert
+      "nss"
+
       # Nix version is broken at the moment
       # "oci-cli"
     ];
