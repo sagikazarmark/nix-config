@@ -178,6 +178,24 @@
         };
       };
 
+      forge = lib.nixosSystem {
+        system = "x86_64-linux";
+
+        specialArgs = { inherit inputs; };
+
+        modules = [
+          {
+            nixpkgs.overlays = [
+              systemOverlay
+              nur.overlays.default
+            ];
+          }
+
+          ./hosts/forge/configuration.nix
+        ];
+      };
+    };
+
       darwinConfigurations = {
         Mark-M4MBP = darwin.lib.darwinSystem rec {
           system = "aarch64-darwin";
