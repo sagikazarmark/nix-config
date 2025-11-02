@@ -1,5 +1,7 @@
 {
+  config,
   pkgs,
+  lib,
   ...
 }:
 
@@ -10,8 +12,13 @@
 
     ../common/nixos/boot/efi.nix
     ../common/nixos/i18n.nix
+    ../common/nixos/nix.nix
     ../common/nixos/services/ssh.nix
     ../common/nixos/shell.nix
+
+    ./services/comfyui.nix
+    ./services/containers.nix
+    ./services/ollama.nix
 
     # Users
     ../../users/mark/system
@@ -28,6 +35,34 @@
 
     services.sudo.sshAgentAuth = true;
   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.graphics.enable = true;
+
+  hardware.nvidia = {
+    # enabled = true;
+    open = false;
+
+    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+      version = "580.82.09";
+      sha256_64bit = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
+      sha256_aarch64 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
+      openSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
+      settingsSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
+      persistencedSha256 = lib.fakeSha256;
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    cudatoolkit
+    cudaPackages.cudnn
+
+    pciutils
+    git
+    devenv
+    distrobox
+  ];
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

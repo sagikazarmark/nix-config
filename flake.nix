@@ -37,6 +37,12 @@
     devenv-latest = {
       url = "github:cachix/devenv/tags/latest";
     };
+
+    stable-diffusion-webui-nix = {
+      # url = "github:Janrupf/stable-diffusion-webui-nix/main";
+      url = "github:sagikazarmark/stable-diffusion-webui-nix/comfyui-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -184,11 +190,19 @@
 
           modules = [
             {
+              nixpkgs.config = {
+                allowUnfree = true;
+                cudaSupport = true;
+              };
+
               nixpkgs.overlays = [
                 systemOverlay
                 nur.overlays.default
+                inputs.stable-diffusion-webui-nix.overlays.default
               ];
             }
+
+            inputs.stable-diffusion-webui-nix.nixosModules.default
 
             ./hosts/forge/configuration.nix
           ];
