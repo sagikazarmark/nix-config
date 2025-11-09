@@ -58,6 +58,7 @@
     }@inputs:
     let
       lib = nixpkgs.lib;
+      libUnstable = nixpkgsUnstable.lib;
 
       systemOverlay = (
         final: prev: {
@@ -183,7 +184,7 @@
           ];
         };
 
-        forge = lib.nixosSystem {
+        forge = libUnstable.nixosSystem {
           system = "x86_64-linux";
 
           specialArgs = { inherit inputs; };
