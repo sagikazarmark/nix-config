@@ -464,6 +464,9 @@
 
                 ibm-plex
 
+                inter
+                poppins
+
                 # go_1_20
                 # impl
               ];
