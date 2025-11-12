@@ -96,7 +96,6 @@
       ".node-version"
       ".ssh/"
       ".php-version"
-      ".python-version"
 
       "*.nupkg"
 
