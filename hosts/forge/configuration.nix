@@ -18,6 +18,7 @@
 
     ./services/comfyui.nix
     ./services/containers.nix
+    ./services/k3s.nix
     ./services/ollama.nix
 
     # Users
