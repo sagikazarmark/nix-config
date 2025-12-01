@@ -30,7 +30,7 @@ in
       upgrade = true;
     };
 
-    taps = [ ];
+    taps = [ "restatedev/tap" ];
 
     brews = [
       "mas"
@@ -42,6 +42,8 @@ in
 
       # Nix version is broken at the moment
       # "oci-cli"
+
+      "restate"
     ];
 
     casks = [
@@ -131,6 +133,7 @@ in
       "zed"
 
       "utm"
+
     ];
 
     masApps = {
