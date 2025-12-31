@@ -43,7 +43,7 @@
     duf
     freshfetch
     fd
-    du-dust
+    dust
     sd
     hyperfine
     # ytop

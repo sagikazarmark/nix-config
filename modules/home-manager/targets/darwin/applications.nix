@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -6,7 +11,7 @@ let
   appsEnv = pkgs.buildEnv {
     name = "home-manager-applications";
     paths = config.home.packages;
-    pathsToLink = "/Applications";
+    pathsToLink = [ "/Applications" ];
   };
   apps = "${appsEnv}/Applications";
 in
