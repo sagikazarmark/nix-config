@@ -37,12 +37,24 @@
     devenv-latest = {
       url = "github:cachix/devenv/tags/latest";
     };
+    claude-code.url = "github:sadjow/claude-code-nix";
 
     stable-diffusion-webui-nix = {
       # url = "github:Janrupf/stable-diffusion-webui-nix/main";
       url = "github:sagikazarmark/stable-diffusion-webui-nix/comfyui-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
+
+  nixConfig = {
+    extra-substituters = [
+      "https://claude-code.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk="
+    ];
+    # Optional: Enable flake features if needed
+    # experimental-features = [ "nix-command" "flakes" ];
   };
 
   outputs =
@@ -84,6 +96,11 @@
           );
         }
       );
+
+      homeOverlays = [
+        nur.overlays.default
+        inputs.claude-code.overlays.default
+      ];
 
       linuxHomeOverlay = (
         final: prev: {
@@ -371,8 +388,7 @@
               "electron-25.9.0"
             ];
 
-            overlays = [
-              nur.overlays.default
+            overlays = homeOverlays ++ [
               # inputs.devenv-latest.overlays.default
             ];
           };
