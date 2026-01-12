@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.ghostty = {
@@ -6,7 +6,7 @@
 
     # TODO: make this cross-compatible with Linux
     # TODO: use ghostty-bin to install ghostty
-    package = null;
+    package = pkgs.ghostty-bin;
 
     # installBatSyntax = true;
     enableBashIntegration = true;
