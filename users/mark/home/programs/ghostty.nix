@@ -22,8 +22,4 @@
   };
 
   catppuccin.ghostty.enable = true;
-
-  # This only works on macOS
-  home.file.".terminfo/67/ghostty".source = "${config.programs.ghostty.package}/Applications/Ghostty.app/Contents/Resources/terminfo/67/ghostty";
-  home.file.".terminfo/78/ghostty".source = "${config.programs.ghostty.package}/Applications/Ghostty.app/Contents/Resources/terminfo/78/xterm-ghostty";
 }
