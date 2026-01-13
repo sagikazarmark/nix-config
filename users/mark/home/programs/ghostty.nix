@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   programs.ghostty = {
@@ -22,4 +22,6 @@
   };
 
   catppuccin.ghostty.enable = true;
+
+  home.file.".terminfo/g/ghostty".source = "${config.programs.ghostty.package}/share/terminfo/g/ghostty";
 }
