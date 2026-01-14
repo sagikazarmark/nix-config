@@ -15,6 +15,9 @@
     settings = {
       theme = "Catppuccin Mocha";
 
+      # https://github.com/ghostty-org/ghostty/discussions/3483#discussioncomment-11716750
+      macos-option-as-alt = "left";
+
       keybind = [
         "global:super+alt+enter=new_window"
       ];

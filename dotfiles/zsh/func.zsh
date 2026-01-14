@@ -114,3 +114,37 @@ dagup() {
 daghere() {
     alias dagger='nix run github:dagger/nix#dagger --'
 }
+
+# claude-checkout() {
+#     type=$1
+#     number=$2
+
+#     case "${type}" in
+#       issue|pr)
+#         ;;
+#       *)
+#         echo "Error: unknown command '$1'" >&2
+#         return 1
+#         ;;
+#     esac
+
+#     if [[ -z $number ]]; then
+#         echo "Error: missing issue number" >&2
+#         return 1
+#     fi
+
+#     base=$(basename $PWD)
+#     worktree_base="../${base}-worktrees"
+#     branch="${type}-${number}"
+#     worktree="${worktree_base}/${branch}"
+
+#     mkdir -p $worktree_base
+
+#     if [[ ! -d $worktree ]]; then
+#         git worktree add -b $branch $worktree
+#     fi
+
+#     cd $worktree
+
+#     claude
+# }

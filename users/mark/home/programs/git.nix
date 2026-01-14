@@ -12,6 +12,22 @@
     };
   };
 
+  programs.gh-dash = {
+    enable = true;
+
+    settings = {
+      keybindings = {
+        issues = [
+          {
+            key = "W";
+            name = "Work on this issue";
+            command = "claude-checkout issue {{.IssueNumber}}";
+          }
+        ];
+      };
+    };
+  };
+
   programs.git = {
     enable = true;
 

@@ -427,6 +427,7 @@
             ./users/mark/home/programs/kitty
             ./users/mark/home/programs/wezterm
             ./users/mark/home/programs/ghostty.nix
+            ./users/mark/home/programs/zellij.nix
 
             {
               programs.wakatime = {

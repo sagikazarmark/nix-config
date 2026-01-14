@@ -20,4 +20,5 @@
   # catppuccin.waybar.enable = true;
   catppuccin.rofi.enable = true;
   catppuccin.dunst.enable = true;
+  catppuccin.gh-dash.enable = true;
 }
