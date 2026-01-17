@@ -44,6 +44,9 @@ in
       # "oci-cli"
 
       "restate"
+
+      # The default one is ooooold
+      "bash"
     ];
 
     casks = [
@@ -59,7 +62,7 @@ in
       "discord"
       "gpg-suite"
       "firefox"
-      "flux"
+      "flux-app"
       "insync"
       "karabiner-elements"
       "little-snitch"
@@ -69,7 +72,7 @@ in
       "notion"
       "obs"
       "obs-websocket"
-      "todoist"
+      "todoist-app"
       "transmit"
       "tuxera-ntfs"
       "vuescan"
@@ -126,7 +129,7 @@ in
 
       "ghostty"
 
-      "zen-browser"
+      "zen"
 
       "obsidian"
 

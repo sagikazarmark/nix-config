@@ -115,6 +115,10 @@ daghere() {
     alias dagger='nix run github:dagger/nix#dagger --'
 }
 
+work() {
+   workmux add --base main --name issue-$1 --agent claude issue-$1 --prompt "/implement $1" --background
+}
+
 # claude-checkout() {
 #     type=$1
 #     number=$2
