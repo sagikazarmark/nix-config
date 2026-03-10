@@ -1,12 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services.ollama = {
     enable = true;
 
-    host = "[::]";
+    package = pkgs.ollama-cuda;
 
-    acceleration = "cuda";
+    host = "[::]";
 
     environmentVariables = {
       OLLAMA_CONTEXT_LENGTH = "30000";

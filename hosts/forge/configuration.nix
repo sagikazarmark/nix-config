@@ -20,6 +20,7 @@
     ./services/containers.nix
     ./services/k3s.nix
     ./services/ollama.nix
+    ./services/tailscale.nix
 
     # Users
     ../../users/mark/system

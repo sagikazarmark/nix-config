@@ -201,6 +201,7 @@
           ];
         };
 
+        # upgrade to latest stable next time, not unstable
         forge = libUnstable.nixosSystem {
           system = "x86_64-linux";
 
