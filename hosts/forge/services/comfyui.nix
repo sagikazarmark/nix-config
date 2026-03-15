@@ -15,7 +15,6 @@
   ];
 
   virtualisation.oci-containers = {
-    backend = "podman";
     containers.comfyui = {
       image = "localhost/comfy:latest";
       autoStart = true;

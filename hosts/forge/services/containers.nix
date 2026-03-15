@@ -11,6 +11,10 @@
     defaultNetwork.settings.dns_enabled = true;
   };
 
+  virtualisation.oci-containers = {
+    backend = "podman";
+  };
+
   environment.systemPackages = with pkgs; [
     dive
     podman-tui
