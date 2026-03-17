@@ -36,6 +36,9 @@
 
     devenv-latest = {
       url = "github:cachix/devenv/tags/latest";
+      inputs = {
+        nixpkgs.follows = "nixpkgsUnstable";
+      };
     };
     claude-code.url = "github:sadjow/claude-code-nix";
 
@@ -390,7 +393,7 @@
             ];
 
             overlays = homeOverlays ++ [
-              # inputs.devenv-latest.overlays.default
+              inputs.devenv-latest.overlays.default
             ];
           };
 
