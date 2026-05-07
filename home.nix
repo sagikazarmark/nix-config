@@ -206,6 +206,10 @@
           # Unset 'duf' alias set by ohmyzsh in OMZ::plugins/common-aliases/common-aliases.plugin.zsh
           # Not necessary anymore
           # unalias duf
+
+          export ZSH=${lib.escapeShellArg config.programs.zsh.oh-my-zsh.package}/share/oh-my-zsh;
+
+          eval "$(devenv hook zsh)"
         '';
       in
       lib.mkMerge [
