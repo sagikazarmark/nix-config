@@ -35,7 +35,7 @@
     matrix-appservices.url = "gitlab:coffeetables/nix-matrix-appservices";
 
     devenv-latest = {
-      url = "github:cachix/devenv/tags/latest";
+      url = "github:cachix/devenv/tags/v2.1.2";
       inputs = {
         nixpkgs.follows = "nixpkgsUnstable";
       };
