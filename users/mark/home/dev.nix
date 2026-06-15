@@ -65,7 +65,10 @@
       }))
       aws-vault
       # azure-cli
-      (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+      (google-cloud-sdk.withExtraComponents [
+        google-cloud-sdk.components.gke-gcloud-auth-plugin
+        google-cloud-sdk.components.local-extract
+      ])
       scaleway-cli
 
       # Go
