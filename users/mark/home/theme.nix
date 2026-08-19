@@ -8,6 +8,7 @@
   # https://github.com/catppuccin/nix
   catppuccin = {
     enable = true;
+    autoEnable = true;
     flavor = "mocha";
   };
 

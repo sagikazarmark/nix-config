@@ -31,28 +31,30 @@
   programs.git = {
     enable = true;
 
-    userName = "Mark Sagi-Kazar";
-    userEmail = "mark.sagikazar@gmail.com";
-
     signing = {
       key = "F4C5C90E";
       signByDefault = true;
     };
 
-    aliases = {
-      ci = "commit -s";
-      st = "status";
-      co = "checkout";
-      comend = "commit --amend --no-edit";
-      it = "!git init && git commit -m \"Root commit\" --allow-empty";
-      yolo = "push --force-with-lease";
-      shorty = "status --short --branch";
-      today = "log --since=midnight --author='Mark Sagi-Kazar' --oneline";
-      grog = "log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"";
-    };
-
-    extraConfig = {
+    settings = {
       # url."git@github.com:".insteadOf = "https://github.com";
+
+      user = {
+        name = "Mark Sagi-Kazar";
+        email = "mark.sagikazar@gmail.com";
+      };
+
+      alias = {
+        ci = "commit -s";
+        st = "status";
+        co = "checkout";
+        comend = "commit --amend --no-edit";
+        it = "!git init && git commit -m \"Root commit\" --allow-empty";
+        yolo = "push --force-with-lease";
+        shorty = "status --short --branch";
+        today = "log --since=midnight --author='Mark Sagi-Kazar' --oneline";
+        grog = "log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"";
+      };
 
       init.defaultBranch = "main";
 
@@ -62,15 +64,6 @@
 
       merge = {
         conflictstyle = "diff3";
-      };
-    };
-
-    delta = {
-      enable = true;
-
-      options = {
-        features = lib.mkForce "decorations catppuccin-${config.catppuccin.delta.flavor}";
-        side-by-side = true;
       };
     };
 
@@ -117,5 +110,15 @@
 
       "values.local.yaml"
     ];
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+
+    options = {
+      features = lib.mkForce "decorations catppuccin-${config.catppuccin.delta.flavor}";
+      side-by-side = true;
+    };
   };
 }

@@ -34,8 +34,8 @@
       # rnix-lsp
       terraform-ls
       helm-ls
-      nodePackages.yaml-language-server
-      nodePackages.typescript-language-server
+      yaml-language-server
+      typescript-language-server
       lua-language-server
       vscode-langservers-extracted
 
@@ -121,7 +121,8 @@
       kubectx
       kubie
       rakkess
-      minikube
+      # minikube also exposes bin/kubectl; prefer the standalone package above.
+      (lib.lowPrio minikube)
       kubernetes-helm
       kind
       # kail # Not maintained

@@ -31,7 +31,6 @@
     coreutils
     gnused
     wget
-    neofetch
     stow
     tree
     # mkpasswd
