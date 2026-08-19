@@ -2,13 +2,13 @@
   description = "My Nix(OS) configurations";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.05";
+    nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgsUnstable.url = "nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-managerUnstable = {
@@ -35,7 +35,7 @@
     matrix-appservices.url = "gitlab:coffeetables/nix-matrix-appservices";
 
     devenv-latest = {
-      url = "github:cachix/devenv/tags/v2.1.2";
+      url = "github:cachix/devenv/tags/v2.2.2";
       inputs = {
         nixpkgs.follows = "nixpkgsUnstable";
       };

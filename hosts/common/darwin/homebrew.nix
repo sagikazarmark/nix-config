@@ -30,7 +30,7 @@ in
       upgrade = true;
     };
 
-    taps = [ "restatedev/tap" ];
+    # taps = [ "restatedev/tap" ];
 
     brews = [
       "mas"
@@ -43,7 +43,7 @@ in
       # Nix version is broken at the moment
       # "oci-cli"
 
-      "restate"
+      # "restate"
 
       # The default one is ooooold
       "bash"
@@ -93,8 +93,8 @@ in
       # "telegram-desktop"
       "webex"
       "whatsapp"
-      "messenger"
-      "beeper"
+      # "messenger"
+      # "beeper"
 
       "darktable"
       "inkscape"
