@@ -393,7 +393,7 @@
             ];
 
             overlays = homeOverlays ++ [
-              inputs.devenv-latest.overlays.default
+              # inputs.devenv-latest.overlays.default
             ];
           };
 
