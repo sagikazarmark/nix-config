@@ -18,6 +18,8 @@
       # https://github.com/ghostty-org/ghostty/discussions/3483#discussioncomment-11716750
       macos-option-as-alt = "left";
 
+      shell-integration-features = "ssh-env,ssh-terminfo";
+
       keybind = [
         "global:super+alt+enter=new_window"
       ];
