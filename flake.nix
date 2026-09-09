@@ -34,10 +34,11 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     matrix-appservices.url = "gitlab:coffeetables/nix-matrix-appservices";
 
+    devenvNixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
     devenv-latest = {
-      url = "github:cachix/devenv/tags/v2.2.2";
+      url = "github:cachix/devenv/tags/v2.3";
       inputs = {
-        nixpkgs.follows = "nixpkgsUnstable";
+        nixpkgs.follows = "devenvNixpkgs";
       };
     };
     claude-code.url = "github:sadjow/claude-code-nix";
@@ -52,9 +53,11 @@
   nixConfig = {
     extra-substituters = [
       "https://claude-code.cachix.org"
+      "https://devenv.cachix.org"
     ];
     extra-trusted-public-keys = [
       "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk="
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
     ];
     # Optional: Enable flake features if needed
     # experimental-features = [ "nix-command" "flakes" ];
@@ -393,7 +396,7 @@
             ];
 
             overlays = homeOverlays ++ [
-              # inputs.devenv-latest.overlays.default
+              inputs.devenv-latest.overlays.default
             ];
           };
 
