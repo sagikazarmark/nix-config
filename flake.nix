@@ -36,7 +36,7 @@
 
     devenvNixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
     devenv-latest = {
-      url = "github:cachix/devenv/tags/v2.3";
+      url = "github:cachix/devenv/tags/v2.4.0";
       inputs = {
         nixpkgs.follows = "devenvNixpkgs";
       };
@@ -223,11 +223,11 @@
               nixpkgs.overlays = [
                 systemOverlay
                 nur.overlays.default
-                inputs.stable-diffusion-webui-nix.overlays.default
+                # inputs.stable-diffusion-webui-nix.overlays.default
               ];
             }
 
-            inputs.stable-diffusion-webui-nix.nixosModules.default
+            # inputs.stable-diffusion-webui-nix.nixosModules.default
 
             ./hosts/forge/configuration.nix
           ];
